@@ -1,0 +1,1653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module ejercicio-uno</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">ejercicio-uno</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:g%3A%5Cmi%20unidad%5Cu_dev_senior%5Cpython_curso%5Cpython_clases_practicas%5C00_pensum_nuevo%5C06_modulo_6_semana_1%5C01_primera_clase%5Cejercicio-uno.py">g:\mi unidad\u_dev_senior\python_curso\python_clases_practicas\00_pensum_nuevo\06_modulo_6_semana_1\01_primera_clase\ejercicio-uno.py</a></td></tr></table>
+    <p><span class="code">API&nbsp;de&nbsp;Clientes<br>
+&nbsp;<br>
+Este&nbsp;módulo&nbsp;implementa&nbsp;una&nbsp;API&nbsp;RESTful&nbsp;para&nbsp;la&nbsp;gestión&nbsp;de&nbsp;clientes&nbsp;utilizando&nbsp;FastAPI.<br>
+Proporciona&nbsp;operaciones&nbsp;CRUD&nbsp;(Crear,&nbsp;Leer,&nbsp;Actualizar,&nbsp;Eliminar)&nbsp;para&nbsp;la&nbsp;gestión&nbsp;de&nbsp;clientes.<br>
+&nbsp;<br>
+Módulos:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fastapi:&nbsp;Framework&nbsp;para&nbsp;construir&nbsp;APIs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;pydantic:&nbsp;Para&nbsp;validación&nbsp;de&nbsp;datos&nbsp;y&nbsp;serialización<br>
+&nbsp;&nbsp;&nbsp;&nbsp;typing:&nbsp;Para&nbsp;tipos&nbsp;de&nbsp;datos&nbsp;opcionales<br>
+&nbsp;<br>
+Ejemplo&nbsp;de&nbsp;uso:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;uvicorn&nbsp;ejercicio-uno:app&nbsp;--reload</span></p>
+<p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>(<a href="builtins.html#object">builtins.object</a>)
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="ejercicio-uno.html#ClienteBase">ClienteBase</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="ejercicio-uno.html#ClienteCreate">ClienteCreate</a>
+</dt><dt class="heading-text"><a href="ejercicio-uno.html#ClienteResponse">ClienteResponse</a>
+</dt></dl>
+</dd>
+<dt class="heading-text"><a href="ejercicio-uno.html#ClienteUpdate">ClienteUpdate</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="ClienteBase">class <strong>ClienteBase</strong></a>(<a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#ClienteBase">ClienteBase</a>(*,&nbsp;nombre:&nbsp;str,&nbsp;edad:&nbsp;int)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+Modelo&nbsp;base&nbsp;para&nbsp;los&nbsp;clientes.<br>
+&nbsp;<br>
+Attributes:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;nombre&nbsp;(str):&nbsp;Nombre&nbsp;del&nbsp;cliente<br>
+&nbsp;&nbsp;&nbsp;&nbsp;edad&nbsp;(int):&nbsp;Edad&nbsp;del&nbsp;cliente<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="ejercicio-uno.html#ClienteBase">ClienteBase</a></dd>
+<dd><a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset()</dl>
+
+<dl><dt><strong>__annotations__</strong> = {'edad': &lt;class 'int'&gt;, 'nombre': &lt;class 'str'&gt;}</dl>
+
+<dl><dt><strong>__class_vars__</strong> = set()</dl>
+
+<dl><dt><strong>__private_attributes__</strong> = {}</dl>
+
+<dl><dt><strong>__pydantic_complete__</strong> = True</dl>
+
+<dl><dt><strong>__pydantic_core_schema__</strong> = {'cls': &lt;class 'ejercicio-uno.ClienteBase'&gt;, 'config': {'title': 'ClienteBase'}, 'custom_init': False, 'metadata': {'pydantic.internal.needs_apply_discriminated_union': False, 'pydantic_js_annotation_functions': [], 'pydantic_js_functions': [functools.partial(&lt;function modify_model_json_sc...692AC0&gt;, cls=&lt;class 'ejercicio-uno.ClienteBase'&gt;), &lt;bound method BaseModel.__get_pydantic_json_schema__ of &lt;class 'ejercicio-uno.ClienteBase'&gt;&gt;]}, 'ref': 'ejercicio-uno.ClienteBase:2542357445120', 'root_model': False, 'schema': {'computed_fields': [], 'fields': {'edad': {'metadata': {'pydantic_js_annotation_functions': [&lt;function GenerateSchema._common_field_schema.&lt;locals&gt;.json_schema_update_func&gt;], 'pydantic_js_functions': []}, 'schema': {'metadata': {'pydantic.internal.needs_apply_discriminated_union': False}, 'type': 'int'}, 'type': 'model-field'}, 'nombre': {'metadata': {'pydantic_js_annotation_functions': [&lt;function GenerateSchema._common_field_schema.&lt;locals&gt;.json_schema_update_func&gt;], 'pydantic_js_functions': []}, 'schema': {'metadata': {'pydantic.internal.needs_apply_discriminated_union': False}, 'type': 'str'}, 'type': 'model-field'}}, 'model_name': 'ClienteBase', 'type': 'model-fields'}, 'type': 'model'}</dl>
+
+<dl><dt><strong>__pydantic_custom_init__</strong> = False</dl>
+
+<dl><dt><strong>__pydantic_decorators__</strong> = DecoratorInfos(validators={}, field_validators={...zers={}, model_validators={}, computed_fields={})</dl>
+
+<dl><dt><strong>__pydantic_generic_metadata__</strong> = {'args': (), 'origin': None, 'parameters': ()}</dl>
+
+<dl><dt><strong>__pydantic_parent_namespace__</strong> = {'BaseModel': &lt;weakref at 0x0000024FF14C6210; to 'ModelMetaclass' at 0x0000024FED820820 (BaseModel)&gt;, 'FastAPI': &lt;weakref at 0x0000024FF14C61B0; to 'type' at 0x0000024FF04FF620 (FastAPI)&gt;, 'HTTPException': &lt;weakref at 0x0000024FF14C6150; to 'type' at 0x0000024FED8CB6E0 (HTTPException)&gt;, 'Optional': &lt;weakref at 0x0000024FF14C6270; to '_SpecialForm'&gt;, '__builtins__': {'ArithmeticError': &lt;class 'ArithmeticError'&gt;, 'AssertionError': &lt;class 'AssertionError'&gt;, 'AttributeError': &lt;class 'AttributeError'&gt;, 'BaseException': &lt;class 'BaseException'&gt;, 'BaseExceptionGroup': &lt;class 'BaseExceptionGroup'&gt;, 'BlockingIOError': &lt;class 'BlockingIOError'&gt;, 'BrokenPipeError': &lt;class 'BrokenPipeError'&gt;, 'BufferError': &lt;class 'BufferError'&gt;, 'BytesWarning': &lt;class 'BytesWarning'&gt;, 'ChildProcessError': &lt;class 'ChildProcessError'&gt;, ...}, '__cached__': r'G:\Mi unidad\U_DEV_SENIOR\Python_Curso\Python_Cl...A_CLASE\__pycache__\ejercicio-uno.cpython-312.pyc', '__doc__': '<span class="repr">\n</span>API de Clientes<span class="repr">\n\n</span>Este módulo implementa una API... uso:<span class="repr">\n</span>    &gt;&gt;&gt; uvicorn ejercicio-uno:app --reload<span class="repr">\n</span>', '__file__': r'G:\Mi unidad\U_DEV_SENIOR\Python_Curso\Python_Cl...dulo_6_Semana_1\01_PRIMERA_CLASE\ejercicio-uno.py', '__loader__': &lt;weakref at 0x0000024FF14C60F0; to 'SourceFileLoader'&gt;, '__name__': 'ejercicio-uno', ...}</dl>
+
+<dl><dt><strong>__pydantic_post_init__</strong> = None</dl>
+
+<dl><dt><strong>__pydantic_serializer__</strong> = SchemaSerializer(serializer=Model(
+    ModelSeri...   name: "ClienteBase",
+    },
+), definitions=[])</dl>
+
+<dl><dt><strong>__pydantic_validator__</strong> = SchemaValidator(title="ClienteBase", validator=M...   name: "ClienteBase",
+    },
+), definitions=[])</dl>
+
+<dl><dt><strong>__signature__</strong> = &lt;Signature (*, nombre: str, edad: int) -&gt; None&gt;</dl>
+
+<dl><dt><strong>model_config</strong> = {}</dl>
+
+<dl><dt><strong>model_fields</strong> = {'edad': FieldInfo(annotation=int, required=True), 'nombre': FieldInfo(annotation=str, required=True)}</dl>
+
+<hr>
+Methods inherited from <a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>:<br>
+<dl><dt><a name="ClienteBase-__copy__"><strong>__copy__</strong></a>(self: 'Model') -&gt; 'Model'</dt><dd><span class="code">Returns&nbsp;a&nbsp;shallow&nbsp;copy&nbsp;of&nbsp;the&nbsp;model.</span></dd></dl>
+
+<dl><dt><a name="ClienteBase-__deepcopy__"><strong>__deepcopy__</strong></a>(self: 'Model', memo: 'dict[int, Any] | None' = None) -&gt; 'Model'</dt><dd><span class="code">Returns&nbsp;a&nbsp;deep&nbsp;copy&nbsp;of&nbsp;the&nbsp;model.</span></dd></dl>
+
+<dl><dt><a name="ClienteBase-__delattr__"><strong>__delattr__</strong></a>(self, item: 'str') -&gt; 'Any'</dt><dd><span class="code">Implement&nbsp;delattr(self,&nbsp;name).</span></dd></dl>
+
+<dl><dt><a name="ClienteBase-__eq__"><strong>__eq__</strong></a>(self, other: 'Any') -&gt; 'bool'</dt><dd><span class="code">Return&nbsp;self==value.</span></dd></dl>
+
+<dl><dt><a name="ClienteBase-__getattr__"><strong>__getattr__</strong></a>(self, item: 'str') -&gt; 'Any'</dt></dl>
+
+<dl><dt><a name="ClienteBase-__getstate__"><strong>__getstate__</strong></a>(self) -&gt; 'dict[Any, Any]'</dt><dd><span class="code">Helper&nbsp;for&nbsp;pickle.</span></dd></dl>
+
+<dl><dt><a name="ClienteBase-__init__"><strong>__init__</strong></a>(__pydantic_self__, **data: 'Any') -&gt; 'None'</dt><dd><span class="code">Create&nbsp;a&nbsp;new&nbsp;model&nbsp;by&nbsp;parsing&nbsp;and&nbsp;validating&nbsp;input&nbsp;data&nbsp;from&nbsp;keyword&nbsp;arguments.<br>
+&nbsp;<br>
+Raises&nbsp;[`ValidationError`][pydantic_core.ValidationError]&nbsp;if&nbsp;the&nbsp;input&nbsp;data&nbsp;cannot&nbsp;be<br>
+validated&nbsp;to&nbsp;form&nbsp;a&nbsp;valid&nbsp;model.<br>
+&nbsp;<br>
+`__init__`&nbsp;uses&nbsp;`__pydantic_self__`&nbsp;instead&nbsp;of&nbsp;the&nbsp;more&nbsp;common&nbsp;`self`&nbsp;for&nbsp;the&nbsp;first&nbsp;arg&nbsp;to<br>
+allow&nbsp;`self`&nbsp;as&nbsp;a&nbsp;field&nbsp;name.</span></dd></dl>
+
+<dl><dt><a name="ClienteBase-__iter__"><strong>__iter__</strong></a>(self) -&gt; 'TupleGenerator'</dt><dd><span class="code">So&nbsp;`<a href="#ClienteBase-dict">dict</a>(model)`&nbsp;works.</span></dd></dl>
+
+<dl><dt><a name="ClienteBase-__pretty__"><strong>__pretty__</strong></a>(self, fmt: 'typing.Callable[[Any], Any]', **kwargs: 'Any') -&gt; 'typing.Generator[Any, None, None]'<span class="grey"><span class="heading-text"> from pydantic._internal._repr.Representation</span></span></dt><dd><span class="code">Used&nbsp;by&nbsp;devtools&nbsp;(<a href="https://python-devtools.helpmanual.io/">https://python-devtools.helpmanual.io/</a>)&nbsp;to&nbsp;pretty&nbsp;print&nbsp;objects.</span></dd></dl>
+
+<dl><dt><a name="ClienteBase-__repr__"><strong>__repr__</strong></a>(self) -&gt; 'str'</dt><dd><span class="code">Return&nbsp;repr(self).</span></dd></dl>
+
+<dl><dt><a name="ClienteBase-__repr_args__"><strong>__repr_args__</strong></a>(self) -&gt; '_repr.ReprArgs'</dt></dl>
+
+<dl><dt><a name="ClienteBase-__repr_name__"><strong>__repr_name__</strong></a>(self) -&gt; 'str'<span class="grey"><span class="heading-text"> from pydantic._internal._repr.Representation</span></span></dt><dd><span class="code">Name&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class,&nbsp;used&nbsp;in&nbsp;__repr__.</span></dd></dl>
+
+<dl><dt><a name="ClienteBase-__repr_str__"><strong>__repr_str__</strong></a>(self, join_str: 'str') -&gt; 'str'<span class="grey"><span class="heading-text"> from pydantic._internal._repr.Representation</span></span></dt></dl>
+
+<dl><dt><a name="ClienteBase-__rich_repr__"><strong>__rich_repr__</strong></a>(self) -&gt; 'RichReprResult'<span class="grey"><span class="heading-text"> from pydantic._internal._repr.Representation</span></span></dt><dd><span class="code">Used&nbsp;by&nbsp;Rich&nbsp;(<a href="https://rich.readthedocs.io/en/stable/pretty.html">https://rich.readthedocs.io/en/stable/pretty.html</a>)&nbsp;to&nbsp;pretty&nbsp;print&nbsp;objects.</span></dd></dl>
+
+<dl><dt><a name="ClienteBase-__setattr__"><strong>__setattr__</strong></a>(self, name: 'str', value: 'Any') -&gt; 'None'</dt><dd><span class="code">Implement&nbsp;setattr(self,&nbsp;name,&nbsp;value).</span></dd></dl>
+
+<dl><dt><a name="ClienteBase-__setstate__"><strong>__setstate__</strong></a>(self, state: 'dict[Any, Any]') -&gt; 'None'</dt></dl>
+
+<dl><dt><a name="ClienteBase-__str__"><strong>__str__</strong></a>(self) -&gt; 'str'</dt><dd><span class="code">Return&nbsp;str(self).</span></dd></dl>
+
+<dl><dt><a name="ClienteBase-copy"><strong>copy</strong></a>(self: 'Model', *, include: 'AbstractSetIntStr | MappingIntStrAny | None' = None, exclude: 'AbstractSetIntStr | MappingIntStrAny | None' = None, update: 'typing.Dict[str, Any] | None' = None, deep: 'bool' = False) -&gt; 'Model'</dt><dd><span class="code">Returns&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;model.<br>
+&nbsp;<br>
+!!!&nbsp;warning&nbsp;"Deprecated"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;method&nbsp;is&nbsp;now&nbsp;deprecated;&nbsp;use&nbsp;`model_copy`&nbsp;instead.<br>
+&nbsp;<br>
+If&nbsp;you&nbsp;need&nbsp;`include`&nbsp;or&nbsp;`exclude`,&nbsp;use:<br>
+&nbsp;<br>
+```py<br>
+data&nbsp;=&nbsp;self.<a href="#ClienteBase-model_dump">model_dump</a>(include=include,&nbsp;exclude=exclude,&nbsp;round_trip=True)<br>
+data&nbsp;=&nbsp;{**data,&nbsp;**(update&nbsp;or&nbsp;{})}<br>
+copied&nbsp;=&nbsp;self.<a href="#ClienteBase-model_validate">model_validate</a>(data)<br>
+```<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;include:&nbsp;Optional&nbsp;set&nbsp;or&nbsp;mapping<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;specifying&nbsp;which&nbsp;fields&nbsp;to&nbsp;include&nbsp;in&nbsp;the&nbsp;copied&nbsp;model.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude:&nbsp;Optional&nbsp;set&nbsp;or&nbsp;mapping<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;specifying&nbsp;which&nbsp;fields&nbsp;to&nbsp;exclude&nbsp;in&nbsp;the&nbsp;copied&nbsp;model.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;update:&nbsp;Optional&nbsp;dictionary&nbsp;of&nbsp;field-value&nbsp;pairs&nbsp;to&nbsp;override&nbsp;field&nbsp;values<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;in&nbsp;the&nbsp;copied&nbsp;model.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;deep:&nbsp;If&nbsp;True,&nbsp;the&nbsp;values&nbsp;of&nbsp;fields&nbsp;that&nbsp;are&nbsp;Pydantic&nbsp;models&nbsp;will&nbsp;be&nbsp;deep&nbsp;copied.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;copy&nbsp;of&nbsp;the&nbsp;model&nbsp;with&nbsp;included,&nbsp;excluded&nbsp;and&nbsp;updated&nbsp;fields&nbsp;as&nbsp;specified.</span></dd></dl>
+
+<dl><dt><a name="ClienteBase-dict"><strong>dict</strong></a>(self, *, include: 'IncEx' = None, exclude: 'IncEx' = None, by_alias: 'bool' = False, exclude_unset: 'bool' = False, exclude_defaults: 'bool' = False, exclude_none: 'bool' = False) -&gt; 'typing.Dict[str, Any]'</dt></dl>
+
+<dl><dt><a name="ClienteBase-json"><strong>json</strong></a>(self, *, include: 'IncEx' = None, exclude: 'IncEx' = None, by_alias: 'bool' = False, exclude_unset: 'bool' = False, exclude_defaults: 'bool' = False, exclude_none: 'bool' = False, encoder: 'typing.Callable[[Any], Any] | None' = PydanticUndefined, models_as_dict: 'bool' = PydanticUndefined, **dumps_kwargs: 'Any') -&gt; 'str'</dt></dl>
+
+<dl><dt><a name="ClienteBase-model_copy"><strong>model_copy</strong></a>(self: 'Model', *, update: 'dict[str, Any] | None' = None, deep: 'bool' = False) -&gt; 'Model'</dt><dd><span class="code">Usage&nbsp;docs:&nbsp;<a href="https://docs.pydantic.dev/2.4/concepts/serialization/#model_copy">https://docs.pydantic.dev/2.4/concepts/serialization/#model_copy</a><br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;model.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;update:&nbsp;Values&nbsp;to&nbsp;change/add&nbsp;in&nbsp;the&nbsp;new&nbsp;model.&nbsp;Note:&nbsp;the&nbsp;data&nbsp;is&nbsp;not&nbsp;validated<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;before&nbsp;creating&nbsp;the&nbsp;new&nbsp;model.&nbsp;You&nbsp;should&nbsp;trust&nbsp;this&nbsp;data.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;deep:&nbsp;Set&nbsp;to&nbsp;`True`&nbsp;to&nbsp;make&nbsp;a&nbsp;deep&nbsp;copy&nbsp;of&nbsp;the&nbsp;model.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;New&nbsp;model&nbsp;instance.</span></dd></dl>
+
+<dl><dt><a name="ClienteBase-model_dump"><strong>model_dump</strong></a>(self, *, mode: "Literal['json', 'python'] | str" = 'python', include: 'IncEx' = None, exclude: 'IncEx' = None, by_alias: 'bool' = False, exclude_unset: 'bool' = False, exclude_defaults: 'bool' = False, exclude_none: 'bool' = False, round_trip: 'bool' = False, warnings: 'bool' = True) -&gt; 'dict[str, Any]'</dt><dd><span class="code">Usage&nbsp;docs:&nbsp;<a href="https://docs.pydantic.dev/2.4/concepts/serialization/#modelmodel_dump">https://docs.pydantic.dev/2.4/concepts/serialization/#modelmodel_dump</a><br>
+&nbsp;<br>
+Generate&nbsp;a&nbsp;dictionary&nbsp;representation&nbsp;of&nbsp;the&nbsp;model,&nbsp;optionally&nbsp;specifying&nbsp;which&nbsp;fields&nbsp;to&nbsp;include&nbsp;or&nbsp;exclude.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;mode:&nbsp;The&nbsp;mode&nbsp;in&nbsp;which&nbsp;`to_python`&nbsp;should&nbsp;run.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;mode&nbsp;is&nbsp;'json',&nbsp;the&nbsp;dictionary&nbsp;will&nbsp;only&nbsp;contain&nbsp;JSON&nbsp;serializable&nbsp;types.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;mode&nbsp;is&nbsp;'python',&nbsp;the&nbsp;dictionary&nbsp;may&nbsp;contain&nbsp;any&nbsp;Python&nbsp;objects.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;include:&nbsp;A&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;include&nbsp;in&nbsp;the&nbsp;output.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude:&nbsp;A&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;exclude&nbsp;from&nbsp;the&nbsp;output.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;by_alias:&nbsp;Whether&nbsp;to&nbsp;use&nbsp;the&nbsp;field's&nbsp;alias&nbsp;in&nbsp;the&nbsp;dictionary&nbsp;key&nbsp;if&nbsp;defined.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude_unset:&nbsp;Whether&nbsp;to&nbsp;exclude&nbsp;fields&nbsp;that&nbsp;are&nbsp;unset&nbsp;or&nbsp;None&nbsp;from&nbsp;the&nbsp;output.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude_defaults:&nbsp;Whether&nbsp;to&nbsp;exclude&nbsp;fields&nbsp;that&nbsp;are&nbsp;set&nbsp;to&nbsp;their&nbsp;default&nbsp;value&nbsp;from&nbsp;the&nbsp;output.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude_none:&nbsp;Whether&nbsp;to&nbsp;exclude&nbsp;fields&nbsp;that&nbsp;have&nbsp;a&nbsp;value&nbsp;of&nbsp;`None`&nbsp;from&nbsp;the&nbsp;output.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;round_trip:&nbsp;Whether&nbsp;to&nbsp;enable&nbsp;serialization&nbsp;and&nbsp;deserialization&nbsp;round-trip&nbsp;support.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;warnings:&nbsp;Whether&nbsp;to&nbsp;log&nbsp;warnings&nbsp;when&nbsp;invalid&nbsp;fields&nbsp;are&nbsp;encountered.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;dictionary&nbsp;representation&nbsp;of&nbsp;the&nbsp;model.</span></dd></dl>
+
+<dl><dt><a name="ClienteBase-model_dump_json"><strong>model_dump_json</strong></a>(self, *, indent: 'int | None' = None, include: 'IncEx' = None, exclude: 'IncEx' = None, by_alias: 'bool' = False, exclude_unset: 'bool' = False, exclude_defaults: 'bool' = False, exclude_none: 'bool' = False, round_trip: 'bool' = False, warnings: 'bool' = True) -&gt; 'str'</dt><dd><span class="code">Usage&nbsp;docs:&nbsp;<a href="https://docs.pydantic.dev/2.4/concepts/serialization/#modelmodel_dump_json">https://docs.pydantic.dev/2.4/concepts/serialization/#modelmodel_dump_json</a><br>
+&nbsp;<br>
+Generates&nbsp;a&nbsp;JSON&nbsp;representation&nbsp;of&nbsp;the&nbsp;model&nbsp;using&nbsp;Pydantic's&nbsp;`to_json`&nbsp;method.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;indent:&nbsp;Indentation&nbsp;to&nbsp;use&nbsp;in&nbsp;the&nbsp;JSON&nbsp;output.&nbsp;If&nbsp;None&nbsp;is&nbsp;passed,&nbsp;the&nbsp;output&nbsp;will&nbsp;be&nbsp;compact.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;include:&nbsp;Field(s)&nbsp;to&nbsp;include&nbsp;in&nbsp;the&nbsp;JSON&nbsp;output.&nbsp;Can&nbsp;take&nbsp;either&nbsp;a&nbsp;string&nbsp;or&nbsp;set&nbsp;of&nbsp;strings.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude:&nbsp;Field(s)&nbsp;to&nbsp;exclude&nbsp;from&nbsp;the&nbsp;JSON&nbsp;output.&nbsp;Can&nbsp;take&nbsp;either&nbsp;a&nbsp;string&nbsp;or&nbsp;set&nbsp;of&nbsp;strings.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;by_alias:&nbsp;Whether&nbsp;to&nbsp;serialize&nbsp;using&nbsp;field&nbsp;aliases.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude_unset:&nbsp;Whether&nbsp;to&nbsp;exclude&nbsp;fields&nbsp;that&nbsp;have&nbsp;not&nbsp;been&nbsp;explicitly&nbsp;set.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude_defaults:&nbsp;Whether&nbsp;to&nbsp;exclude&nbsp;fields&nbsp;that&nbsp;have&nbsp;the&nbsp;default&nbsp;value.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude_none:&nbsp;Whether&nbsp;to&nbsp;exclude&nbsp;fields&nbsp;that&nbsp;have&nbsp;a&nbsp;value&nbsp;of&nbsp;`None`.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;round_trip:&nbsp;Whether&nbsp;to&nbsp;use&nbsp;serialization/deserialization&nbsp;between&nbsp;JSON&nbsp;and&nbsp;class&nbsp;instance.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;warnings:&nbsp;Whether&nbsp;to&nbsp;show&nbsp;any&nbsp;warnings&nbsp;that&nbsp;occurred&nbsp;during&nbsp;serialization.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;JSON&nbsp;string&nbsp;representation&nbsp;of&nbsp;the&nbsp;model.</span></dd></dl>
+
+<dl><dt><a name="ClienteBase-model_post_init"><strong>model_post_init</strong></a>(self, _BaseModel__context: 'Any') -&gt; 'None'</dt><dd><span class="code">Override&nbsp;this&nbsp;method&nbsp;to&nbsp;perform&nbsp;additional&nbsp;initialization&nbsp;after&nbsp;`__init__`&nbsp;and&nbsp;`model_construct`.<br>
+This&nbsp;is&nbsp;useful&nbsp;if&nbsp;you&nbsp;want&nbsp;to&nbsp;do&nbsp;some&nbsp;validation&nbsp;that&nbsp;requires&nbsp;the&nbsp;entire&nbsp;model&nbsp;to&nbsp;be&nbsp;initialized.</span></dd></dl>
+
+<hr>
+Class methods inherited from <a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>:<br>
+<dl><dt><a name="ClienteBase-__class_getitem__"><strong>__class_getitem__</strong></a>(typevar_values: 'type[Any] | tuple[type[Any], ...]') -&gt; 'type[BaseModel] | _forward_ref.PydanticRecursiveRef'</dt></dl>
+
+<dl><dt><a name="ClienteBase-__get_pydantic_core_schema__"><strong>__get_pydantic_core_schema__</strong></a>(_BaseModel__source: 'type[BaseModel]', _BaseModel__handler: 'GetCoreSchemaHandler') -&gt; 'CoreSchema'</dt><dd><span class="code">Hook&nbsp;into&nbsp;generating&nbsp;the&nbsp;model's&nbsp;CoreSchema.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;__source:&nbsp;The&nbsp;class&nbsp;we&nbsp;are&nbsp;generating&nbsp;a&nbsp;schema&nbsp;for.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;will&nbsp;generally&nbsp;be&nbsp;the&nbsp;same&nbsp;as&nbsp;the&nbsp;`cls`&nbsp;argument&nbsp;if&nbsp;this&nbsp;is&nbsp;a&nbsp;classmethod.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;__handler:&nbsp;Call&nbsp;into&nbsp;Pydantic's&nbsp;internal&nbsp;JSON&nbsp;schema&nbsp;generation.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;callable&nbsp;that&nbsp;calls&nbsp;into&nbsp;Pydantic's&nbsp;internal&nbsp;CoreSchema&nbsp;generation&nbsp;logic.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;`pydantic-core`&nbsp;`CoreSchema`.</span></dd></dl>
+
+<dl><dt><a name="ClienteBase-__get_pydantic_json_schema__"><strong>__get_pydantic_json_schema__</strong></a>(_BaseModel__core_schema: 'CoreSchema', _BaseModel__handler: 'GetJsonSchemaHandler') -&gt; 'JsonSchemaValue'</dt><dd><span class="code">Hook&nbsp;into&nbsp;generating&nbsp;the&nbsp;model's&nbsp;JSON&nbsp;schema.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;__core_schema:&nbsp;A&nbsp;`pydantic-core`&nbsp;CoreSchema.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You&nbsp;can&nbsp;ignore&nbsp;this&nbsp;argument&nbsp;and&nbsp;call&nbsp;the&nbsp;handler&nbsp;with&nbsp;a&nbsp;new&nbsp;CoreSchema,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wrap&nbsp;this&nbsp;CoreSchema&nbsp;(`{'type':&nbsp;'nullable',&nbsp;'schema':&nbsp;current_schema}`),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;just&nbsp;call&nbsp;the&nbsp;handler&nbsp;with&nbsp;the&nbsp;original&nbsp;schema.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;__handler:&nbsp;Call&nbsp;into&nbsp;Pydantic's&nbsp;internal&nbsp;JSON&nbsp;schema&nbsp;generation.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;will&nbsp;raise&nbsp;a&nbsp;`pydantic.errors.PydanticInvalidForJsonSchema`&nbsp;if&nbsp;JSON&nbsp;schema<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;generation&nbsp;fails.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Since&nbsp;this&nbsp;gets&nbsp;called&nbsp;by&nbsp;`<a href="pydantic.main.html#BaseModel">BaseModel</a>.model_json_schema`&nbsp;you&nbsp;can&nbsp;override&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`schema_generator`&nbsp;argument&nbsp;to&nbsp;that&nbsp;function&nbsp;to&nbsp;change&nbsp;JSON&nbsp;schema&nbsp;generation&nbsp;globally<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;a&nbsp;type.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;JSON&nbsp;schema,&nbsp;as&nbsp;a&nbsp;Python&nbsp;object.</span></dd></dl>
+
+<dl><dt><a name="ClienteBase-__pydantic_init_subclass__"><strong>__pydantic_init_subclass__</strong></a>(**kwargs: 'Any') -&gt; 'None'</dt><dd><span class="code">This&nbsp;is&nbsp;intended&nbsp;to&nbsp;behave&nbsp;just&nbsp;like&nbsp;`__init_subclass__`,&nbsp;but&nbsp;is&nbsp;called&nbsp;by&nbsp;`ModelMetaclass`<br>
+only&nbsp;after&nbsp;the&nbsp;class&nbsp;is&nbsp;actually&nbsp;fully&nbsp;initialized.&nbsp;In&nbsp;particular,&nbsp;attributes&nbsp;like&nbsp;`model_fields`&nbsp;will<br>
+be&nbsp;present&nbsp;when&nbsp;this&nbsp;is&nbsp;called.<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;necessary&nbsp;because&nbsp;`__init_subclass__`&nbsp;will&nbsp;always&nbsp;be&nbsp;called&nbsp;by&nbsp;`type.__new__`,<br>
+and&nbsp;it&nbsp;would&nbsp;require&nbsp;a&nbsp;prohibitively&nbsp;large&nbsp;refactor&nbsp;to&nbsp;the&nbsp;`ModelMetaclass`&nbsp;to&nbsp;ensure&nbsp;that<br>
+`type.__new__`&nbsp;was&nbsp;called&nbsp;in&nbsp;such&nbsp;a&nbsp;manner&nbsp;that&nbsp;the&nbsp;class&nbsp;would&nbsp;already&nbsp;be&nbsp;sufficiently&nbsp;initialized.<br>
+&nbsp;<br>
+This&nbsp;will&nbsp;receive&nbsp;the&nbsp;same&nbsp;`kwargs`&nbsp;that&nbsp;would&nbsp;be&nbsp;passed&nbsp;to&nbsp;the&nbsp;standard&nbsp;`__init_subclass__`,&nbsp;namely,<br>
+any&nbsp;kwargs&nbsp;passed&nbsp;to&nbsp;the&nbsp;class&nbsp;definition&nbsp;that&nbsp;aren't&nbsp;used&nbsp;internally&nbsp;by&nbsp;pydantic.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;**kwargs:&nbsp;Any&nbsp;keyword&nbsp;arguments&nbsp;passed&nbsp;to&nbsp;the&nbsp;class&nbsp;definition&nbsp;that&nbsp;aren't&nbsp;used&nbsp;internally<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;by&nbsp;pydantic.</span></dd></dl>
+
+<dl><dt><a name="ClienteBase-construct"><strong>construct</strong></a>(_fields_set: 'set[str] | None' = None, **values: 'Any') -&gt; 'Model'</dt></dl>
+
+<dl><dt><a name="ClienteBase-from_orm"><strong>from_orm</strong></a>(obj: 'Any') -&gt; 'Model'</dt></dl>
+
+<dl><dt><a name="ClienteBase-model_construct"><strong>model_construct</strong></a>(_fields_set: 'set[str] | None' = None, **values: 'Any') -&gt; 'Model'</dt><dd><span class="code">Creates&nbsp;a&nbsp;new&nbsp;instance&nbsp;of&nbsp;the&nbsp;`Model`&nbsp;class&nbsp;with&nbsp;validated&nbsp;data.<br>
+&nbsp;<br>
+Creates&nbsp;a&nbsp;new&nbsp;model&nbsp;setting&nbsp;`__dict__`&nbsp;and&nbsp;`__pydantic_fields_set__`&nbsp;from&nbsp;trusted&nbsp;or&nbsp;pre-validated&nbsp;data.<br>
+Default&nbsp;values&nbsp;are&nbsp;respected,&nbsp;but&nbsp;no&nbsp;other&nbsp;validation&nbsp;is&nbsp;performed.<br>
+Behaves&nbsp;as&nbsp;if&nbsp;`Config.extra&nbsp;=&nbsp;'allow'`&nbsp;was&nbsp;set&nbsp;since&nbsp;it&nbsp;adds&nbsp;all&nbsp;passed&nbsp;values<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_fields_set:&nbsp;The&nbsp;set&nbsp;of&nbsp;field&nbsp;names&nbsp;accepted&nbsp;for&nbsp;the&nbsp;Model&nbsp;instance.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;values:&nbsp;Trusted&nbsp;or&nbsp;pre-validated&nbsp;data&nbsp;dictionary.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;new&nbsp;instance&nbsp;of&nbsp;the&nbsp;`Model`&nbsp;class&nbsp;with&nbsp;validated&nbsp;data.</span></dd></dl>
+
+<dl><dt><a name="ClienteBase-model_json_schema"><strong>model_json_schema</strong></a>(by_alias: 'bool' = True, ref_template: 'str' = '#/$defs/{model}', schema_generator: 'type[GenerateJsonSchema]' = &lt;class 'pydantic.json_schema.GenerateJsonSchema'&gt;, mode: 'JsonSchemaMode' = 'validation') -&gt; 'dict[str, Any]'</dt><dd><span class="code">Generates&nbsp;a&nbsp;JSON&nbsp;schema&nbsp;for&nbsp;a&nbsp;model&nbsp;class.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;by_alias:&nbsp;Whether&nbsp;to&nbsp;use&nbsp;attribute&nbsp;aliases&nbsp;or&nbsp;not.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ref_template:&nbsp;The&nbsp;reference&nbsp;template.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;schema_generator:&nbsp;To&nbsp;override&nbsp;the&nbsp;logic&nbsp;used&nbsp;to&nbsp;generate&nbsp;the&nbsp;JSON&nbsp;schema,&nbsp;as&nbsp;a&nbsp;subclass&nbsp;of<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`GenerateJsonSchema`&nbsp;with&nbsp;your&nbsp;desired&nbsp;modifications<br>
+&nbsp;&nbsp;&nbsp;&nbsp;mode:&nbsp;The&nbsp;mode&nbsp;in&nbsp;which&nbsp;to&nbsp;generate&nbsp;the&nbsp;schema.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;JSON&nbsp;schema&nbsp;for&nbsp;the&nbsp;given&nbsp;model&nbsp;class.</span></dd></dl>
+
+<dl><dt><a name="ClienteBase-model_parametrized_name"><strong>model_parametrized_name</strong></a>(params: 'tuple[type[Any], ...]') -&gt; 'str'</dt><dd><span class="code">Compute&nbsp;the&nbsp;class&nbsp;name&nbsp;for&nbsp;parametrizations&nbsp;of&nbsp;generic&nbsp;classes.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;can&nbsp;be&nbsp;overridden&nbsp;to&nbsp;achieve&nbsp;a&nbsp;custom&nbsp;naming&nbsp;scheme&nbsp;for&nbsp;generic&nbsp;BaseModels.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;params:&nbsp;Tuple&nbsp;of&nbsp;types&nbsp;of&nbsp;the&nbsp;class.&nbsp;Given&nbsp;a&nbsp;generic&nbsp;class<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Model`&nbsp;with&nbsp;2&nbsp;type&nbsp;variables&nbsp;and&nbsp;a&nbsp;concrete&nbsp;model&nbsp;`Model[str,&nbsp;int]`,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;value&nbsp;`(str,&nbsp;int)`&nbsp;would&nbsp;be&nbsp;passed&nbsp;to&nbsp;`params`.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;representing&nbsp;the&nbsp;new&nbsp;class&nbsp;where&nbsp;`params`&nbsp;are&nbsp;passed&nbsp;to&nbsp;`cls`&nbsp;as&nbsp;type&nbsp;variables.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TypeError:&nbsp;Raised&nbsp;when&nbsp;trying&nbsp;to&nbsp;generate&nbsp;concrete&nbsp;names&nbsp;for&nbsp;non-generic&nbsp;models.</span></dd></dl>
+
+<dl><dt><a name="ClienteBase-model_rebuild"><strong>model_rebuild</strong></a>(*, force: 'bool' = False, raise_errors: 'bool' = True, _parent_namespace_depth: 'int' = 2, _types_namespace: 'dict[str, Any] | None' = None) -&gt; 'bool | None'</dt><dd><span class="code">Try&nbsp;to&nbsp;rebuild&nbsp;the&nbsp;pydantic-core&nbsp;schema&nbsp;for&nbsp;the&nbsp;model.<br>
+&nbsp;<br>
+This&nbsp;may&nbsp;be&nbsp;necessary&nbsp;when&nbsp;one&nbsp;of&nbsp;the&nbsp;annotations&nbsp;is&nbsp;a&nbsp;ForwardRef&nbsp;which&nbsp;could&nbsp;not&nbsp;be&nbsp;resolved&nbsp;during<br>
+the&nbsp;initial&nbsp;attempt&nbsp;to&nbsp;build&nbsp;the&nbsp;schema,&nbsp;and&nbsp;automatic&nbsp;rebuilding&nbsp;fails.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;force:&nbsp;Whether&nbsp;to&nbsp;force&nbsp;the&nbsp;rebuilding&nbsp;of&nbsp;the&nbsp;model&nbsp;schema,&nbsp;defaults&nbsp;to&nbsp;`False`.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;raise_errors:&nbsp;Whether&nbsp;to&nbsp;raise&nbsp;errors,&nbsp;defaults&nbsp;to&nbsp;`True`.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_parent_namespace_depth:&nbsp;The&nbsp;depth&nbsp;level&nbsp;of&nbsp;the&nbsp;parent&nbsp;namespace,&nbsp;defaults&nbsp;to&nbsp;2.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_types_namespace:&nbsp;The&nbsp;types&nbsp;namespace,&nbsp;defaults&nbsp;to&nbsp;`None`.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Returns&nbsp;`None`&nbsp;if&nbsp;the&nbsp;schema&nbsp;is&nbsp;already&nbsp;"complete"&nbsp;and&nbsp;rebuilding&nbsp;was&nbsp;not&nbsp;required.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;rebuilding&nbsp;_was_&nbsp;required,&nbsp;returns&nbsp;`True`&nbsp;if&nbsp;rebuilding&nbsp;was&nbsp;successful,&nbsp;otherwise&nbsp;`False`.</span></dd></dl>
+
+<dl><dt><a name="ClienteBase-model_validate"><strong>model_validate</strong></a>(obj: 'Any', *, strict: 'bool | None' = None, from_attributes: 'bool | None' = None, context: 'dict[str, Any] | None' = None) -&gt; 'Model'</dt><dd><span class="code">Validate&nbsp;a&nbsp;pydantic&nbsp;model&nbsp;instance.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;obj:&nbsp;The&nbsp;object&nbsp;to&nbsp;validate.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;strict:&nbsp;Whether&nbsp;to&nbsp;raise&nbsp;an&nbsp;exception&nbsp;on&nbsp;invalid&nbsp;fields.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;from_attributes:&nbsp;Whether&nbsp;to&nbsp;extract&nbsp;data&nbsp;from&nbsp;object&nbsp;attributes.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;context:&nbsp;Additional&nbsp;context&nbsp;to&nbsp;pass&nbsp;to&nbsp;the&nbsp;validator.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ValidationError:&nbsp;If&nbsp;the&nbsp;object&nbsp;could&nbsp;not&nbsp;be&nbsp;validated.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;validated&nbsp;model&nbsp;instance.</span></dd></dl>
+
+<dl><dt><a name="ClienteBase-model_validate_json"><strong>model_validate_json</strong></a>(json_data: 'str | bytes | bytearray', *, strict: 'bool | None' = None, context: 'dict[str, Any] | None' = None) -&gt; 'Model'</dt><dd><span class="code">Validate&nbsp;the&nbsp;given&nbsp;JSON&nbsp;data&nbsp;against&nbsp;the&nbsp;Pydantic&nbsp;model.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;json_data:&nbsp;The&nbsp;JSON&nbsp;data&nbsp;to&nbsp;validate.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;strict:&nbsp;Whether&nbsp;to&nbsp;enforce&nbsp;types&nbsp;strictly.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;context:&nbsp;Extra&nbsp;variables&nbsp;to&nbsp;pass&nbsp;to&nbsp;the&nbsp;validator.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;validated&nbsp;Pydantic&nbsp;model.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ValueError:&nbsp;If&nbsp;`json_data`&nbsp;is&nbsp;not&nbsp;a&nbsp;JSON&nbsp;string.</span></dd></dl>
+
+<dl><dt><a name="ClienteBase-model_validate_strings"><strong>model_validate_strings</strong></a>(obj: 'Any', *, strict: 'bool | None' = None, context: 'dict[str, Any] | None' = None) -&gt; 'Model'</dt><dd><span class="code">Validate&nbsp;the&nbsp;given&nbsp;object&nbsp;contains&nbsp;string&nbsp;data&nbsp;against&nbsp;the&nbsp;Pydantic&nbsp;model.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;obj:&nbsp;The&nbsp;object&nbsp;contains&nbsp;string&nbsp;data&nbsp;to&nbsp;validate.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;strict:&nbsp;Whether&nbsp;to&nbsp;enforce&nbsp;types&nbsp;strictly.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;context:&nbsp;Extra&nbsp;variables&nbsp;to&nbsp;pass&nbsp;to&nbsp;the&nbsp;validator.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;validated&nbsp;Pydantic&nbsp;model.</span></dd></dl>
+
+<dl><dt><a name="ClienteBase-parse_file"><strong>parse_file</strong></a>(path: 'str | Path', *, content_type: 'str | None' = None, encoding: 'str' = 'utf8', proto: 'DeprecatedParseProtocol | None' = None, allow_pickle: 'bool' = False) -&gt; 'Model'</dt></dl>
+
+<dl><dt><a name="ClienteBase-parse_obj"><strong>parse_obj</strong></a>(obj: 'Any') -&gt; 'Model'</dt></dl>
+
+<dl><dt><a name="ClienteBase-parse_raw"><strong>parse_raw</strong></a>(b: 'str | bytes', *, content_type: 'str | None' = None, encoding: 'str' = 'utf8', proto: 'DeprecatedParseProtocol | None' = None, allow_pickle: 'bool' = False) -&gt; 'Model'</dt></dl>
+
+<dl><dt><a name="ClienteBase-schema"><strong>schema</strong></a>(by_alias: 'bool' = True, ref_template: 'str' = '#/$defs/{model}') -&gt; 'typing.Dict[str, Any]'</dt></dl>
+
+<dl><dt><a name="ClienteBase-schema_json"><strong>schema_json</strong></a>(*, by_alias: 'bool' = True, ref_template: 'str' = '#/$defs/{model}', **dumps_kwargs: 'Any') -&gt; 'str'</dt></dl>
+
+<dl><dt><a name="ClienteBase-update_forward_refs"><strong>update_forward_refs</strong></a>(**localns: 'Any') -&gt; 'None'</dt></dl>
+
+<dl><dt><a name="ClienteBase-validate"><strong>validate</strong></a>(value: 'Any') -&gt; 'Model'</dt></dl>
+
+<hr>
+Readonly properties inherited from <a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>:<br>
+<dl><dt><strong>__fields__</strong></dt>
+</dl>
+<dl><dt><strong>__fields_set__</strong></dt>
+</dl>
+<dl><dt><strong>model_computed_fields</strong></dt>
+<dd><span class="code">Get&nbsp;the&nbsp;computed&nbsp;fields&nbsp;of&nbsp;this&nbsp;model&nbsp;instance.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;dictionary&nbsp;of&nbsp;computed&nbsp;field&nbsp;names&nbsp;and&nbsp;their&nbsp;corresponding&nbsp;`ComputedFieldInfo`&nbsp;objects.</span></dd>
+</dl>
+<dl><dt><strong>model_extra</strong></dt>
+<dd><span class="code">Get&nbsp;extra&nbsp;fields&nbsp;set&nbsp;during&nbsp;validation.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;dictionary&nbsp;of&nbsp;extra&nbsp;fields,&nbsp;or&nbsp;`None`&nbsp;if&nbsp;`config.extra`&nbsp;is&nbsp;not&nbsp;set&nbsp;to&nbsp;`"allow"`.</span></dd>
+</dl>
+<dl><dt><strong>model_fields_set</strong></dt>
+<dd><span class="code">Returns&nbsp;the&nbsp;set&nbsp;of&nbsp;fields&nbsp;that&nbsp;have&nbsp;been&nbsp;set&nbsp;on&nbsp;this&nbsp;model&nbsp;instance.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;set&nbsp;of&nbsp;strings&nbsp;representing&nbsp;the&nbsp;fields&nbsp;that&nbsp;have&nbsp;been&nbsp;set,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.e.&nbsp;that&nbsp;were&nbsp;not&nbsp;filled&nbsp;from&nbsp;defaults.</span></dd>
+</dl>
+<hr>
+Data descriptors inherited from <a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__pydantic_extra__</strong></dt>
+</dl>
+<dl><dt><strong>__pydantic_fields_set__</strong></dt>
+</dl>
+<dl><dt><strong>__pydantic_private__</strong></dt>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>:<br>
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+<dl><dt><strong>__pydantic_root_model__</strong> = False</dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="ClienteCreate">class <strong>ClienteCreate</strong></a>(<a href="ejercicio-uno.html#ClienteBase">ClienteBase</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#ClienteCreate">ClienteCreate</a>(*,&nbsp;nombre:&nbsp;str,&nbsp;edad:&nbsp;int)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+Modelo&nbsp;para&nbsp;la&nbsp;creación&nbsp;de&nbsp;clientes.<br>
+Hereda&nbsp;de&nbsp;<a href="#ClienteBase">ClienteBase</a>.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="ejercicio-uno.html#ClienteCreate">ClienteCreate</a></dd>
+<dd><a href="ejercicio-uno.html#ClienteBase">ClienteBase</a></dd>
+<dd><a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset()</dl>
+
+<dl><dt><strong>__annotations__</strong> = {}</dl>
+
+<dl><dt><strong>__class_vars__</strong> = set()</dl>
+
+<dl><dt><strong>__private_attributes__</strong> = {}</dl>
+
+<dl><dt><strong>__pydantic_complete__</strong> = True</dl>
+
+<dl><dt><strong>__pydantic_core_schema__</strong> = {'cls': &lt;class 'ejercicio-uno.ClienteCreate'&gt;, 'config': {'title': 'ClienteCreate'}, 'custom_init': False, 'metadata': {'pydantic.internal.needs_apply_discriminated_union': False, 'pydantic_js_annotation_functions': [], 'pydantic_js_functions': [functools.partial(&lt;function modify_model_json_sc...2AC0&gt;, cls=&lt;class 'ejercicio-uno.ClienteCreate'&gt;), &lt;bound method BaseModel.__get_pydantic_json_schema__ of &lt;class 'ejercicio-uno.ClienteCreate'&gt;&gt;]}, 'ref': 'ejercicio-uno.ClienteCreate:2542357447104', 'root_model': False, 'schema': {'computed_fields': [], 'fields': {'edad': {'metadata': {'pydantic_js_annotation_functions': [&lt;function GenerateSchema._common_field_schema.&lt;locals&gt;.json_schema_update_func&gt;], 'pydantic_js_functions': []}, 'schema': {'metadata': {'pydantic.internal.needs_apply_discriminated_union': False}, 'type': 'int'}, 'type': 'model-field'}, 'nombre': {'metadata': {'pydantic_js_annotation_functions': [&lt;function GenerateSchema._common_field_schema.&lt;locals&gt;.json_schema_update_func&gt;], 'pydantic_js_functions': []}, 'schema': {'metadata': {'pydantic.internal.needs_apply_discriminated_union': False}, 'type': 'str'}, 'type': 'model-field'}}, 'model_name': 'ClienteCreate', 'type': 'model-fields'}, 'type': 'model'}</dl>
+
+<dl><dt><strong>__pydantic_custom_init__</strong> = False</dl>
+
+<dl><dt><strong>__pydantic_decorators__</strong> = DecoratorInfos(validators={}, field_validators={...zers={}, model_validators={}, computed_fields={})</dl>
+
+<dl><dt><strong>__pydantic_generic_metadata__</strong> = {'args': (), 'origin': None, 'parameters': ()}</dl>
+
+<dl><dt><strong>__pydantic_parent_namespace__</strong> = {'BaseModel': &lt;weakref at 0x0000024FF14C6510; to 'ModelMetaclass' at 0x0000024FED820820 (BaseModel)&gt;, 'ClienteBase': &lt;weakref at 0x0000024FF14C6630; to 'ModelMetaclass' at 0x0000024FF04FFA00 (ClienteBase)&gt;, 'FastAPI': &lt;weakref at 0x0000024FF14C64B0; to 'type' at 0x0000024FF04FF620 (FastAPI)&gt;, 'HTTPException': &lt;weakref at 0x0000024FF14C6450; to 'type' at 0x0000024FED8CB6E0 (HTTPException)&gt;, 'Optional': &lt;weakref at 0x0000024FF14C6570; to '_SpecialForm'&gt;, '__builtins__': {'ArithmeticError': &lt;class 'ArithmeticError'&gt;, 'AssertionError': &lt;class 'AssertionError'&gt;, 'AttributeError': &lt;class 'AttributeError'&gt;, 'BaseException': &lt;class 'BaseException'&gt;, 'BaseExceptionGroup': &lt;class 'BaseExceptionGroup'&gt;, 'BlockingIOError': &lt;class 'BlockingIOError'&gt;, 'BrokenPipeError': &lt;class 'BrokenPipeError'&gt;, 'BufferError': &lt;class 'BufferError'&gt;, 'BytesWarning': &lt;class 'BytesWarning'&gt;, 'ChildProcessError': &lt;class 'ChildProcessError'&gt;, ...}, '__cached__': r'G:\Mi unidad\U_DEV_SENIOR\Python_Curso\Python_Cl...A_CLASE\__pycache__\ejercicio-uno.cpython-312.pyc', '__doc__': '<span class="repr">\n</span>API de Clientes<span class="repr">\n\n</span>Este módulo implementa una API... uso:<span class="repr">\n</span>    &gt;&gt;&gt; uvicorn ejercicio-uno:app --reload<span class="repr">\n</span>', '__file__': r'G:\Mi unidad\U_DEV_SENIOR\Python_Curso\Python_Cl...dulo_6_Semana_1\01_PRIMERA_CLASE\ejercicio-uno.py', '__loader__': &lt;weakref at 0x0000024FF14C6390; to 'SourceFileLoader'&gt;, ...}</dl>
+
+<dl><dt><strong>__pydantic_post_init__</strong> = None</dl>
+
+<dl><dt><strong>__pydantic_serializer__</strong> = SchemaSerializer(serializer=Model(
+    ModelSeri... name: "ClienteCreate",
+    },
+), definitions=[])</dl>
+
+<dl><dt><strong>__pydantic_validator__</strong> = SchemaValidator(title="ClienteCreate", validator... name: "ClienteCreate",
+    },
+), definitions=[])</dl>
+
+<dl><dt><strong>__signature__</strong> = &lt;Signature (*, nombre: str, edad: int) -&gt; None&gt;</dl>
+
+<dl><dt><strong>model_config</strong> = {}</dl>
+
+<dl><dt><strong>model_fields</strong> = {'edad': FieldInfo(annotation=int, required=True), 'nombre': FieldInfo(annotation=str, required=True)}</dl>
+
+<hr>
+Data descriptors inherited from <a href="ejercicio-uno.html#ClienteBase">ClienteBase</a>:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Methods inherited from <a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>:<br>
+<dl><dt><a name="ClienteCreate-__copy__"><strong>__copy__</strong></a>(self: 'Model') -&gt; 'Model'</dt><dd><span class="code">Returns&nbsp;a&nbsp;shallow&nbsp;copy&nbsp;of&nbsp;the&nbsp;model.</span></dd></dl>
+
+<dl><dt><a name="ClienteCreate-__deepcopy__"><strong>__deepcopy__</strong></a>(self: 'Model', memo: 'dict[int, Any] | None' = None) -&gt; 'Model'</dt><dd><span class="code">Returns&nbsp;a&nbsp;deep&nbsp;copy&nbsp;of&nbsp;the&nbsp;model.</span></dd></dl>
+
+<dl><dt><a name="ClienteCreate-__delattr__"><strong>__delattr__</strong></a>(self, item: 'str') -&gt; 'Any'</dt><dd><span class="code">Implement&nbsp;delattr(self,&nbsp;name).</span></dd></dl>
+
+<dl><dt><a name="ClienteCreate-__eq__"><strong>__eq__</strong></a>(self, other: 'Any') -&gt; 'bool'</dt><dd><span class="code">Return&nbsp;self==value.</span></dd></dl>
+
+<dl><dt><a name="ClienteCreate-__getattr__"><strong>__getattr__</strong></a>(self, item: 'str') -&gt; 'Any'</dt></dl>
+
+<dl><dt><a name="ClienteCreate-__getstate__"><strong>__getstate__</strong></a>(self) -&gt; 'dict[Any, Any]'</dt><dd><span class="code">Helper&nbsp;for&nbsp;pickle.</span></dd></dl>
+
+<dl><dt><a name="ClienteCreate-__init__"><strong>__init__</strong></a>(__pydantic_self__, **data: 'Any') -&gt; 'None'</dt><dd><span class="code">Create&nbsp;a&nbsp;new&nbsp;model&nbsp;by&nbsp;parsing&nbsp;and&nbsp;validating&nbsp;input&nbsp;data&nbsp;from&nbsp;keyword&nbsp;arguments.<br>
+&nbsp;<br>
+Raises&nbsp;[`ValidationError`][pydantic_core.ValidationError]&nbsp;if&nbsp;the&nbsp;input&nbsp;data&nbsp;cannot&nbsp;be<br>
+validated&nbsp;to&nbsp;form&nbsp;a&nbsp;valid&nbsp;model.<br>
+&nbsp;<br>
+`__init__`&nbsp;uses&nbsp;`__pydantic_self__`&nbsp;instead&nbsp;of&nbsp;the&nbsp;more&nbsp;common&nbsp;`self`&nbsp;for&nbsp;the&nbsp;first&nbsp;arg&nbsp;to<br>
+allow&nbsp;`self`&nbsp;as&nbsp;a&nbsp;field&nbsp;name.</span></dd></dl>
+
+<dl><dt><a name="ClienteCreate-__iter__"><strong>__iter__</strong></a>(self) -&gt; 'TupleGenerator'</dt><dd><span class="code">So&nbsp;`<a href="#ClienteCreate-dict">dict</a>(model)`&nbsp;works.</span></dd></dl>
+
+<dl><dt><a name="ClienteCreate-__pretty__"><strong>__pretty__</strong></a>(self, fmt: 'typing.Callable[[Any], Any]', **kwargs: 'Any') -&gt; 'typing.Generator[Any, None, None]'<span class="grey"><span class="heading-text"> from pydantic._internal._repr.Representation</span></span></dt><dd><span class="code">Used&nbsp;by&nbsp;devtools&nbsp;(<a href="https://python-devtools.helpmanual.io/">https://python-devtools.helpmanual.io/</a>)&nbsp;to&nbsp;pretty&nbsp;print&nbsp;objects.</span></dd></dl>
+
+<dl><dt><a name="ClienteCreate-__repr__"><strong>__repr__</strong></a>(self) -&gt; 'str'</dt><dd><span class="code">Return&nbsp;repr(self).</span></dd></dl>
+
+<dl><dt><a name="ClienteCreate-__repr_args__"><strong>__repr_args__</strong></a>(self) -&gt; '_repr.ReprArgs'</dt></dl>
+
+<dl><dt><a name="ClienteCreate-__repr_name__"><strong>__repr_name__</strong></a>(self) -&gt; 'str'<span class="grey"><span class="heading-text"> from pydantic._internal._repr.Representation</span></span></dt><dd><span class="code">Name&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class,&nbsp;used&nbsp;in&nbsp;__repr__.</span></dd></dl>
+
+<dl><dt><a name="ClienteCreate-__repr_str__"><strong>__repr_str__</strong></a>(self, join_str: 'str') -&gt; 'str'<span class="grey"><span class="heading-text"> from pydantic._internal._repr.Representation</span></span></dt></dl>
+
+<dl><dt><a name="ClienteCreate-__rich_repr__"><strong>__rich_repr__</strong></a>(self) -&gt; 'RichReprResult'<span class="grey"><span class="heading-text"> from pydantic._internal._repr.Representation</span></span></dt><dd><span class="code">Used&nbsp;by&nbsp;Rich&nbsp;(<a href="https://rich.readthedocs.io/en/stable/pretty.html">https://rich.readthedocs.io/en/stable/pretty.html</a>)&nbsp;to&nbsp;pretty&nbsp;print&nbsp;objects.</span></dd></dl>
+
+<dl><dt><a name="ClienteCreate-__setattr__"><strong>__setattr__</strong></a>(self, name: 'str', value: 'Any') -&gt; 'None'</dt><dd><span class="code">Implement&nbsp;setattr(self,&nbsp;name,&nbsp;value).</span></dd></dl>
+
+<dl><dt><a name="ClienteCreate-__setstate__"><strong>__setstate__</strong></a>(self, state: 'dict[Any, Any]') -&gt; 'None'</dt></dl>
+
+<dl><dt><a name="ClienteCreate-__str__"><strong>__str__</strong></a>(self) -&gt; 'str'</dt><dd><span class="code">Return&nbsp;str(self).</span></dd></dl>
+
+<dl><dt><a name="ClienteCreate-copy"><strong>copy</strong></a>(self: 'Model', *, include: 'AbstractSetIntStr | MappingIntStrAny | None' = None, exclude: 'AbstractSetIntStr | MappingIntStrAny | None' = None, update: 'typing.Dict[str, Any] | None' = None, deep: 'bool' = False) -&gt; 'Model'</dt><dd><span class="code">Returns&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;model.<br>
+&nbsp;<br>
+!!!&nbsp;warning&nbsp;"Deprecated"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;method&nbsp;is&nbsp;now&nbsp;deprecated;&nbsp;use&nbsp;`model_copy`&nbsp;instead.<br>
+&nbsp;<br>
+If&nbsp;you&nbsp;need&nbsp;`include`&nbsp;or&nbsp;`exclude`,&nbsp;use:<br>
+&nbsp;<br>
+```py<br>
+data&nbsp;=&nbsp;self.<a href="#ClienteCreate-model_dump">model_dump</a>(include=include,&nbsp;exclude=exclude,&nbsp;round_trip=True)<br>
+data&nbsp;=&nbsp;{**data,&nbsp;**(update&nbsp;or&nbsp;{})}<br>
+copied&nbsp;=&nbsp;self.<a href="#ClienteCreate-model_validate">model_validate</a>(data)<br>
+```<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;include:&nbsp;Optional&nbsp;set&nbsp;or&nbsp;mapping<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;specifying&nbsp;which&nbsp;fields&nbsp;to&nbsp;include&nbsp;in&nbsp;the&nbsp;copied&nbsp;model.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude:&nbsp;Optional&nbsp;set&nbsp;or&nbsp;mapping<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;specifying&nbsp;which&nbsp;fields&nbsp;to&nbsp;exclude&nbsp;in&nbsp;the&nbsp;copied&nbsp;model.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;update:&nbsp;Optional&nbsp;dictionary&nbsp;of&nbsp;field-value&nbsp;pairs&nbsp;to&nbsp;override&nbsp;field&nbsp;values<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;in&nbsp;the&nbsp;copied&nbsp;model.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;deep:&nbsp;If&nbsp;True,&nbsp;the&nbsp;values&nbsp;of&nbsp;fields&nbsp;that&nbsp;are&nbsp;Pydantic&nbsp;models&nbsp;will&nbsp;be&nbsp;deep&nbsp;copied.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;copy&nbsp;of&nbsp;the&nbsp;model&nbsp;with&nbsp;included,&nbsp;excluded&nbsp;and&nbsp;updated&nbsp;fields&nbsp;as&nbsp;specified.</span></dd></dl>
+
+<dl><dt><a name="ClienteCreate-dict"><strong>dict</strong></a>(self, *, include: 'IncEx' = None, exclude: 'IncEx' = None, by_alias: 'bool' = False, exclude_unset: 'bool' = False, exclude_defaults: 'bool' = False, exclude_none: 'bool' = False) -&gt; 'typing.Dict[str, Any]'</dt></dl>
+
+<dl><dt><a name="ClienteCreate-json"><strong>json</strong></a>(self, *, include: 'IncEx' = None, exclude: 'IncEx' = None, by_alias: 'bool' = False, exclude_unset: 'bool' = False, exclude_defaults: 'bool' = False, exclude_none: 'bool' = False, encoder: 'typing.Callable[[Any], Any] | None' = PydanticUndefined, models_as_dict: 'bool' = PydanticUndefined, **dumps_kwargs: 'Any') -&gt; 'str'</dt></dl>
+
+<dl><dt><a name="ClienteCreate-model_copy"><strong>model_copy</strong></a>(self: 'Model', *, update: 'dict[str, Any] | None' = None, deep: 'bool' = False) -&gt; 'Model'</dt><dd><span class="code">Usage&nbsp;docs:&nbsp;<a href="https://docs.pydantic.dev/2.4/concepts/serialization/#model_copy">https://docs.pydantic.dev/2.4/concepts/serialization/#model_copy</a><br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;model.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;update:&nbsp;Values&nbsp;to&nbsp;change/add&nbsp;in&nbsp;the&nbsp;new&nbsp;model.&nbsp;Note:&nbsp;the&nbsp;data&nbsp;is&nbsp;not&nbsp;validated<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;before&nbsp;creating&nbsp;the&nbsp;new&nbsp;model.&nbsp;You&nbsp;should&nbsp;trust&nbsp;this&nbsp;data.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;deep:&nbsp;Set&nbsp;to&nbsp;`True`&nbsp;to&nbsp;make&nbsp;a&nbsp;deep&nbsp;copy&nbsp;of&nbsp;the&nbsp;model.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;New&nbsp;model&nbsp;instance.</span></dd></dl>
+
+<dl><dt><a name="ClienteCreate-model_dump"><strong>model_dump</strong></a>(self, *, mode: "Literal['json', 'python'] | str" = 'python', include: 'IncEx' = None, exclude: 'IncEx' = None, by_alias: 'bool' = False, exclude_unset: 'bool' = False, exclude_defaults: 'bool' = False, exclude_none: 'bool' = False, round_trip: 'bool' = False, warnings: 'bool' = True) -&gt; 'dict[str, Any]'</dt><dd><span class="code">Usage&nbsp;docs:&nbsp;<a href="https://docs.pydantic.dev/2.4/concepts/serialization/#modelmodel_dump">https://docs.pydantic.dev/2.4/concepts/serialization/#modelmodel_dump</a><br>
+&nbsp;<br>
+Generate&nbsp;a&nbsp;dictionary&nbsp;representation&nbsp;of&nbsp;the&nbsp;model,&nbsp;optionally&nbsp;specifying&nbsp;which&nbsp;fields&nbsp;to&nbsp;include&nbsp;or&nbsp;exclude.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;mode:&nbsp;The&nbsp;mode&nbsp;in&nbsp;which&nbsp;`to_python`&nbsp;should&nbsp;run.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;mode&nbsp;is&nbsp;'json',&nbsp;the&nbsp;dictionary&nbsp;will&nbsp;only&nbsp;contain&nbsp;JSON&nbsp;serializable&nbsp;types.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;mode&nbsp;is&nbsp;'python',&nbsp;the&nbsp;dictionary&nbsp;may&nbsp;contain&nbsp;any&nbsp;Python&nbsp;objects.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;include:&nbsp;A&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;include&nbsp;in&nbsp;the&nbsp;output.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude:&nbsp;A&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;exclude&nbsp;from&nbsp;the&nbsp;output.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;by_alias:&nbsp;Whether&nbsp;to&nbsp;use&nbsp;the&nbsp;field's&nbsp;alias&nbsp;in&nbsp;the&nbsp;dictionary&nbsp;key&nbsp;if&nbsp;defined.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude_unset:&nbsp;Whether&nbsp;to&nbsp;exclude&nbsp;fields&nbsp;that&nbsp;are&nbsp;unset&nbsp;or&nbsp;None&nbsp;from&nbsp;the&nbsp;output.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude_defaults:&nbsp;Whether&nbsp;to&nbsp;exclude&nbsp;fields&nbsp;that&nbsp;are&nbsp;set&nbsp;to&nbsp;their&nbsp;default&nbsp;value&nbsp;from&nbsp;the&nbsp;output.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude_none:&nbsp;Whether&nbsp;to&nbsp;exclude&nbsp;fields&nbsp;that&nbsp;have&nbsp;a&nbsp;value&nbsp;of&nbsp;`None`&nbsp;from&nbsp;the&nbsp;output.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;round_trip:&nbsp;Whether&nbsp;to&nbsp;enable&nbsp;serialization&nbsp;and&nbsp;deserialization&nbsp;round-trip&nbsp;support.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;warnings:&nbsp;Whether&nbsp;to&nbsp;log&nbsp;warnings&nbsp;when&nbsp;invalid&nbsp;fields&nbsp;are&nbsp;encountered.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;dictionary&nbsp;representation&nbsp;of&nbsp;the&nbsp;model.</span></dd></dl>
+
+<dl><dt><a name="ClienteCreate-model_dump_json"><strong>model_dump_json</strong></a>(self, *, indent: 'int | None' = None, include: 'IncEx' = None, exclude: 'IncEx' = None, by_alias: 'bool' = False, exclude_unset: 'bool' = False, exclude_defaults: 'bool' = False, exclude_none: 'bool' = False, round_trip: 'bool' = False, warnings: 'bool' = True) -&gt; 'str'</dt><dd><span class="code">Usage&nbsp;docs:&nbsp;<a href="https://docs.pydantic.dev/2.4/concepts/serialization/#modelmodel_dump_json">https://docs.pydantic.dev/2.4/concepts/serialization/#modelmodel_dump_json</a><br>
+&nbsp;<br>
+Generates&nbsp;a&nbsp;JSON&nbsp;representation&nbsp;of&nbsp;the&nbsp;model&nbsp;using&nbsp;Pydantic's&nbsp;`to_json`&nbsp;method.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;indent:&nbsp;Indentation&nbsp;to&nbsp;use&nbsp;in&nbsp;the&nbsp;JSON&nbsp;output.&nbsp;If&nbsp;None&nbsp;is&nbsp;passed,&nbsp;the&nbsp;output&nbsp;will&nbsp;be&nbsp;compact.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;include:&nbsp;Field(s)&nbsp;to&nbsp;include&nbsp;in&nbsp;the&nbsp;JSON&nbsp;output.&nbsp;Can&nbsp;take&nbsp;either&nbsp;a&nbsp;string&nbsp;or&nbsp;set&nbsp;of&nbsp;strings.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude:&nbsp;Field(s)&nbsp;to&nbsp;exclude&nbsp;from&nbsp;the&nbsp;JSON&nbsp;output.&nbsp;Can&nbsp;take&nbsp;either&nbsp;a&nbsp;string&nbsp;or&nbsp;set&nbsp;of&nbsp;strings.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;by_alias:&nbsp;Whether&nbsp;to&nbsp;serialize&nbsp;using&nbsp;field&nbsp;aliases.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude_unset:&nbsp;Whether&nbsp;to&nbsp;exclude&nbsp;fields&nbsp;that&nbsp;have&nbsp;not&nbsp;been&nbsp;explicitly&nbsp;set.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude_defaults:&nbsp;Whether&nbsp;to&nbsp;exclude&nbsp;fields&nbsp;that&nbsp;have&nbsp;the&nbsp;default&nbsp;value.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude_none:&nbsp;Whether&nbsp;to&nbsp;exclude&nbsp;fields&nbsp;that&nbsp;have&nbsp;a&nbsp;value&nbsp;of&nbsp;`None`.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;round_trip:&nbsp;Whether&nbsp;to&nbsp;use&nbsp;serialization/deserialization&nbsp;between&nbsp;JSON&nbsp;and&nbsp;class&nbsp;instance.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;warnings:&nbsp;Whether&nbsp;to&nbsp;show&nbsp;any&nbsp;warnings&nbsp;that&nbsp;occurred&nbsp;during&nbsp;serialization.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;JSON&nbsp;string&nbsp;representation&nbsp;of&nbsp;the&nbsp;model.</span></dd></dl>
+
+<dl><dt><a name="ClienteCreate-model_post_init"><strong>model_post_init</strong></a>(self, _BaseModel__context: 'Any') -&gt; 'None'</dt><dd><span class="code">Override&nbsp;this&nbsp;method&nbsp;to&nbsp;perform&nbsp;additional&nbsp;initialization&nbsp;after&nbsp;`__init__`&nbsp;and&nbsp;`model_construct`.<br>
+This&nbsp;is&nbsp;useful&nbsp;if&nbsp;you&nbsp;want&nbsp;to&nbsp;do&nbsp;some&nbsp;validation&nbsp;that&nbsp;requires&nbsp;the&nbsp;entire&nbsp;model&nbsp;to&nbsp;be&nbsp;initialized.</span></dd></dl>
+
+<hr>
+Class methods inherited from <a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>:<br>
+<dl><dt><a name="ClienteCreate-__class_getitem__"><strong>__class_getitem__</strong></a>(typevar_values: 'type[Any] | tuple[type[Any], ...]') -&gt; 'type[BaseModel] | _forward_ref.PydanticRecursiveRef'</dt></dl>
+
+<dl><dt><a name="ClienteCreate-__get_pydantic_core_schema__"><strong>__get_pydantic_core_schema__</strong></a>(_BaseModel__source: 'type[BaseModel]', _BaseModel__handler: 'GetCoreSchemaHandler') -&gt; 'CoreSchema'</dt><dd><span class="code">Hook&nbsp;into&nbsp;generating&nbsp;the&nbsp;model's&nbsp;CoreSchema.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;__source:&nbsp;The&nbsp;class&nbsp;we&nbsp;are&nbsp;generating&nbsp;a&nbsp;schema&nbsp;for.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;will&nbsp;generally&nbsp;be&nbsp;the&nbsp;same&nbsp;as&nbsp;the&nbsp;`cls`&nbsp;argument&nbsp;if&nbsp;this&nbsp;is&nbsp;a&nbsp;classmethod.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;__handler:&nbsp;Call&nbsp;into&nbsp;Pydantic's&nbsp;internal&nbsp;JSON&nbsp;schema&nbsp;generation.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;callable&nbsp;that&nbsp;calls&nbsp;into&nbsp;Pydantic's&nbsp;internal&nbsp;CoreSchema&nbsp;generation&nbsp;logic.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;`pydantic-core`&nbsp;`CoreSchema`.</span></dd></dl>
+
+<dl><dt><a name="ClienteCreate-__get_pydantic_json_schema__"><strong>__get_pydantic_json_schema__</strong></a>(_BaseModel__core_schema: 'CoreSchema', _BaseModel__handler: 'GetJsonSchemaHandler') -&gt; 'JsonSchemaValue'</dt><dd><span class="code">Hook&nbsp;into&nbsp;generating&nbsp;the&nbsp;model's&nbsp;JSON&nbsp;schema.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;__core_schema:&nbsp;A&nbsp;`pydantic-core`&nbsp;CoreSchema.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You&nbsp;can&nbsp;ignore&nbsp;this&nbsp;argument&nbsp;and&nbsp;call&nbsp;the&nbsp;handler&nbsp;with&nbsp;a&nbsp;new&nbsp;CoreSchema,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wrap&nbsp;this&nbsp;CoreSchema&nbsp;(`{'type':&nbsp;'nullable',&nbsp;'schema':&nbsp;current_schema}`),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;just&nbsp;call&nbsp;the&nbsp;handler&nbsp;with&nbsp;the&nbsp;original&nbsp;schema.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;__handler:&nbsp;Call&nbsp;into&nbsp;Pydantic's&nbsp;internal&nbsp;JSON&nbsp;schema&nbsp;generation.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;will&nbsp;raise&nbsp;a&nbsp;`pydantic.errors.PydanticInvalidForJsonSchema`&nbsp;if&nbsp;JSON&nbsp;schema<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;generation&nbsp;fails.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Since&nbsp;this&nbsp;gets&nbsp;called&nbsp;by&nbsp;`<a href="pydantic.main.html#BaseModel">BaseModel</a>.model_json_schema`&nbsp;you&nbsp;can&nbsp;override&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`schema_generator`&nbsp;argument&nbsp;to&nbsp;that&nbsp;function&nbsp;to&nbsp;change&nbsp;JSON&nbsp;schema&nbsp;generation&nbsp;globally<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;a&nbsp;type.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;JSON&nbsp;schema,&nbsp;as&nbsp;a&nbsp;Python&nbsp;object.</span></dd></dl>
+
+<dl><dt><a name="ClienteCreate-__pydantic_init_subclass__"><strong>__pydantic_init_subclass__</strong></a>(**kwargs: 'Any') -&gt; 'None'</dt><dd><span class="code">This&nbsp;is&nbsp;intended&nbsp;to&nbsp;behave&nbsp;just&nbsp;like&nbsp;`__init_subclass__`,&nbsp;but&nbsp;is&nbsp;called&nbsp;by&nbsp;`ModelMetaclass`<br>
+only&nbsp;after&nbsp;the&nbsp;class&nbsp;is&nbsp;actually&nbsp;fully&nbsp;initialized.&nbsp;In&nbsp;particular,&nbsp;attributes&nbsp;like&nbsp;`model_fields`&nbsp;will<br>
+be&nbsp;present&nbsp;when&nbsp;this&nbsp;is&nbsp;called.<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;necessary&nbsp;because&nbsp;`__init_subclass__`&nbsp;will&nbsp;always&nbsp;be&nbsp;called&nbsp;by&nbsp;`type.__new__`,<br>
+and&nbsp;it&nbsp;would&nbsp;require&nbsp;a&nbsp;prohibitively&nbsp;large&nbsp;refactor&nbsp;to&nbsp;the&nbsp;`ModelMetaclass`&nbsp;to&nbsp;ensure&nbsp;that<br>
+`type.__new__`&nbsp;was&nbsp;called&nbsp;in&nbsp;such&nbsp;a&nbsp;manner&nbsp;that&nbsp;the&nbsp;class&nbsp;would&nbsp;already&nbsp;be&nbsp;sufficiently&nbsp;initialized.<br>
+&nbsp;<br>
+This&nbsp;will&nbsp;receive&nbsp;the&nbsp;same&nbsp;`kwargs`&nbsp;that&nbsp;would&nbsp;be&nbsp;passed&nbsp;to&nbsp;the&nbsp;standard&nbsp;`__init_subclass__`,&nbsp;namely,<br>
+any&nbsp;kwargs&nbsp;passed&nbsp;to&nbsp;the&nbsp;class&nbsp;definition&nbsp;that&nbsp;aren't&nbsp;used&nbsp;internally&nbsp;by&nbsp;pydantic.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;**kwargs:&nbsp;Any&nbsp;keyword&nbsp;arguments&nbsp;passed&nbsp;to&nbsp;the&nbsp;class&nbsp;definition&nbsp;that&nbsp;aren't&nbsp;used&nbsp;internally<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;by&nbsp;pydantic.</span></dd></dl>
+
+<dl><dt><a name="ClienteCreate-construct"><strong>construct</strong></a>(_fields_set: 'set[str] | None' = None, **values: 'Any') -&gt; 'Model'</dt></dl>
+
+<dl><dt><a name="ClienteCreate-from_orm"><strong>from_orm</strong></a>(obj: 'Any') -&gt; 'Model'</dt></dl>
+
+<dl><dt><a name="ClienteCreate-model_construct"><strong>model_construct</strong></a>(_fields_set: 'set[str] | None' = None, **values: 'Any') -&gt; 'Model'</dt><dd><span class="code">Creates&nbsp;a&nbsp;new&nbsp;instance&nbsp;of&nbsp;the&nbsp;`Model`&nbsp;class&nbsp;with&nbsp;validated&nbsp;data.<br>
+&nbsp;<br>
+Creates&nbsp;a&nbsp;new&nbsp;model&nbsp;setting&nbsp;`__dict__`&nbsp;and&nbsp;`__pydantic_fields_set__`&nbsp;from&nbsp;trusted&nbsp;or&nbsp;pre-validated&nbsp;data.<br>
+Default&nbsp;values&nbsp;are&nbsp;respected,&nbsp;but&nbsp;no&nbsp;other&nbsp;validation&nbsp;is&nbsp;performed.<br>
+Behaves&nbsp;as&nbsp;if&nbsp;`Config.extra&nbsp;=&nbsp;'allow'`&nbsp;was&nbsp;set&nbsp;since&nbsp;it&nbsp;adds&nbsp;all&nbsp;passed&nbsp;values<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_fields_set:&nbsp;The&nbsp;set&nbsp;of&nbsp;field&nbsp;names&nbsp;accepted&nbsp;for&nbsp;the&nbsp;Model&nbsp;instance.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;values:&nbsp;Trusted&nbsp;or&nbsp;pre-validated&nbsp;data&nbsp;dictionary.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;new&nbsp;instance&nbsp;of&nbsp;the&nbsp;`Model`&nbsp;class&nbsp;with&nbsp;validated&nbsp;data.</span></dd></dl>
+
+<dl><dt><a name="ClienteCreate-model_json_schema"><strong>model_json_schema</strong></a>(by_alias: 'bool' = True, ref_template: 'str' = '#/$defs/{model}', schema_generator: 'type[GenerateJsonSchema]' = &lt;class 'pydantic.json_schema.GenerateJsonSchema'&gt;, mode: 'JsonSchemaMode' = 'validation') -&gt; 'dict[str, Any]'</dt><dd><span class="code">Generates&nbsp;a&nbsp;JSON&nbsp;schema&nbsp;for&nbsp;a&nbsp;model&nbsp;class.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;by_alias:&nbsp;Whether&nbsp;to&nbsp;use&nbsp;attribute&nbsp;aliases&nbsp;or&nbsp;not.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ref_template:&nbsp;The&nbsp;reference&nbsp;template.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;schema_generator:&nbsp;To&nbsp;override&nbsp;the&nbsp;logic&nbsp;used&nbsp;to&nbsp;generate&nbsp;the&nbsp;JSON&nbsp;schema,&nbsp;as&nbsp;a&nbsp;subclass&nbsp;of<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`GenerateJsonSchema`&nbsp;with&nbsp;your&nbsp;desired&nbsp;modifications<br>
+&nbsp;&nbsp;&nbsp;&nbsp;mode:&nbsp;The&nbsp;mode&nbsp;in&nbsp;which&nbsp;to&nbsp;generate&nbsp;the&nbsp;schema.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;JSON&nbsp;schema&nbsp;for&nbsp;the&nbsp;given&nbsp;model&nbsp;class.</span></dd></dl>
+
+<dl><dt><a name="ClienteCreate-model_parametrized_name"><strong>model_parametrized_name</strong></a>(params: 'tuple[type[Any], ...]') -&gt; 'str'</dt><dd><span class="code">Compute&nbsp;the&nbsp;class&nbsp;name&nbsp;for&nbsp;parametrizations&nbsp;of&nbsp;generic&nbsp;classes.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;can&nbsp;be&nbsp;overridden&nbsp;to&nbsp;achieve&nbsp;a&nbsp;custom&nbsp;naming&nbsp;scheme&nbsp;for&nbsp;generic&nbsp;BaseModels.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;params:&nbsp;Tuple&nbsp;of&nbsp;types&nbsp;of&nbsp;the&nbsp;class.&nbsp;Given&nbsp;a&nbsp;generic&nbsp;class<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Model`&nbsp;with&nbsp;2&nbsp;type&nbsp;variables&nbsp;and&nbsp;a&nbsp;concrete&nbsp;model&nbsp;`Model[str,&nbsp;int]`,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;value&nbsp;`(str,&nbsp;int)`&nbsp;would&nbsp;be&nbsp;passed&nbsp;to&nbsp;`params`.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;representing&nbsp;the&nbsp;new&nbsp;class&nbsp;where&nbsp;`params`&nbsp;are&nbsp;passed&nbsp;to&nbsp;`cls`&nbsp;as&nbsp;type&nbsp;variables.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TypeError:&nbsp;Raised&nbsp;when&nbsp;trying&nbsp;to&nbsp;generate&nbsp;concrete&nbsp;names&nbsp;for&nbsp;non-generic&nbsp;models.</span></dd></dl>
+
+<dl><dt><a name="ClienteCreate-model_rebuild"><strong>model_rebuild</strong></a>(*, force: 'bool' = False, raise_errors: 'bool' = True, _parent_namespace_depth: 'int' = 2, _types_namespace: 'dict[str, Any] | None' = None) -&gt; 'bool | None'</dt><dd><span class="code">Try&nbsp;to&nbsp;rebuild&nbsp;the&nbsp;pydantic-core&nbsp;schema&nbsp;for&nbsp;the&nbsp;model.<br>
+&nbsp;<br>
+This&nbsp;may&nbsp;be&nbsp;necessary&nbsp;when&nbsp;one&nbsp;of&nbsp;the&nbsp;annotations&nbsp;is&nbsp;a&nbsp;ForwardRef&nbsp;which&nbsp;could&nbsp;not&nbsp;be&nbsp;resolved&nbsp;during<br>
+the&nbsp;initial&nbsp;attempt&nbsp;to&nbsp;build&nbsp;the&nbsp;schema,&nbsp;and&nbsp;automatic&nbsp;rebuilding&nbsp;fails.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;force:&nbsp;Whether&nbsp;to&nbsp;force&nbsp;the&nbsp;rebuilding&nbsp;of&nbsp;the&nbsp;model&nbsp;schema,&nbsp;defaults&nbsp;to&nbsp;`False`.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;raise_errors:&nbsp;Whether&nbsp;to&nbsp;raise&nbsp;errors,&nbsp;defaults&nbsp;to&nbsp;`True`.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_parent_namespace_depth:&nbsp;The&nbsp;depth&nbsp;level&nbsp;of&nbsp;the&nbsp;parent&nbsp;namespace,&nbsp;defaults&nbsp;to&nbsp;2.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_types_namespace:&nbsp;The&nbsp;types&nbsp;namespace,&nbsp;defaults&nbsp;to&nbsp;`None`.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Returns&nbsp;`None`&nbsp;if&nbsp;the&nbsp;schema&nbsp;is&nbsp;already&nbsp;"complete"&nbsp;and&nbsp;rebuilding&nbsp;was&nbsp;not&nbsp;required.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;rebuilding&nbsp;_was_&nbsp;required,&nbsp;returns&nbsp;`True`&nbsp;if&nbsp;rebuilding&nbsp;was&nbsp;successful,&nbsp;otherwise&nbsp;`False`.</span></dd></dl>
+
+<dl><dt><a name="ClienteCreate-model_validate"><strong>model_validate</strong></a>(obj: 'Any', *, strict: 'bool | None' = None, from_attributes: 'bool | None' = None, context: 'dict[str, Any] | None' = None) -&gt; 'Model'</dt><dd><span class="code">Validate&nbsp;a&nbsp;pydantic&nbsp;model&nbsp;instance.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;obj:&nbsp;The&nbsp;object&nbsp;to&nbsp;validate.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;strict:&nbsp;Whether&nbsp;to&nbsp;raise&nbsp;an&nbsp;exception&nbsp;on&nbsp;invalid&nbsp;fields.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;from_attributes:&nbsp;Whether&nbsp;to&nbsp;extract&nbsp;data&nbsp;from&nbsp;object&nbsp;attributes.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;context:&nbsp;Additional&nbsp;context&nbsp;to&nbsp;pass&nbsp;to&nbsp;the&nbsp;validator.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ValidationError:&nbsp;If&nbsp;the&nbsp;object&nbsp;could&nbsp;not&nbsp;be&nbsp;validated.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;validated&nbsp;model&nbsp;instance.</span></dd></dl>
+
+<dl><dt><a name="ClienteCreate-model_validate_json"><strong>model_validate_json</strong></a>(json_data: 'str | bytes | bytearray', *, strict: 'bool | None' = None, context: 'dict[str, Any] | None' = None) -&gt; 'Model'</dt><dd><span class="code">Validate&nbsp;the&nbsp;given&nbsp;JSON&nbsp;data&nbsp;against&nbsp;the&nbsp;Pydantic&nbsp;model.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;json_data:&nbsp;The&nbsp;JSON&nbsp;data&nbsp;to&nbsp;validate.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;strict:&nbsp;Whether&nbsp;to&nbsp;enforce&nbsp;types&nbsp;strictly.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;context:&nbsp;Extra&nbsp;variables&nbsp;to&nbsp;pass&nbsp;to&nbsp;the&nbsp;validator.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;validated&nbsp;Pydantic&nbsp;model.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ValueError:&nbsp;If&nbsp;`json_data`&nbsp;is&nbsp;not&nbsp;a&nbsp;JSON&nbsp;string.</span></dd></dl>
+
+<dl><dt><a name="ClienteCreate-model_validate_strings"><strong>model_validate_strings</strong></a>(obj: 'Any', *, strict: 'bool | None' = None, context: 'dict[str, Any] | None' = None) -&gt; 'Model'</dt><dd><span class="code">Validate&nbsp;the&nbsp;given&nbsp;object&nbsp;contains&nbsp;string&nbsp;data&nbsp;against&nbsp;the&nbsp;Pydantic&nbsp;model.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;obj:&nbsp;The&nbsp;object&nbsp;contains&nbsp;string&nbsp;data&nbsp;to&nbsp;validate.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;strict:&nbsp;Whether&nbsp;to&nbsp;enforce&nbsp;types&nbsp;strictly.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;context:&nbsp;Extra&nbsp;variables&nbsp;to&nbsp;pass&nbsp;to&nbsp;the&nbsp;validator.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;validated&nbsp;Pydantic&nbsp;model.</span></dd></dl>
+
+<dl><dt><a name="ClienteCreate-parse_file"><strong>parse_file</strong></a>(path: 'str | Path', *, content_type: 'str | None' = None, encoding: 'str' = 'utf8', proto: 'DeprecatedParseProtocol | None' = None, allow_pickle: 'bool' = False) -&gt; 'Model'</dt></dl>
+
+<dl><dt><a name="ClienteCreate-parse_obj"><strong>parse_obj</strong></a>(obj: 'Any') -&gt; 'Model'</dt></dl>
+
+<dl><dt><a name="ClienteCreate-parse_raw"><strong>parse_raw</strong></a>(b: 'str | bytes', *, content_type: 'str | None' = None, encoding: 'str' = 'utf8', proto: 'DeprecatedParseProtocol | None' = None, allow_pickle: 'bool' = False) -&gt; 'Model'</dt></dl>
+
+<dl><dt><a name="ClienteCreate-schema"><strong>schema</strong></a>(by_alias: 'bool' = True, ref_template: 'str' = '#/$defs/{model}') -&gt; 'typing.Dict[str, Any]'</dt></dl>
+
+<dl><dt><a name="ClienteCreate-schema_json"><strong>schema_json</strong></a>(*, by_alias: 'bool' = True, ref_template: 'str' = '#/$defs/{model}', **dumps_kwargs: 'Any') -&gt; 'str'</dt></dl>
+
+<dl><dt><a name="ClienteCreate-update_forward_refs"><strong>update_forward_refs</strong></a>(**localns: 'Any') -&gt; 'None'</dt></dl>
+
+<dl><dt><a name="ClienteCreate-validate"><strong>validate</strong></a>(value: 'Any') -&gt; 'Model'</dt></dl>
+
+<hr>
+Readonly properties inherited from <a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>:<br>
+<dl><dt><strong>__fields__</strong></dt>
+</dl>
+<dl><dt><strong>__fields_set__</strong></dt>
+</dl>
+<dl><dt><strong>model_computed_fields</strong></dt>
+<dd><span class="code">Get&nbsp;the&nbsp;computed&nbsp;fields&nbsp;of&nbsp;this&nbsp;model&nbsp;instance.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;dictionary&nbsp;of&nbsp;computed&nbsp;field&nbsp;names&nbsp;and&nbsp;their&nbsp;corresponding&nbsp;`ComputedFieldInfo`&nbsp;objects.</span></dd>
+</dl>
+<dl><dt><strong>model_extra</strong></dt>
+<dd><span class="code">Get&nbsp;extra&nbsp;fields&nbsp;set&nbsp;during&nbsp;validation.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;dictionary&nbsp;of&nbsp;extra&nbsp;fields,&nbsp;or&nbsp;`None`&nbsp;if&nbsp;`config.extra`&nbsp;is&nbsp;not&nbsp;set&nbsp;to&nbsp;`"allow"`.</span></dd>
+</dl>
+<dl><dt><strong>model_fields_set</strong></dt>
+<dd><span class="code">Returns&nbsp;the&nbsp;set&nbsp;of&nbsp;fields&nbsp;that&nbsp;have&nbsp;been&nbsp;set&nbsp;on&nbsp;this&nbsp;model&nbsp;instance.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;set&nbsp;of&nbsp;strings&nbsp;representing&nbsp;the&nbsp;fields&nbsp;that&nbsp;have&nbsp;been&nbsp;set,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.e.&nbsp;that&nbsp;were&nbsp;not&nbsp;filled&nbsp;from&nbsp;defaults.</span></dd>
+</dl>
+<hr>
+Data descriptors inherited from <a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__pydantic_extra__</strong></dt>
+</dl>
+<dl><dt><strong>__pydantic_fields_set__</strong></dt>
+</dl>
+<dl><dt><strong>__pydantic_private__</strong></dt>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>:<br>
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+<dl><dt><strong>__pydantic_root_model__</strong> = False</dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="ClienteResponse">class <strong>ClienteResponse</strong></a>(<a href="ejercicio-uno.html#ClienteBase">ClienteBase</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#ClienteResponse">ClienteResponse</a>(*,&nbsp;nombre:&nbsp;str,&nbsp;edad:&nbsp;int,&nbsp;id:&nbsp;int)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+Modelo&nbsp;de&nbsp;respuesta&nbsp;para&nbsp;los&nbsp;clientes.<br>
+&nbsp;<br>
+Attributes:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;id&nbsp;(int):&nbsp;Identificador&nbsp;único&nbsp;del&nbsp;cliente<br>
+&nbsp;&nbsp;&nbsp;&nbsp;nombre&nbsp;(str):&nbsp;Nombre&nbsp;del&nbsp;cliente<br>
+&nbsp;&nbsp;&nbsp;&nbsp;edad&nbsp;(int):&nbsp;Edad&nbsp;del&nbsp;cliente<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="ejercicio-uno.html#ClienteResponse">ClienteResponse</a></dd>
+<dd><a href="ejercicio-uno.html#ClienteBase">ClienteBase</a></dd>
+<dd><a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>Config</strong> = &lt;class 'ejercicio-uno.ClienteResponse.Config'&gt;<dd><span class="code">Configuración&nbsp;del&nbsp;modelo&nbsp;Pydantic.</span></dl>
+
+<dl><dt><strong>__abstractmethods__</strong> = frozenset()</dl>
+
+<dl><dt><strong>__annotations__</strong> = {'id': &lt;class 'int'&gt;}</dl>
+
+<dl><dt><strong>__class_vars__</strong> = set()</dl>
+
+<dl><dt><strong>__private_attributes__</strong> = {}</dl>
+
+<dl><dt><strong>__pydantic_complete__</strong> = True</dl>
+
+<dl><dt><strong>__pydantic_core_schema__</strong> = {'cls': &lt;class 'ejercicio-uno.ClienteResponse'&gt;, 'config': {'from_attributes': True, 'title': 'ClienteResponse'}, 'custom_init': False, 'metadata': {'pydantic.internal.needs_apply_discriminated_union': False, 'pydantic_js_annotation_functions': [], 'pydantic_js_functions': [functools.partial(&lt;function modify_model_json_sc...C0&gt;, cls=&lt;class 'ejercicio-uno.ClienteResponse'&gt;), &lt;bound method BaseModel.__get_pydantic_json_schema__ of &lt;class 'ejercicio-uno.ClienteResponse'&gt;&gt;]}, 'ref': 'ejercicio-uno.ClienteResponse:2542357446112', 'root_model': False, 'schema': {'computed_fields': [], 'fields': {'edad': {'metadata': {'pydantic_js_annotation_functions': [&lt;function GenerateSchema._common_field_schema.&lt;locals&gt;.json_schema_update_func&gt;], 'pydantic_js_functions': []}, 'schema': {'metadata': {'pydantic.internal.needs_apply_discriminated_union': False}, 'type': 'int'}, 'type': 'model-field'}, 'id': {'metadata': {'pydantic_js_annotation_functions': [&lt;function GenerateSchema._common_field_schema.&lt;locals&gt;.json_schema_update_func&gt;], 'pydantic_js_functions': []}, 'schema': {'metadata': {'pydantic.internal.needs_apply_discriminated_union': False}, 'type': 'int'}, 'type': 'model-field'}, 'nombre': {'metadata': {'pydantic_js_annotation_functions': [&lt;function GenerateSchema._common_field_schema.&lt;locals&gt;.json_schema_update_func&gt;], 'pydantic_js_functions': []}, 'schema': {'metadata': {'pydantic.internal.needs_apply_discriminated_union': False}, 'type': 'str'}, 'type': 'model-field'}}, 'model_name': 'ClienteResponse', 'type': 'model-fields'}, 'type': 'model'}</dl>
+
+<dl><dt><strong>__pydantic_custom_init__</strong> = False</dl>
+
+<dl><dt><strong>__pydantic_decorators__</strong> = DecoratorInfos(validators={}, field_validators={...zers={}, model_validators={}, computed_fields={})</dl>
+
+<dl><dt><strong>__pydantic_generic_metadata__</strong> = {'args': (), 'origin': None, 'parameters': ()}</dl>
+
+<dl><dt><strong>__pydantic_parent_namespace__</strong> = {'BaseModel': &lt;weakref at 0x0000024FF14C6D50; to 'ModelMetaclass' at 0x0000024FED820820 (BaseModel)&gt;, 'ClienteBase': &lt;weakref at 0x0000024FF14C6E70; to 'ModelMetaclass' at 0x0000024FF04FFA00 (ClienteBase)&gt;, 'ClienteCreate': &lt;weakref at 0x0000024FF14C6ED0; to 'ModelMetaclass' at 0x0000024FF05001C0 (ClienteCreate)&gt;, 'ClienteUpdate': &lt;weakref at 0x0000024FF14C6F30; to 'ModelMetaclass' at 0x0000024FF0502C60 (ClienteUpdate)&gt;, 'FastAPI': &lt;weakref at 0x0000024FF14C6CF0; to 'type' at 0x0000024FF04FF620 (FastAPI)&gt;, 'HTTPException': &lt;weakref at 0x0000024FF14C6C90; to 'type' at 0x0000024FED8CB6E0 (HTTPException)&gt;, 'Optional': &lt;weakref at 0x0000024FF14C6DB0; to '_SpecialForm'&gt;, '__builtins__': {'ArithmeticError': &lt;class 'ArithmeticError'&gt;, 'AssertionError': &lt;class 'AssertionError'&gt;, 'AttributeError': &lt;class 'AttributeError'&gt;, 'BaseException': &lt;class 'BaseException'&gt;, 'BaseExceptionGroup': &lt;class 'BaseExceptionGroup'&gt;, 'BlockingIOError': &lt;class 'BlockingIOError'&gt;, 'BrokenPipeError': &lt;class 'BrokenPipeError'&gt;, 'BufferError': &lt;class 'BufferError'&gt;, 'BytesWarning': &lt;class 'BytesWarning'&gt;, 'ChildProcessError': &lt;class 'ChildProcessError'&gt;, ...}, '__cached__': r'G:\Mi unidad\U_DEV_SENIOR\Python_Curso\Python_Cl...A_CLASE\__pycache__\ejercicio-uno.cpython-312.pyc', '__doc__': '<span class="repr">\n</span>API de Clientes<span class="repr">\n\n</span>Este módulo implementa una API... uso:<span class="repr">\n</span>    &gt;&gt;&gt; uvicorn ejercicio-uno:app --reload<span class="repr">\n</span>', ...}</dl>
+
+<dl><dt><strong>__pydantic_post_init__</strong> = None</dl>
+
+<dl><dt><strong>__pydantic_serializer__</strong> = SchemaSerializer(serializer=Model(
+    ModelSeri...ame: "ClienteResponse",
+    },
+), definitions=[])</dl>
+
+<dl><dt><strong>__pydantic_validator__</strong> = SchemaValidator(title="ClienteResponse", validat...ame: "ClienteResponse",
+    },
+), definitions=[])</dl>
+
+<dl><dt><strong>__signature__</strong> = &lt;Signature (*, nombre: str, edad: int, id: int) -&gt; None&gt;</dl>
+
+<dl><dt><strong>model_config</strong> = {'from_attributes': True}</dl>
+
+<dl><dt><strong>model_fields</strong> = {'edad': FieldInfo(annotation=int, required=True), 'id': FieldInfo(annotation=int, required=True), 'nombre': FieldInfo(annotation=str, required=True)}</dl>
+
+<hr>
+Data descriptors inherited from <a href="ejercicio-uno.html#ClienteBase">ClienteBase</a>:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Methods inherited from <a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>:<br>
+<dl><dt><a name="ClienteResponse-__copy__"><strong>__copy__</strong></a>(self: 'Model') -&gt; 'Model'</dt><dd><span class="code">Returns&nbsp;a&nbsp;shallow&nbsp;copy&nbsp;of&nbsp;the&nbsp;model.</span></dd></dl>
+
+<dl><dt><a name="ClienteResponse-__deepcopy__"><strong>__deepcopy__</strong></a>(self: 'Model', memo: 'dict[int, Any] | None' = None) -&gt; 'Model'</dt><dd><span class="code">Returns&nbsp;a&nbsp;deep&nbsp;copy&nbsp;of&nbsp;the&nbsp;model.</span></dd></dl>
+
+<dl><dt><a name="ClienteResponse-__delattr__"><strong>__delattr__</strong></a>(self, item: 'str') -&gt; 'Any'</dt><dd><span class="code">Implement&nbsp;delattr(self,&nbsp;name).</span></dd></dl>
+
+<dl><dt><a name="ClienteResponse-__eq__"><strong>__eq__</strong></a>(self, other: 'Any') -&gt; 'bool'</dt><dd><span class="code">Return&nbsp;self==value.</span></dd></dl>
+
+<dl><dt><a name="ClienteResponse-__getattr__"><strong>__getattr__</strong></a>(self, item: 'str') -&gt; 'Any'</dt></dl>
+
+<dl><dt><a name="ClienteResponse-__getstate__"><strong>__getstate__</strong></a>(self) -&gt; 'dict[Any, Any]'</dt><dd><span class="code">Helper&nbsp;for&nbsp;pickle.</span></dd></dl>
+
+<dl><dt><a name="ClienteResponse-__init__"><strong>__init__</strong></a>(__pydantic_self__, **data: 'Any') -&gt; 'None'</dt><dd><span class="code">Create&nbsp;a&nbsp;new&nbsp;model&nbsp;by&nbsp;parsing&nbsp;and&nbsp;validating&nbsp;input&nbsp;data&nbsp;from&nbsp;keyword&nbsp;arguments.<br>
+&nbsp;<br>
+Raises&nbsp;[`ValidationError`][pydantic_core.ValidationError]&nbsp;if&nbsp;the&nbsp;input&nbsp;data&nbsp;cannot&nbsp;be<br>
+validated&nbsp;to&nbsp;form&nbsp;a&nbsp;valid&nbsp;model.<br>
+&nbsp;<br>
+`__init__`&nbsp;uses&nbsp;`__pydantic_self__`&nbsp;instead&nbsp;of&nbsp;the&nbsp;more&nbsp;common&nbsp;`self`&nbsp;for&nbsp;the&nbsp;first&nbsp;arg&nbsp;to<br>
+allow&nbsp;`self`&nbsp;as&nbsp;a&nbsp;field&nbsp;name.</span></dd></dl>
+
+<dl><dt><a name="ClienteResponse-__iter__"><strong>__iter__</strong></a>(self) -&gt; 'TupleGenerator'</dt><dd><span class="code">So&nbsp;`<a href="#ClienteResponse-dict">dict</a>(model)`&nbsp;works.</span></dd></dl>
+
+<dl><dt><a name="ClienteResponse-__pretty__"><strong>__pretty__</strong></a>(self, fmt: 'typing.Callable[[Any], Any]', **kwargs: 'Any') -&gt; 'typing.Generator[Any, None, None]'<span class="grey"><span class="heading-text"> from pydantic._internal._repr.Representation</span></span></dt><dd><span class="code">Used&nbsp;by&nbsp;devtools&nbsp;(<a href="https://python-devtools.helpmanual.io/">https://python-devtools.helpmanual.io/</a>)&nbsp;to&nbsp;pretty&nbsp;print&nbsp;objects.</span></dd></dl>
+
+<dl><dt><a name="ClienteResponse-__repr__"><strong>__repr__</strong></a>(self) -&gt; 'str'</dt><dd><span class="code">Return&nbsp;repr(self).</span></dd></dl>
+
+<dl><dt><a name="ClienteResponse-__repr_args__"><strong>__repr_args__</strong></a>(self) -&gt; '_repr.ReprArgs'</dt></dl>
+
+<dl><dt><a name="ClienteResponse-__repr_name__"><strong>__repr_name__</strong></a>(self) -&gt; 'str'<span class="grey"><span class="heading-text"> from pydantic._internal._repr.Representation</span></span></dt><dd><span class="code">Name&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class,&nbsp;used&nbsp;in&nbsp;__repr__.</span></dd></dl>
+
+<dl><dt><a name="ClienteResponse-__repr_str__"><strong>__repr_str__</strong></a>(self, join_str: 'str') -&gt; 'str'<span class="grey"><span class="heading-text"> from pydantic._internal._repr.Representation</span></span></dt></dl>
+
+<dl><dt><a name="ClienteResponse-__rich_repr__"><strong>__rich_repr__</strong></a>(self) -&gt; 'RichReprResult'<span class="grey"><span class="heading-text"> from pydantic._internal._repr.Representation</span></span></dt><dd><span class="code">Used&nbsp;by&nbsp;Rich&nbsp;(<a href="https://rich.readthedocs.io/en/stable/pretty.html">https://rich.readthedocs.io/en/stable/pretty.html</a>)&nbsp;to&nbsp;pretty&nbsp;print&nbsp;objects.</span></dd></dl>
+
+<dl><dt><a name="ClienteResponse-__setattr__"><strong>__setattr__</strong></a>(self, name: 'str', value: 'Any') -&gt; 'None'</dt><dd><span class="code">Implement&nbsp;setattr(self,&nbsp;name,&nbsp;value).</span></dd></dl>
+
+<dl><dt><a name="ClienteResponse-__setstate__"><strong>__setstate__</strong></a>(self, state: 'dict[Any, Any]') -&gt; 'None'</dt></dl>
+
+<dl><dt><a name="ClienteResponse-__str__"><strong>__str__</strong></a>(self) -&gt; 'str'</dt><dd><span class="code">Return&nbsp;str(self).</span></dd></dl>
+
+<dl><dt><a name="ClienteResponse-copy"><strong>copy</strong></a>(self: 'Model', *, include: 'AbstractSetIntStr | MappingIntStrAny | None' = None, exclude: 'AbstractSetIntStr | MappingIntStrAny | None' = None, update: 'typing.Dict[str, Any] | None' = None, deep: 'bool' = False) -&gt; 'Model'</dt><dd><span class="code">Returns&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;model.<br>
+&nbsp;<br>
+!!!&nbsp;warning&nbsp;"Deprecated"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;method&nbsp;is&nbsp;now&nbsp;deprecated;&nbsp;use&nbsp;`model_copy`&nbsp;instead.<br>
+&nbsp;<br>
+If&nbsp;you&nbsp;need&nbsp;`include`&nbsp;or&nbsp;`exclude`,&nbsp;use:<br>
+&nbsp;<br>
+```py<br>
+data&nbsp;=&nbsp;self.<a href="#ClienteResponse-model_dump">model_dump</a>(include=include,&nbsp;exclude=exclude,&nbsp;round_trip=True)<br>
+data&nbsp;=&nbsp;{**data,&nbsp;**(update&nbsp;or&nbsp;{})}<br>
+copied&nbsp;=&nbsp;self.<a href="#ClienteResponse-model_validate">model_validate</a>(data)<br>
+```<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;include:&nbsp;Optional&nbsp;set&nbsp;or&nbsp;mapping<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;specifying&nbsp;which&nbsp;fields&nbsp;to&nbsp;include&nbsp;in&nbsp;the&nbsp;copied&nbsp;model.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude:&nbsp;Optional&nbsp;set&nbsp;or&nbsp;mapping<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;specifying&nbsp;which&nbsp;fields&nbsp;to&nbsp;exclude&nbsp;in&nbsp;the&nbsp;copied&nbsp;model.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;update:&nbsp;Optional&nbsp;dictionary&nbsp;of&nbsp;field-value&nbsp;pairs&nbsp;to&nbsp;override&nbsp;field&nbsp;values<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;in&nbsp;the&nbsp;copied&nbsp;model.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;deep:&nbsp;If&nbsp;True,&nbsp;the&nbsp;values&nbsp;of&nbsp;fields&nbsp;that&nbsp;are&nbsp;Pydantic&nbsp;models&nbsp;will&nbsp;be&nbsp;deep&nbsp;copied.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;copy&nbsp;of&nbsp;the&nbsp;model&nbsp;with&nbsp;included,&nbsp;excluded&nbsp;and&nbsp;updated&nbsp;fields&nbsp;as&nbsp;specified.</span></dd></dl>
+
+<dl><dt><a name="ClienteResponse-dict"><strong>dict</strong></a>(self, *, include: 'IncEx' = None, exclude: 'IncEx' = None, by_alias: 'bool' = False, exclude_unset: 'bool' = False, exclude_defaults: 'bool' = False, exclude_none: 'bool' = False) -&gt; 'typing.Dict[str, Any]'</dt></dl>
+
+<dl><dt><a name="ClienteResponse-json"><strong>json</strong></a>(self, *, include: 'IncEx' = None, exclude: 'IncEx' = None, by_alias: 'bool' = False, exclude_unset: 'bool' = False, exclude_defaults: 'bool' = False, exclude_none: 'bool' = False, encoder: 'typing.Callable[[Any], Any] | None' = PydanticUndefined, models_as_dict: 'bool' = PydanticUndefined, **dumps_kwargs: 'Any') -&gt; 'str'</dt></dl>
+
+<dl><dt><a name="ClienteResponse-model_copy"><strong>model_copy</strong></a>(self: 'Model', *, update: 'dict[str, Any] | None' = None, deep: 'bool' = False) -&gt; 'Model'</dt><dd><span class="code">Usage&nbsp;docs:&nbsp;<a href="https://docs.pydantic.dev/2.4/concepts/serialization/#model_copy">https://docs.pydantic.dev/2.4/concepts/serialization/#model_copy</a><br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;model.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;update:&nbsp;Values&nbsp;to&nbsp;change/add&nbsp;in&nbsp;the&nbsp;new&nbsp;model.&nbsp;Note:&nbsp;the&nbsp;data&nbsp;is&nbsp;not&nbsp;validated<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;before&nbsp;creating&nbsp;the&nbsp;new&nbsp;model.&nbsp;You&nbsp;should&nbsp;trust&nbsp;this&nbsp;data.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;deep:&nbsp;Set&nbsp;to&nbsp;`True`&nbsp;to&nbsp;make&nbsp;a&nbsp;deep&nbsp;copy&nbsp;of&nbsp;the&nbsp;model.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;New&nbsp;model&nbsp;instance.</span></dd></dl>
+
+<dl><dt><a name="ClienteResponse-model_dump"><strong>model_dump</strong></a>(self, *, mode: "Literal['json', 'python'] | str" = 'python', include: 'IncEx' = None, exclude: 'IncEx' = None, by_alias: 'bool' = False, exclude_unset: 'bool' = False, exclude_defaults: 'bool' = False, exclude_none: 'bool' = False, round_trip: 'bool' = False, warnings: 'bool' = True) -&gt; 'dict[str, Any]'</dt><dd><span class="code">Usage&nbsp;docs:&nbsp;<a href="https://docs.pydantic.dev/2.4/concepts/serialization/#modelmodel_dump">https://docs.pydantic.dev/2.4/concepts/serialization/#modelmodel_dump</a><br>
+&nbsp;<br>
+Generate&nbsp;a&nbsp;dictionary&nbsp;representation&nbsp;of&nbsp;the&nbsp;model,&nbsp;optionally&nbsp;specifying&nbsp;which&nbsp;fields&nbsp;to&nbsp;include&nbsp;or&nbsp;exclude.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;mode:&nbsp;The&nbsp;mode&nbsp;in&nbsp;which&nbsp;`to_python`&nbsp;should&nbsp;run.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;mode&nbsp;is&nbsp;'json',&nbsp;the&nbsp;dictionary&nbsp;will&nbsp;only&nbsp;contain&nbsp;JSON&nbsp;serializable&nbsp;types.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;mode&nbsp;is&nbsp;'python',&nbsp;the&nbsp;dictionary&nbsp;may&nbsp;contain&nbsp;any&nbsp;Python&nbsp;objects.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;include:&nbsp;A&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;include&nbsp;in&nbsp;the&nbsp;output.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude:&nbsp;A&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;exclude&nbsp;from&nbsp;the&nbsp;output.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;by_alias:&nbsp;Whether&nbsp;to&nbsp;use&nbsp;the&nbsp;field's&nbsp;alias&nbsp;in&nbsp;the&nbsp;dictionary&nbsp;key&nbsp;if&nbsp;defined.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude_unset:&nbsp;Whether&nbsp;to&nbsp;exclude&nbsp;fields&nbsp;that&nbsp;are&nbsp;unset&nbsp;or&nbsp;None&nbsp;from&nbsp;the&nbsp;output.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude_defaults:&nbsp;Whether&nbsp;to&nbsp;exclude&nbsp;fields&nbsp;that&nbsp;are&nbsp;set&nbsp;to&nbsp;their&nbsp;default&nbsp;value&nbsp;from&nbsp;the&nbsp;output.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude_none:&nbsp;Whether&nbsp;to&nbsp;exclude&nbsp;fields&nbsp;that&nbsp;have&nbsp;a&nbsp;value&nbsp;of&nbsp;`None`&nbsp;from&nbsp;the&nbsp;output.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;round_trip:&nbsp;Whether&nbsp;to&nbsp;enable&nbsp;serialization&nbsp;and&nbsp;deserialization&nbsp;round-trip&nbsp;support.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;warnings:&nbsp;Whether&nbsp;to&nbsp;log&nbsp;warnings&nbsp;when&nbsp;invalid&nbsp;fields&nbsp;are&nbsp;encountered.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;dictionary&nbsp;representation&nbsp;of&nbsp;the&nbsp;model.</span></dd></dl>
+
+<dl><dt><a name="ClienteResponse-model_dump_json"><strong>model_dump_json</strong></a>(self, *, indent: 'int | None' = None, include: 'IncEx' = None, exclude: 'IncEx' = None, by_alias: 'bool' = False, exclude_unset: 'bool' = False, exclude_defaults: 'bool' = False, exclude_none: 'bool' = False, round_trip: 'bool' = False, warnings: 'bool' = True) -&gt; 'str'</dt><dd><span class="code">Usage&nbsp;docs:&nbsp;<a href="https://docs.pydantic.dev/2.4/concepts/serialization/#modelmodel_dump_json">https://docs.pydantic.dev/2.4/concepts/serialization/#modelmodel_dump_json</a><br>
+&nbsp;<br>
+Generates&nbsp;a&nbsp;JSON&nbsp;representation&nbsp;of&nbsp;the&nbsp;model&nbsp;using&nbsp;Pydantic's&nbsp;`to_json`&nbsp;method.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;indent:&nbsp;Indentation&nbsp;to&nbsp;use&nbsp;in&nbsp;the&nbsp;JSON&nbsp;output.&nbsp;If&nbsp;None&nbsp;is&nbsp;passed,&nbsp;the&nbsp;output&nbsp;will&nbsp;be&nbsp;compact.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;include:&nbsp;Field(s)&nbsp;to&nbsp;include&nbsp;in&nbsp;the&nbsp;JSON&nbsp;output.&nbsp;Can&nbsp;take&nbsp;either&nbsp;a&nbsp;string&nbsp;or&nbsp;set&nbsp;of&nbsp;strings.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude:&nbsp;Field(s)&nbsp;to&nbsp;exclude&nbsp;from&nbsp;the&nbsp;JSON&nbsp;output.&nbsp;Can&nbsp;take&nbsp;either&nbsp;a&nbsp;string&nbsp;or&nbsp;set&nbsp;of&nbsp;strings.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;by_alias:&nbsp;Whether&nbsp;to&nbsp;serialize&nbsp;using&nbsp;field&nbsp;aliases.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude_unset:&nbsp;Whether&nbsp;to&nbsp;exclude&nbsp;fields&nbsp;that&nbsp;have&nbsp;not&nbsp;been&nbsp;explicitly&nbsp;set.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude_defaults:&nbsp;Whether&nbsp;to&nbsp;exclude&nbsp;fields&nbsp;that&nbsp;have&nbsp;the&nbsp;default&nbsp;value.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude_none:&nbsp;Whether&nbsp;to&nbsp;exclude&nbsp;fields&nbsp;that&nbsp;have&nbsp;a&nbsp;value&nbsp;of&nbsp;`None`.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;round_trip:&nbsp;Whether&nbsp;to&nbsp;use&nbsp;serialization/deserialization&nbsp;between&nbsp;JSON&nbsp;and&nbsp;class&nbsp;instance.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;warnings:&nbsp;Whether&nbsp;to&nbsp;show&nbsp;any&nbsp;warnings&nbsp;that&nbsp;occurred&nbsp;during&nbsp;serialization.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;JSON&nbsp;string&nbsp;representation&nbsp;of&nbsp;the&nbsp;model.</span></dd></dl>
+
+<dl><dt><a name="ClienteResponse-model_post_init"><strong>model_post_init</strong></a>(self, _BaseModel__context: 'Any') -&gt; 'None'</dt><dd><span class="code">Override&nbsp;this&nbsp;method&nbsp;to&nbsp;perform&nbsp;additional&nbsp;initialization&nbsp;after&nbsp;`__init__`&nbsp;and&nbsp;`model_construct`.<br>
+This&nbsp;is&nbsp;useful&nbsp;if&nbsp;you&nbsp;want&nbsp;to&nbsp;do&nbsp;some&nbsp;validation&nbsp;that&nbsp;requires&nbsp;the&nbsp;entire&nbsp;model&nbsp;to&nbsp;be&nbsp;initialized.</span></dd></dl>
+
+<hr>
+Class methods inherited from <a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>:<br>
+<dl><dt><a name="ClienteResponse-__class_getitem__"><strong>__class_getitem__</strong></a>(typevar_values: 'type[Any] | tuple[type[Any], ...]') -&gt; 'type[BaseModel] | _forward_ref.PydanticRecursiveRef'</dt></dl>
+
+<dl><dt><a name="ClienteResponse-__get_pydantic_core_schema__"><strong>__get_pydantic_core_schema__</strong></a>(_BaseModel__source: 'type[BaseModel]', _BaseModel__handler: 'GetCoreSchemaHandler') -&gt; 'CoreSchema'</dt><dd><span class="code">Hook&nbsp;into&nbsp;generating&nbsp;the&nbsp;model's&nbsp;CoreSchema.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;__source:&nbsp;The&nbsp;class&nbsp;we&nbsp;are&nbsp;generating&nbsp;a&nbsp;schema&nbsp;for.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;will&nbsp;generally&nbsp;be&nbsp;the&nbsp;same&nbsp;as&nbsp;the&nbsp;`cls`&nbsp;argument&nbsp;if&nbsp;this&nbsp;is&nbsp;a&nbsp;classmethod.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;__handler:&nbsp;Call&nbsp;into&nbsp;Pydantic's&nbsp;internal&nbsp;JSON&nbsp;schema&nbsp;generation.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;callable&nbsp;that&nbsp;calls&nbsp;into&nbsp;Pydantic's&nbsp;internal&nbsp;CoreSchema&nbsp;generation&nbsp;logic.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;`pydantic-core`&nbsp;`CoreSchema`.</span></dd></dl>
+
+<dl><dt><a name="ClienteResponse-__get_pydantic_json_schema__"><strong>__get_pydantic_json_schema__</strong></a>(_BaseModel__core_schema: 'CoreSchema', _BaseModel__handler: 'GetJsonSchemaHandler') -&gt; 'JsonSchemaValue'</dt><dd><span class="code">Hook&nbsp;into&nbsp;generating&nbsp;the&nbsp;model's&nbsp;JSON&nbsp;schema.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;__core_schema:&nbsp;A&nbsp;`pydantic-core`&nbsp;CoreSchema.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You&nbsp;can&nbsp;ignore&nbsp;this&nbsp;argument&nbsp;and&nbsp;call&nbsp;the&nbsp;handler&nbsp;with&nbsp;a&nbsp;new&nbsp;CoreSchema,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wrap&nbsp;this&nbsp;CoreSchema&nbsp;(`{'type':&nbsp;'nullable',&nbsp;'schema':&nbsp;current_schema}`),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;just&nbsp;call&nbsp;the&nbsp;handler&nbsp;with&nbsp;the&nbsp;original&nbsp;schema.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;__handler:&nbsp;Call&nbsp;into&nbsp;Pydantic's&nbsp;internal&nbsp;JSON&nbsp;schema&nbsp;generation.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;will&nbsp;raise&nbsp;a&nbsp;`pydantic.errors.PydanticInvalidForJsonSchema`&nbsp;if&nbsp;JSON&nbsp;schema<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;generation&nbsp;fails.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Since&nbsp;this&nbsp;gets&nbsp;called&nbsp;by&nbsp;`<a href="pydantic.main.html#BaseModel">BaseModel</a>.model_json_schema`&nbsp;you&nbsp;can&nbsp;override&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`schema_generator`&nbsp;argument&nbsp;to&nbsp;that&nbsp;function&nbsp;to&nbsp;change&nbsp;JSON&nbsp;schema&nbsp;generation&nbsp;globally<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;a&nbsp;type.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;JSON&nbsp;schema,&nbsp;as&nbsp;a&nbsp;Python&nbsp;object.</span></dd></dl>
+
+<dl><dt><a name="ClienteResponse-__pydantic_init_subclass__"><strong>__pydantic_init_subclass__</strong></a>(**kwargs: 'Any') -&gt; 'None'</dt><dd><span class="code">This&nbsp;is&nbsp;intended&nbsp;to&nbsp;behave&nbsp;just&nbsp;like&nbsp;`__init_subclass__`,&nbsp;but&nbsp;is&nbsp;called&nbsp;by&nbsp;`ModelMetaclass`<br>
+only&nbsp;after&nbsp;the&nbsp;class&nbsp;is&nbsp;actually&nbsp;fully&nbsp;initialized.&nbsp;In&nbsp;particular,&nbsp;attributes&nbsp;like&nbsp;`model_fields`&nbsp;will<br>
+be&nbsp;present&nbsp;when&nbsp;this&nbsp;is&nbsp;called.<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;necessary&nbsp;because&nbsp;`__init_subclass__`&nbsp;will&nbsp;always&nbsp;be&nbsp;called&nbsp;by&nbsp;`type.__new__`,<br>
+and&nbsp;it&nbsp;would&nbsp;require&nbsp;a&nbsp;prohibitively&nbsp;large&nbsp;refactor&nbsp;to&nbsp;the&nbsp;`ModelMetaclass`&nbsp;to&nbsp;ensure&nbsp;that<br>
+`type.__new__`&nbsp;was&nbsp;called&nbsp;in&nbsp;such&nbsp;a&nbsp;manner&nbsp;that&nbsp;the&nbsp;class&nbsp;would&nbsp;already&nbsp;be&nbsp;sufficiently&nbsp;initialized.<br>
+&nbsp;<br>
+This&nbsp;will&nbsp;receive&nbsp;the&nbsp;same&nbsp;`kwargs`&nbsp;that&nbsp;would&nbsp;be&nbsp;passed&nbsp;to&nbsp;the&nbsp;standard&nbsp;`__init_subclass__`,&nbsp;namely,<br>
+any&nbsp;kwargs&nbsp;passed&nbsp;to&nbsp;the&nbsp;class&nbsp;definition&nbsp;that&nbsp;aren't&nbsp;used&nbsp;internally&nbsp;by&nbsp;pydantic.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;**kwargs:&nbsp;Any&nbsp;keyword&nbsp;arguments&nbsp;passed&nbsp;to&nbsp;the&nbsp;class&nbsp;definition&nbsp;that&nbsp;aren't&nbsp;used&nbsp;internally<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;by&nbsp;pydantic.</span></dd></dl>
+
+<dl><dt><a name="ClienteResponse-construct"><strong>construct</strong></a>(_fields_set: 'set[str] | None' = None, **values: 'Any') -&gt; 'Model'</dt></dl>
+
+<dl><dt><a name="ClienteResponse-from_orm"><strong>from_orm</strong></a>(obj: 'Any') -&gt; 'Model'</dt></dl>
+
+<dl><dt><a name="ClienteResponse-model_construct"><strong>model_construct</strong></a>(_fields_set: 'set[str] | None' = None, **values: 'Any') -&gt; 'Model'</dt><dd><span class="code">Creates&nbsp;a&nbsp;new&nbsp;instance&nbsp;of&nbsp;the&nbsp;`Model`&nbsp;class&nbsp;with&nbsp;validated&nbsp;data.<br>
+&nbsp;<br>
+Creates&nbsp;a&nbsp;new&nbsp;model&nbsp;setting&nbsp;`__dict__`&nbsp;and&nbsp;`__pydantic_fields_set__`&nbsp;from&nbsp;trusted&nbsp;or&nbsp;pre-validated&nbsp;data.<br>
+Default&nbsp;values&nbsp;are&nbsp;respected,&nbsp;but&nbsp;no&nbsp;other&nbsp;validation&nbsp;is&nbsp;performed.<br>
+Behaves&nbsp;as&nbsp;if&nbsp;`Config.extra&nbsp;=&nbsp;'allow'`&nbsp;was&nbsp;set&nbsp;since&nbsp;it&nbsp;adds&nbsp;all&nbsp;passed&nbsp;values<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_fields_set:&nbsp;The&nbsp;set&nbsp;of&nbsp;field&nbsp;names&nbsp;accepted&nbsp;for&nbsp;the&nbsp;Model&nbsp;instance.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;values:&nbsp;Trusted&nbsp;or&nbsp;pre-validated&nbsp;data&nbsp;dictionary.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;new&nbsp;instance&nbsp;of&nbsp;the&nbsp;`Model`&nbsp;class&nbsp;with&nbsp;validated&nbsp;data.</span></dd></dl>
+
+<dl><dt><a name="ClienteResponse-model_json_schema"><strong>model_json_schema</strong></a>(by_alias: 'bool' = True, ref_template: 'str' = '#/$defs/{model}', schema_generator: 'type[GenerateJsonSchema]' = &lt;class 'pydantic.json_schema.GenerateJsonSchema'&gt;, mode: 'JsonSchemaMode' = 'validation') -&gt; 'dict[str, Any]'</dt><dd><span class="code">Generates&nbsp;a&nbsp;JSON&nbsp;schema&nbsp;for&nbsp;a&nbsp;model&nbsp;class.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;by_alias:&nbsp;Whether&nbsp;to&nbsp;use&nbsp;attribute&nbsp;aliases&nbsp;or&nbsp;not.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ref_template:&nbsp;The&nbsp;reference&nbsp;template.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;schema_generator:&nbsp;To&nbsp;override&nbsp;the&nbsp;logic&nbsp;used&nbsp;to&nbsp;generate&nbsp;the&nbsp;JSON&nbsp;schema,&nbsp;as&nbsp;a&nbsp;subclass&nbsp;of<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`GenerateJsonSchema`&nbsp;with&nbsp;your&nbsp;desired&nbsp;modifications<br>
+&nbsp;&nbsp;&nbsp;&nbsp;mode:&nbsp;The&nbsp;mode&nbsp;in&nbsp;which&nbsp;to&nbsp;generate&nbsp;the&nbsp;schema.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;JSON&nbsp;schema&nbsp;for&nbsp;the&nbsp;given&nbsp;model&nbsp;class.</span></dd></dl>
+
+<dl><dt><a name="ClienteResponse-model_parametrized_name"><strong>model_parametrized_name</strong></a>(params: 'tuple[type[Any], ...]') -&gt; 'str'</dt><dd><span class="code">Compute&nbsp;the&nbsp;class&nbsp;name&nbsp;for&nbsp;parametrizations&nbsp;of&nbsp;generic&nbsp;classes.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;can&nbsp;be&nbsp;overridden&nbsp;to&nbsp;achieve&nbsp;a&nbsp;custom&nbsp;naming&nbsp;scheme&nbsp;for&nbsp;generic&nbsp;BaseModels.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;params:&nbsp;Tuple&nbsp;of&nbsp;types&nbsp;of&nbsp;the&nbsp;class.&nbsp;Given&nbsp;a&nbsp;generic&nbsp;class<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Model`&nbsp;with&nbsp;2&nbsp;type&nbsp;variables&nbsp;and&nbsp;a&nbsp;concrete&nbsp;model&nbsp;`Model[str,&nbsp;int]`,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;value&nbsp;`(str,&nbsp;int)`&nbsp;would&nbsp;be&nbsp;passed&nbsp;to&nbsp;`params`.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;representing&nbsp;the&nbsp;new&nbsp;class&nbsp;where&nbsp;`params`&nbsp;are&nbsp;passed&nbsp;to&nbsp;`cls`&nbsp;as&nbsp;type&nbsp;variables.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TypeError:&nbsp;Raised&nbsp;when&nbsp;trying&nbsp;to&nbsp;generate&nbsp;concrete&nbsp;names&nbsp;for&nbsp;non-generic&nbsp;models.</span></dd></dl>
+
+<dl><dt><a name="ClienteResponse-model_rebuild"><strong>model_rebuild</strong></a>(*, force: 'bool' = False, raise_errors: 'bool' = True, _parent_namespace_depth: 'int' = 2, _types_namespace: 'dict[str, Any] | None' = None) -&gt; 'bool | None'</dt><dd><span class="code">Try&nbsp;to&nbsp;rebuild&nbsp;the&nbsp;pydantic-core&nbsp;schema&nbsp;for&nbsp;the&nbsp;model.<br>
+&nbsp;<br>
+This&nbsp;may&nbsp;be&nbsp;necessary&nbsp;when&nbsp;one&nbsp;of&nbsp;the&nbsp;annotations&nbsp;is&nbsp;a&nbsp;ForwardRef&nbsp;which&nbsp;could&nbsp;not&nbsp;be&nbsp;resolved&nbsp;during<br>
+the&nbsp;initial&nbsp;attempt&nbsp;to&nbsp;build&nbsp;the&nbsp;schema,&nbsp;and&nbsp;automatic&nbsp;rebuilding&nbsp;fails.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;force:&nbsp;Whether&nbsp;to&nbsp;force&nbsp;the&nbsp;rebuilding&nbsp;of&nbsp;the&nbsp;model&nbsp;schema,&nbsp;defaults&nbsp;to&nbsp;`False`.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;raise_errors:&nbsp;Whether&nbsp;to&nbsp;raise&nbsp;errors,&nbsp;defaults&nbsp;to&nbsp;`True`.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_parent_namespace_depth:&nbsp;The&nbsp;depth&nbsp;level&nbsp;of&nbsp;the&nbsp;parent&nbsp;namespace,&nbsp;defaults&nbsp;to&nbsp;2.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_types_namespace:&nbsp;The&nbsp;types&nbsp;namespace,&nbsp;defaults&nbsp;to&nbsp;`None`.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Returns&nbsp;`None`&nbsp;if&nbsp;the&nbsp;schema&nbsp;is&nbsp;already&nbsp;"complete"&nbsp;and&nbsp;rebuilding&nbsp;was&nbsp;not&nbsp;required.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;rebuilding&nbsp;_was_&nbsp;required,&nbsp;returns&nbsp;`True`&nbsp;if&nbsp;rebuilding&nbsp;was&nbsp;successful,&nbsp;otherwise&nbsp;`False`.</span></dd></dl>
+
+<dl><dt><a name="ClienteResponse-model_validate"><strong>model_validate</strong></a>(obj: 'Any', *, strict: 'bool | None' = None, from_attributes: 'bool | None' = None, context: 'dict[str, Any] | None' = None) -&gt; 'Model'</dt><dd><span class="code">Validate&nbsp;a&nbsp;pydantic&nbsp;model&nbsp;instance.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;obj:&nbsp;The&nbsp;object&nbsp;to&nbsp;validate.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;strict:&nbsp;Whether&nbsp;to&nbsp;raise&nbsp;an&nbsp;exception&nbsp;on&nbsp;invalid&nbsp;fields.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;from_attributes:&nbsp;Whether&nbsp;to&nbsp;extract&nbsp;data&nbsp;from&nbsp;object&nbsp;attributes.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;context:&nbsp;Additional&nbsp;context&nbsp;to&nbsp;pass&nbsp;to&nbsp;the&nbsp;validator.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ValidationError:&nbsp;If&nbsp;the&nbsp;object&nbsp;could&nbsp;not&nbsp;be&nbsp;validated.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;validated&nbsp;model&nbsp;instance.</span></dd></dl>
+
+<dl><dt><a name="ClienteResponse-model_validate_json"><strong>model_validate_json</strong></a>(json_data: 'str | bytes | bytearray', *, strict: 'bool | None' = None, context: 'dict[str, Any] | None' = None) -&gt; 'Model'</dt><dd><span class="code">Validate&nbsp;the&nbsp;given&nbsp;JSON&nbsp;data&nbsp;against&nbsp;the&nbsp;Pydantic&nbsp;model.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;json_data:&nbsp;The&nbsp;JSON&nbsp;data&nbsp;to&nbsp;validate.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;strict:&nbsp;Whether&nbsp;to&nbsp;enforce&nbsp;types&nbsp;strictly.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;context:&nbsp;Extra&nbsp;variables&nbsp;to&nbsp;pass&nbsp;to&nbsp;the&nbsp;validator.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;validated&nbsp;Pydantic&nbsp;model.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ValueError:&nbsp;If&nbsp;`json_data`&nbsp;is&nbsp;not&nbsp;a&nbsp;JSON&nbsp;string.</span></dd></dl>
+
+<dl><dt><a name="ClienteResponse-model_validate_strings"><strong>model_validate_strings</strong></a>(obj: 'Any', *, strict: 'bool | None' = None, context: 'dict[str, Any] | None' = None) -&gt; 'Model'</dt><dd><span class="code">Validate&nbsp;the&nbsp;given&nbsp;object&nbsp;contains&nbsp;string&nbsp;data&nbsp;against&nbsp;the&nbsp;Pydantic&nbsp;model.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;obj:&nbsp;The&nbsp;object&nbsp;contains&nbsp;string&nbsp;data&nbsp;to&nbsp;validate.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;strict:&nbsp;Whether&nbsp;to&nbsp;enforce&nbsp;types&nbsp;strictly.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;context:&nbsp;Extra&nbsp;variables&nbsp;to&nbsp;pass&nbsp;to&nbsp;the&nbsp;validator.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;validated&nbsp;Pydantic&nbsp;model.</span></dd></dl>
+
+<dl><dt><a name="ClienteResponse-parse_file"><strong>parse_file</strong></a>(path: 'str | Path', *, content_type: 'str | None' = None, encoding: 'str' = 'utf8', proto: 'DeprecatedParseProtocol | None' = None, allow_pickle: 'bool' = False) -&gt; 'Model'</dt></dl>
+
+<dl><dt><a name="ClienteResponse-parse_obj"><strong>parse_obj</strong></a>(obj: 'Any') -&gt; 'Model'</dt></dl>
+
+<dl><dt><a name="ClienteResponse-parse_raw"><strong>parse_raw</strong></a>(b: 'str | bytes', *, content_type: 'str | None' = None, encoding: 'str' = 'utf8', proto: 'DeprecatedParseProtocol | None' = None, allow_pickle: 'bool' = False) -&gt; 'Model'</dt></dl>
+
+<dl><dt><a name="ClienteResponse-schema"><strong>schema</strong></a>(by_alias: 'bool' = True, ref_template: 'str' = '#/$defs/{model}') -&gt; 'typing.Dict[str, Any]'</dt></dl>
+
+<dl><dt><a name="ClienteResponse-schema_json"><strong>schema_json</strong></a>(*, by_alias: 'bool' = True, ref_template: 'str' = '#/$defs/{model}', **dumps_kwargs: 'Any') -&gt; 'str'</dt></dl>
+
+<dl><dt><a name="ClienteResponse-update_forward_refs"><strong>update_forward_refs</strong></a>(**localns: 'Any') -&gt; 'None'</dt></dl>
+
+<dl><dt><a name="ClienteResponse-validate"><strong>validate</strong></a>(value: 'Any') -&gt; 'Model'</dt></dl>
+
+<hr>
+Readonly properties inherited from <a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>:<br>
+<dl><dt><strong>__fields__</strong></dt>
+</dl>
+<dl><dt><strong>__fields_set__</strong></dt>
+</dl>
+<dl><dt><strong>model_computed_fields</strong></dt>
+<dd><span class="code">Get&nbsp;the&nbsp;computed&nbsp;fields&nbsp;of&nbsp;this&nbsp;model&nbsp;instance.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;dictionary&nbsp;of&nbsp;computed&nbsp;field&nbsp;names&nbsp;and&nbsp;their&nbsp;corresponding&nbsp;`ComputedFieldInfo`&nbsp;objects.</span></dd>
+</dl>
+<dl><dt><strong>model_extra</strong></dt>
+<dd><span class="code">Get&nbsp;extra&nbsp;fields&nbsp;set&nbsp;during&nbsp;validation.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;dictionary&nbsp;of&nbsp;extra&nbsp;fields,&nbsp;or&nbsp;`None`&nbsp;if&nbsp;`config.extra`&nbsp;is&nbsp;not&nbsp;set&nbsp;to&nbsp;`"allow"`.</span></dd>
+</dl>
+<dl><dt><strong>model_fields_set</strong></dt>
+<dd><span class="code">Returns&nbsp;the&nbsp;set&nbsp;of&nbsp;fields&nbsp;that&nbsp;have&nbsp;been&nbsp;set&nbsp;on&nbsp;this&nbsp;model&nbsp;instance.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;set&nbsp;of&nbsp;strings&nbsp;representing&nbsp;the&nbsp;fields&nbsp;that&nbsp;have&nbsp;been&nbsp;set,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.e.&nbsp;that&nbsp;were&nbsp;not&nbsp;filled&nbsp;from&nbsp;defaults.</span></dd>
+</dl>
+<hr>
+Data descriptors inherited from <a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__pydantic_extra__</strong></dt>
+</dl>
+<dl><dt><strong>__pydantic_fields_set__</strong></dt>
+</dl>
+<dl><dt><strong>__pydantic_private__</strong></dt>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>:<br>
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+<dl><dt><strong>__pydantic_root_model__</strong> = False</dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="ClienteUpdate">class <strong>ClienteUpdate</strong></a>(<a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#ClienteUpdate">ClienteUpdate</a>(*,&nbsp;nombre:&nbsp;Optional[str]&nbsp;=&nbsp;None,&nbsp;edad:&nbsp;Optional[int]&nbsp;=&nbsp;None)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+Modelo&nbsp;para&nbsp;la&nbsp;actualización&nbsp;de&nbsp;clientes.<br>
+&nbsp;<br>
+Attributes:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;nombre&nbsp;(Optional[str]):&nbsp;Nuevo&nbsp;nombre&nbsp;del&nbsp;cliente&nbsp;(opcional)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;edad&nbsp;(Optional[int]):&nbsp;Nueva&nbsp;edad&nbsp;del&nbsp;cliente&nbsp;(opcional)<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="ejercicio-uno.html#ClienteUpdate">ClienteUpdate</a></dd>
+<dd><a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset()</dl>
+
+<dl><dt><strong>__annotations__</strong> = {'edad': typing.Optional[int], 'nombre': typing.Optional[str]}</dl>
+
+<dl><dt><strong>__class_vars__</strong> = set()</dl>
+
+<dl><dt><strong>__private_attributes__</strong> = {}</dl>
+
+<dl><dt><strong>__pydantic_complete__</strong> = True</dl>
+
+<dl><dt><strong>__pydantic_core_schema__</strong> = {'cls': &lt;class 'ejercicio-uno.ClienteUpdate'&gt;, 'config': {'title': 'ClienteUpdate'}, 'custom_init': False, 'metadata': {'pydantic.internal.needs_apply_discriminated_union': False, 'pydantic_js_annotation_functions': [], 'pydantic_js_functions': [functools.partial(&lt;function modify_model_json_sc...2AC0&gt;, cls=&lt;class 'ejercicio-uno.ClienteUpdate'&gt;), &lt;bound method BaseModel.__get_pydantic_json_schema__ of &lt;class 'ejercicio-uno.ClienteUpdate'&gt;&gt;]}, 'ref': 'ejercicio-uno.ClienteUpdate:2542357458016', 'root_model': False, 'schema': {'computed_fields': [], 'fields': {'edad': {'metadata': {'pydantic_js_annotation_functions': [&lt;function GenerateSchema._common_field_schema.&lt;locals&gt;.json_schema_update_func&gt;], 'pydantic_js_functions': []}, 'schema': {'default': None, 'schema': {'metadata': {...}, 'schema': {...}, 'type': 'nullable'}, 'type': 'default'}, 'type': 'model-field'}, 'nombre': {'metadata': {'pydantic_js_annotation_functions': [&lt;function GenerateSchema._common_field_schema.&lt;locals&gt;.json_schema_update_func&gt;], 'pydantic_js_functions': []}, 'schema': {'default': None, 'schema': {'metadata': {...}, 'schema': {...}, 'type': 'nullable'}, 'type': 'default'}, 'type': 'model-field'}}, 'model_name': 'ClienteUpdate', 'type': 'model-fields'}, 'type': 'model'}</dl>
+
+<dl><dt><strong>__pydantic_custom_init__</strong> = False</dl>
+
+<dl><dt><strong>__pydantic_decorators__</strong> = DecoratorInfos(validators={}, field_validators={...zers={}, model_validators={}, computed_fields={})</dl>
+
+<dl><dt><strong>__pydantic_generic_metadata__</strong> = {'args': (), 'origin': None, 'parameters': ()}</dl>
+
+<dl><dt><strong>__pydantic_parent_namespace__</strong> = {'BaseModel': &lt;weakref at 0x0000024FF14C6870; to 'ModelMetaclass' at 0x0000024FED820820 (BaseModel)&gt;, 'ClienteBase': &lt;weakref at 0x0000024FF14C6990; to 'ModelMetaclass' at 0x0000024FF04FFA00 (ClienteBase)&gt;, 'ClienteCreate': &lt;weakref at 0x0000024FF14C69F0; to 'ModelMetaclass' at 0x0000024FF05001C0 (ClienteCreate)&gt;, 'FastAPI': &lt;weakref at 0x0000024FF14C6810; to 'type' at 0x0000024FF04FF620 (FastAPI)&gt;, 'HTTPException': &lt;weakref at 0x0000024FF14C67B0; to 'type' at 0x0000024FED8CB6E0 (HTTPException)&gt;, 'Optional': &lt;weakref at 0x0000024FF14C68D0; to '_SpecialForm'&gt;, '__builtins__': {'ArithmeticError': &lt;class 'ArithmeticError'&gt;, 'AssertionError': &lt;class 'AssertionError'&gt;, 'AttributeError': &lt;class 'AttributeError'&gt;, 'BaseException': &lt;class 'BaseException'&gt;, 'BaseExceptionGroup': &lt;class 'BaseExceptionGroup'&gt;, 'BlockingIOError': &lt;class 'BlockingIOError'&gt;, 'BrokenPipeError': &lt;class 'BrokenPipeError'&gt;, 'BufferError': &lt;class 'BufferError'&gt;, 'BytesWarning': &lt;class 'BytesWarning'&gt;, 'ChildProcessError': &lt;class 'ChildProcessError'&gt;, ...}, '__cached__': r'G:\Mi unidad\U_DEV_SENIOR\Python_Curso\Python_Cl...A_CLASE\__pycache__\ejercicio-uno.cpython-312.pyc', '__doc__': '<span class="repr">\n</span>API de Clientes<span class="repr">\n\n</span>Este módulo implementa una API... uso:<span class="repr">\n</span>    &gt;&gt;&gt; uvicorn ejercicio-uno:app --reload<span class="repr">\n</span>', '__file__': r'G:\Mi unidad\U_DEV_SENIOR\Python_Curso\Python_Cl...dulo_6_Semana_1\01_PRIMERA_CLASE\ejercicio-uno.py', ...}</dl>
+
+<dl><dt><strong>__pydantic_post_init__</strong> = None</dl>
+
+<dl><dt><strong>__pydantic_serializer__</strong> = SchemaSerializer(serializer=Model(
+    ModelSeri... name: "ClienteUpdate",
+    },
+), definitions=[])</dl>
+
+<dl><dt><strong>__pydantic_validator__</strong> = SchemaValidator(title="ClienteUpdate", validator... name: "ClienteUpdate",
+    },
+), definitions=[])</dl>
+
+<dl><dt><strong>__signature__</strong> = &lt;Signature (*, nombre: Optional[str] = None, edad: Optional[int] = None) -&gt; None&gt;</dl>
+
+<dl><dt><strong>model_config</strong> = {}</dl>
+
+<dl><dt><strong>model_fields</strong> = {'edad': FieldInfo(annotation=Union[int, NoneType], required=False), 'nombre': FieldInfo(annotation=Union[str, NoneType], required=False)}</dl>
+
+<hr>
+Methods inherited from <a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>:<br>
+<dl><dt><a name="ClienteUpdate-__copy__"><strong>__copy__</strong></a>(self: 'Model') -&gt; 'Model'</dt><dd><span class="code">Returns&nbsp;a&nbsp;shallow&nbsp;copy&nbsp;of&nbsp;the&nbsp;model.</span></dd></dl>
+
+<dl><dt><a name="ClienteUpdate-__deepcopy__"><strong>__deepcopy__</strong></a>(self: 'Model', memo: 'dict[int, Any] | None' = None) -&gt; 'Model'</dt><dd><span class="code">Returns&nbsp;a&nbsp;deep&nbsp;copy&nbsp;of&nbsp;the&nbsp;model.</span></dd></dl>
+
+<dl><dt><a name="ClienteUpdate-__delattr__"><strong>__delattr__</strong></a>(self, item: 'str') -&gt; 'Any'</dt><dd><span class="code">Implement&nbsp;delattr(self,&nbsp;name).</span></dd></dl>
+
+<dl><dt><a name="ClienteUpdate-__eq__"><strong>__eq__</strong></a>(self, other: 'Any') -&gt; 'bool'</dt><dd><span class="code">Return&nbsp;self==value.</span></dd></dl>
+
+<dl><dt><a name="ClienteUpdate-__getattr__"><strong>__getattr__</strong></a>(self, item: 'str') -&gt; 'Any'</dt></dl>
+
+<dl><dt><a name="ClienteUpdate-__getstate__"><strong>__getstate__</strong></a>(self) -&gt; 'dict[Any, Any]'</dt><dd><span class="code">Helper&nbsp;for&nbsp;pickle.</span></dd></dl>
+
+<dl><dt><a name="ClienteUpdate-__init__"><strong>__init__</strong></a>(__pydantic_self__, **data: 'Any') -&gt; 'None'</dt><dd><span class="code">Create&nbsp;a&nbsp;new&nbsp;model&nbsp;by&nbsp;parsing&nbsp;and&nbsp;validating&nbsp;input&nbsp;data&nbsp;from&nbsp;keyword&nbsp;arguments.<br>
+&nbsp;<br>
+Raises&nbsp;[`ValidationError`][pydantic_core.ValidationError]&nbsp;if&nbsp;the&nbsp;input&nbsp;data&nbsp;cannot&nbsp;be<br>
+validated&nbsp;to&nbsp;form&nbsp;a&nbsp;valid&nbsp;model.<br>
+&nbsp;<br>
+`__init__`&nbsp;uses&nbsp;`__pydantic_self__`&nbsp;instead&nbsp;of&nbsp;the&nbsp;more&nbsp;common&nbsp;`self`&nbsp;for&nbsp;the&nbsp;first&nbsp;arg&nbsp;to<br>
+allow&nbsp;`self`&nbsp;as&nbsp;a&nbsp;field&nbsp;name.</span></dd></dl>
+
+<dl><dt><a name="ClienteUpdate-__iter__"><strong>__iter__</strong></a>(self) -&gt; 'TupleGenerator'</dt><dd><span class="code">So&nbsp;`<a href="#ClienteUpdate-dict">dict</a>(model)`&nbsp;works.</span></dd></dl>
+
+<dl><dt><a name="ClienteUpdate-__pretty__"><strong>__pretty__</strong></a>(self, fmt: 'typing.Callable[[Any], Any]', **kwargs: 'Any') -&gt; 'typing.Generator[Any, None, None]'<span class="grey"><span class="heading-text"> from pydantic._internal._repr.Representation</span></span></dt><dd><span class="code">Used&nbsp;by&nbsp;devtools&nbsp;(<a href="https://python-devtools.helpmanual.io/">https://python-devtools.helpmanual.io/</a>)&nbsp;to&nbsp;pretty&nbsp;print&nbsp;objects.</span></dd></dl>
+
+<dl><dt><a name="ClienteUpdate-__repr__"><strong>__repr__</strong></a>(self) -&gt; 'str'</dt><dd><span class="code">Return&nbsp;repr(self).</span></dd></dl>
+
+<dl><dt><a name="ClienteUpdate-__repr_args__"><strong>__repr_args__</strong></a>(self) -&gt; '_repr.ReprArgs'</dt></dl>
+
+<dl><dt><a name="ClienteUpdate-__repr_name__"><strong>__repr_name__</strong></a>(self) -&gt; 'str'<span class="grey"><span class="heading-text"> from pydantic._internal._repr.Representation</span></span></dt><dd><span class="code">Name&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class,&nbsp;used&nbsp;in&nbsp;__repr__.</span></dd></dl>
+
+<dl><dt><a name="ClienteUpdate-__repr_str__"><strong>__repr_str__</strong></a>(self, join_str: 'str') -&gt; 'str'<span class="grey"><span class="heading-text"> from pydantic._internal._repr.Representation</span></span></dt></dl>
+
+<dl><dt><a name="ClienteUpdate-__rich_repr__"><strong>__rich_repr__</strong></a>(self) -&gt; 'RichReprResult'<span class="grey"><span class="heading-text"> from pydantic._internal._repr.Representation</span></span></dt><dd><span class="code">Used&nbsp;by&nbsp;Rich&nbsp;(<a href="https://rich.readthedocs.io/en/stable/pretty.html">https://rich.readthedocs.io/en/stable/pretty.html</a>)&nbsp;to&nbsp;pretty&nbsp;print&nbsp;objects.</span></dd></dl>
+
+<dl><dt><a name="ClienteUpdate-__setattr__"><strong>__setattr__</strong></a>(self, name: 'str', value: 'Any') -&gt; 'None'</dt><dd><span class="code">Implement&nbsp;setattr(self,&nbsp;name,&nbsp;value).</span></dd></dl>
+
+<dl><dt><a name="ClienteUpdate-__setstate__"><strong>__setstate__</strong></a>(self, state: 'dict[Any, Any]') -&gt; 'None'</dt></dl>
+
+<dl><dt><a name="ClienteUpdate-__str__"><strong>__str__</strong></a>(self) -&gt; 'str'</dt><dd><span class="code">Return&nbsp;str(self).</span></dd></dl>
+
+<dl><dt><a name="ClienteUpdate-copy"><strong>copy</strong></a>(self: 'Model', *, include: 'AbstractSetIntStr | MappingIntStrAny | None' = None, exclude: 'AbstractSetIntStr | MappingIntStrAny | None' = None, update: 'typing.Dict[str, Any] | None' = None, deep: 'bool' = False) -&gt; 'Model'</dt><dd><span class="code">Returns&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;model.<br>
+&nbsp;<br>
+!!!&nbsp;warning&nbsp;"Deprecated"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;method&nbsp;is&nbsp;now&nbsp;deprecated;&nbsp;use&nbsp;`model_copy`&nbsp;instead.<br>
+&nbsp;<br>
+If&nbsp;you&nbsp;need&nbsp;`include`&nbsp;or&nbsp;`exclude`,&nbsp;use:<br>
+&nbsp;<br>
+```py<br>
+data&nbsp;=&nbsp;self.<a href="#ClienteUpdate-model_dump">model_dump</a>(include=include,&nbsp;exclude=exclude,&nbsp;round_trip=True)<br>
+data&nbsp;=&nbsp;{**data,&nbsp;**(update&nbsp;or&nbsp;{})}<br>
+copied&nbsp;=&nbsp;self.<a href="#ClienteUpdate-model_validate">model_validate</a>(data)<br>
+```<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;include:&nbsp;Optional&nbsp;set&nbsp;or&nbsp;mapping<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;specifying&nbsp;which&nbsp;fields&nbsp;to&nbsp;include&nbsp;in&nbsp;the&nbsp;copied&nbsp;model.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude:&nbsp;Optional&nbsp;set&nbsp;or&nbsp;mapping<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;specifying&nbsp;which&nbsp;fields&nbsp;to&nbsp;exclude&nbsp;in&nbsp;the&nbsp;copied&nbsp;model.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;update:&nbsp;Optional&nbsp;dictionary&nbsp;of&nbsp;field-value&nbsp;pairs&nbsp;to&nbsp;override&nbsp;field&nbsp;values<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;in&nbsp;the&nbsp;copied&nbsp;model.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;deep:&nbsp;If&nbsp;True,&nbsp;the&nbsp;values&nbsp;of&nbsp;fields&nbsp;that&nbsp;are&nbsp;Pydantic&nbsp;models&nbsp;will&nbsp;be&nbsp;deep&nbsp;copied.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;copy&nbsp;of&nbsp;the&nbsp;model&nbsp;with&nbsp;included,&nbsp;excluded&nbsp;and&nbsp;updated&nbsp;fields&nbsp;as&nbsp;specified.</span></dd></dl>
+
+<dl><dt><a name="ClienteUpdate-dict"><strong>dict</strong></a>(self, *, include: 'IncEx' = None, exclude: 'IncEx' = None, by_alias: 'bool' = False, exclude_unset: 'bool' = False, exclude_defaults: 'bool' = False, exclude_none: 'bool' = False) -&gt; 'typing.Dict[str, Any]'</dt></dl>
+
+<dl><dt><a name="ClienteUpdate-json"><strong>json</strong></a>(self, *, include: 'IncEx' = None, exclude: 'IncEx' = None, by_alias: 'bool' = False, exclude_unset: 'bool' = False, exclude_defaults: 'bool' = False, exclude_none: 'bool' = False, encoder: 'typing.Callable[[Any], Any] | None' = PydanticUndefined, models_as_dict: 'bool' = PydanticUndefined, **dumps_kwargs: 'Any') -&gt; 'str'</dt></dl>
+
+<dl><dt><a name="ClienteUpdate-model_copy"><strong>model_copy</strong></a>(self: 'Model', *, update: 'dict[str, Any] | None' = None, deep: 'bool' = False) -&gt; 'Model'</dt><dd><span class="code">Usage&nbsp;docs:&nbsp;<a href="https://docs.pydantic.dev/2.4/concepts/serialization/#model_copy">https://docs.pydantic.dev/2.4/concepts/serialization/#model_copy</a><br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;model.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;update:&nbsp;Values&nbsp;to&nbsp;change/add&nbsp;in&nbsp;the&nbsp;new&nbsp;model.&nbsp;Note:&nbsp;the&nbsp;data&nbsp;is&nbsp;not&nbsp;validated<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;before&nbsp;creating&nbsp;the&nbsp;new&nbsp;model.&nbsp;You&nbsp;should&nbsp;trust&nbsp;this&nbsp;data.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;deep:&nbsp;Set&nbsp;to&nbsp;`True`&nbsp;to&nbsp;make&nbsp;a&nbsp;deep&nbsp;copy&nbsp;of&nbsp;the&nbsp;model.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;New&nbsp;model&nbsp;instance.</span></dd></dl>
+
+<dl><dt><a name="ClienteUpdate-model_dump"><strong>model_dump</strong></a>(self, *, mode: "Literal['json', 'python'] | str" = 'python', include: 'IncEx' = None, exclude: 'IncEx' = None, by_alias: 'bool' = False, exclude_unset: 'bool' = False, exclude_defaults: 'bool' = False, exclude_none: 'bool' = False, round_trip: 'bool' = False, warnings: 'bool' = True) -&gt; 'dict[str, Any]'</dt><dd><span class="code">Usage&nbsp;docs:&nbsp;<a href="https://docs.pydantic.dev/2.4/concepts/serialization/#modelmodel_dump">https://docs.pydantic.dev/2.4/concepts/serialization/#modelmodel_dump</a><br>
+&nbsp;<br>
+Generate&nbsp;a&nbsp;dictionary&nbsp;representation&nbsp;of&nbsp;the&nbsp;model,&nbsp;optionally&nbsp;specifying&nbsp;which&nbsp;fields&nbsp;to&nbsp;include&nbsp;or&nbsp;exclude.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;mode:&nbsp;The&nbsp;mode&nbsp;in&nbsp;which&nbsp;`to_python`&nbsp;should&nbsp;run.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;mode&nbsp;is&nbsp;'json',&nbsp;the&nbsp;dictionary&nbsp;will&nbsp;only&nbsp;contain&nbsp;JSON&nbsp;serializable&nbsp;types.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;mode&nbsp;is&nbsp;'python',&nbsp;the&nbsp;dictionary&nbsp;may&nbsp;contain&nbsp;any&nbsp;Python&nbsp;objects.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;include:&nbsp;A&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;include&nbsp;in&nbsp;the&nbsp;output.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude:&nbsp;A&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;exclude&nbsp;from&nbsp;the&nbsp;output.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;by_alias:&nbsp;Whether&nbsp;to&nbsp;use&nbsp;the&nbsp;field's&nbsp;alias&nbsp;in&nbsp;the&nbsp;dictionary&nbsp;key&nbsp;if&nbsp;defined.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude_unset:&nbsp;Whether&nbsp;to&nbsp;exclude&nbsp;fields&nbsp;that&nbsp;are&nbsp;unset&nbsp;or&nbsp;None&nbsp;from&nbsp;the&nbsp;output.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude_defaults:&nbsp;Whether&nbsp;to&nbsp;exclude&nbsp;fields&nbsp;that&nbsp;are&nbsp;set&nbsp;to&nbsp;their&nbsp;default&nbsp;value&nbsp;from&nbsp;the&nbsp;output.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude_none:&nbsp;Whether&nbsp;to&nbsp;exclude&nbsp;fields&nbsp;that&nbsp;have&nbsp;a&nbsp;value&nbsp;of&nbsp;`None`&nbsp;from&nbsp;the&nbsp;output.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;round_trip:&nbsp;Whether&nbsp;to&nbsp;enable&nbsp;serialization&nbsp;and&nbsp;deserialization&nbsp;round-trip&nbsp;support.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;warnings:&nbsp;Whether&nbsp;to&nbsp;log&nbsp;warnings&nbsp;when&nbsp;invalid&nbsp;fields&nbsp;are&nbsp;encountered.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;dictionary&nbsp;representation&nbsp;of&nbsp;the&nbsp;model.</span></dd></dl>
+
+<dl><dt><a name="ClienteUpdate-model_dump_json"><strong>model_dump_json</strong></a>(self, *, indent: 'int | None' = None, include: 'IncEx' = None, exclude: 'IncEx' = None, by_alias: 'bool' = False, exclude_unset: 'bool' = False, exclude_defaults: 'bool' = False, exclude_none: 'bool' = False, round_trip: 'bool' = False, warnings: 'bool' = True) -&gt; 'str'</dt><dd><span class="code">Usage&nbsp;docs:&nbsp;<a href="https://docs.pydantic.dev/2.4/concepts/serialization/#modelmodel_dump_json">https://docs.pydantic.dev/2.4/concepts/serialization/#modelmodel_dump_json</a><br>
+&nbsp;<br>
+Generates&nbsp;a&nbsp;JSON&nbsp;representation&nbsp;of&nbsp;the&nbsp;model&nbsp;using&nbsp;Pydantic's&nbsp;`to_json`&nbsp;method.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;indent:&nbsp;Indentation&nbsp;to&nbsp;use&nbsp;in&nbsp;the&nbsp;JSON&nbsp;output.&nbsp;If&nbsp;None&nbsp;is&nbsp;passed,&nbsp;the&nbsp;output&nbsp;will&nbsp;be&nbsp;compact.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;include:&nbsp;Field(s)&nbsp;to&nbsp;include&nbsp;in&nbsp;the&nbsp;JSON&nbsp;output.&nbsp;Can&nbsp;take&nbsp;either&nbsp;a&nbsp;string&nbsp;or&nbsp;set&nbsp;of&nbsp;strings.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude:&nbsp;Field(s)&nbsp;to&nbsp;exclude&nbsp;from&nbsp;the&nbsp;JSON&nbsp;output.&nbsp;Can&nbsp;take&nbsp;either&nbsp;a&nbsp;string&nbsp;or&nbsp;set&nbsp;of&nbsp;strings.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;by_alias:&nbsp;Whether&nbsp;to&nbsp;serialize&nbsp;using&nbsp;field&nbsp;aliases.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude_unset:&nbsp;Whether&nbsp;to&nbsp;exclude&nbsp;fields&nbsp;that&nbsp;have&nbsp;not&nbsp;been&nbsp;explicitly&nbsp;set.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude_defaults:&nbsp;Whether&nbsp;to&nbsp;exclude&nbsp;fields&nbsp;that&nbsp;have&nbsp;the&nbsp;default&nbsp;value.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exclude_none:&nbsp;Whether&nbsp;to&nbsp;exclude&nbsp;fields&nbsp;that&nbsp;have&nbsp;a&nbsp;value&nbsp;of&nbsp;`None`.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;round_trip:&nbsp;Whether&nbsp;to&nbsp;use&nbsp;serialization/deserialization&nbsp;between&nbsp;JSON&nbsp;and&nbsp;class&nbsp;instance.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;warnings:&nbsp;Whether&nbsp;to&nbsp;show&nbsp;any&nbsp;warnings&nbsp;that&nbsp;occurred&nbsp;during&nbsp;serialization.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;JSON&nbsp;string&nbsp;representation&nbsp;of&nbsp;the&nbsp;model.</span></dd></dl>
+
+<dl><dt><a name="ClienteUpdate-model_post_init"><strong>model_post_init</strong></a>(self, _BaseModel__context: 'Any') -&gt; 'None'</dt><dd><span class="code">Override&nbsp;this&nbsp;method&nbsp;to&nbsp;perform&nbsp;additional&nbsp;initialization&nbsp;after&nbsp;`__init__`&nbsp;and&nbsp;`model_construct`.<br>
+This&nbsp;is&nbsp;useful&nbsp;if&nbsp;you&nbsp;want&nbsp;to&nbsp;do&nbsp;some&nbsp;validation&nbsp;that&nbsp;requires&nbsp;the&nbsp;entire&nbsp;model&nbsp;to&nbsp;be&nbsp;initialized.</span></dd></dl>
+
+<hr>
+Class methods inherited from <a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>:<br>
+<dl><dt><a name="ClienteUpdate-__class_getitem__"><strong>__class_getitem__</strong></a>(typevar_values: 'type[Any] | tuple[type[Any], ...]') -&gt; 'type[BaseModel] | _forward_ref.PydanticRecursiveRef'</dt></dl>
+
+<dl><dt><a name="ClienteUpdate-__get_pydantic_core_schema__"><strong>__get_pydantic_core_schema__</strong></a>(_BaseModel__source: 'type[BaseModel]', _BaseModel__handler: 'GetCoreSchemaHandler') -&gt; 'CoreSchema'</dt><dd><span class="code">Hook&nbsp;into&nbsp;generating&nbsp;the&nbsp;model's&nbsp;CoreSchema.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;__source:&nbsp;The&nbsp;class&nbsp;we&nbsp;are&nbsp;generating&nbsp;a&nbsp;schema&nbsp;for.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;will&nbsp;generally&nbsp;be&nbsp;the&nbsp;same&nbsp;as&nbsp;the&nbsp;`cls`&nbsp;argument&nbsp;if&nbsp;this&nbsp;is&nbsp;a&nbsp;classmethod.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;__handler:&nbsp;Call&nbsp;into&nbsp;Pydantic's&nbsp;internal&nbsp;JSON&nbsp;schema&nbsp;generation.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;callable&nbsp;that&nbsp;calls&nbsp;into&nbsp;Pydantic's&nbsp;internal&nbsp;CoreSchema&nbsp;generation&nbsp;logic.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;`pydantic-core`&nbsp;`CoreSchema`.</span></dd></dl>
+
+<dl><dt><a name="ClienteUpdate-__get_pydantic_json_schema__"><strong>__get_pydantic_json_schema__</strong></a>(_BaseModel__core_schema: 'CoreSchema', _BaseModel__handler: 'GetJsonSchemaHandler') -&gt; 'JsonSchemaValue'</dt><dd><span class="code">Hook&nbsp;into&nbsp;generating&nbsp;the&nbsp;model's&nbsp;JSON&nbsp;schema.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;__core_schema:&nbsp;A&nbsp;`pydantic-core`&nbsp;CoreSchema.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You&nbsp;can&nbsp;ignore&nbsp;this&nbsp;argument&nbsp;and&nbsp;call&nbsp;the&nbsp;handler&nbsp;with&nbsp;a&nbsp;new&nbsp;CoreSchema,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wrap&nbsp;this&nbsp;CoreSchema&nbsp;(`{'type':&nbsp;'nullable',&nbsp;'schema':&nbsp;current_schema}`),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;just&nbsp;call&nbsp;the&nbsp;handler&nbsp;with&nbsp;the&nbsp;original&nbsp;schema.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;__handler:&nbsp;Call&nbsp;into&nbsp;Pydantic's&nbsp;internal&nbsp;JSON&nbsp;schema&nbsp;generation.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;will&nbsp;raise&nbsp;a&nbsp;`pydantic.errors.PydanticInvalidForJsonSchema`&nbsp;if&nbsp;JSON&nbsp;schema<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;generation&nbsp;fails.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Since&nbsp;this&nbsp;gets&nbsp;called&nbsp;by&nbsp;`<a href="pydantic.main.html#BaseModel">BaseModel</a>.model_json_schema`&nbsp;you&nbsp;can&nbsp;override&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`schema_generator`&nbsp;argument&nbsp;to&nbsp;that&nbsp;function&nbsp;to&nbsp;change&nbsp;JSON&nbsp;schema&nbsp;generation&nbsp;globally<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;a&nbsp;type.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;JSON&nbsp;schema,&nbsp;as&nbsp;a&nbsp;Python&nbsp;object.</span></dd></dl>
+
+<dl><dt><a name="ClienteUpdate-__pydantic_init_subclass__"><strong>__pydantic_init_subclass__</strong></a>(**kwargs: 'Any') -&gt; 'None'</dt><dd><span class="code">This&nbsp;is&nbsp;intended&nbsp;to&nbsp;behave&nbsp;just&nbsp;like&nbsp;`__init_subclass__`,&nbsp;but&nbsp;is&nbsp;called&nbsp;by&nbsp;`ModelMetaclass`<br>
+only&nbsp;after&nbsp;the&nbsp;class&nbsp;is&nbsp;actually&nbsp;fully&nbsp;initialized.&nbsp;In&nbsp;particular,&nbsp;attributes&nbsp;like&nbsp;`model_fields`&nbsp;will<br>
+be&nbsp;present&nbsp;when&nbsp;this&nbsp;is&nbsp;called.<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;necessary&nbsp;because&nbsp;`__init_subclass__`&nbsp;will&nbsp;always&nbsp;be&nbsp;called&nbsp;by&nbsp;`type.__new__`,<br>
+and&nbsp;it&nbsp;would&nbsp;require&nbsp;a&nbsp;prohibitively&nbsp;large&nbsp;refactor&nbsp;to&nbsp;the&nbsp;`ModelMetaclass`&nbsp;to&nbsp;ensure&nbsp;that<br>
+`type.__new__`&nbsp;was&nbsp;called&nbsp;in&nbsp;such&nbsp;a&nbsp;manner&nbsp;that&nbsp;the&nbsp;class&nbsp;would&nbsp;already&nbsp;be&nbsp;sufficiently&nbsp;initialized.<br>
+&nbsp;<br>
+This&nbsp;will&nbsp;receive&nbsp;the&nbsp;same&nbsp;`kwargs`&nbsp;that&nbsp;would&nbsp;be&nbsp;passed&nbsp;to&nbsp;the&nbsp;standard&nbsp;`__init_subclass__`,&nbsp;namely,<br>
+any&nbsp;kwargs&nbsp;passed&nbsp;to&nbsp;the&nbsp;class&nbsp;definition&nbsp;that&nbsp;aren't&nbsp;used&nbsp;internally&nbsp;by&nbsp;pydantic.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;**kwargs:&nbsp;Any&nbsp;keyword&nbsp;arguments&nbsp;passed&nbsp;to&nbsp;the&nbsp;class&nbsp;definition&nbsp;that&nbsp;aren't&nbsp;used&nbsp;internally<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;by&nbsp;pydantic.</span></dd></dl>
+
+<dl><dt><a name="ClienteUpdate-construct"><strong>construct</strong></a>(_fields_set: 'set[str] | None' = None, **values: 'Any') -&gt; 'Model'</dt></dl>
+
+<dl><dt><a name="ClienteUpdate-from_orm"><strong>from_orm</strong></a>(obj: 'Any') -&gt; 'Model'</dt></dl>
+
+<dl><dt><a name="ClienteUpdate-model_construct"><strong>model_construct</strong></a>(_fields_set: 'set[str] | None' = None, **values: 'Any') -&gt; 'Model'</dt><dd><span class="code">Creates&nbsp;a&nbsp;new&nbsp;instance&nbsp;of&nbsp;the&nbsp;`Model`&nbsp;class&nbsp;with&nbsp;validated&nbsp;data.<br>
+&nbsp;<br>
+Creates&nbsp;a&nbsp;new&nbsp;model&nbsp;setting&nbsp;`__dict__`&nbsp;and&nbsp;`__pydantic_fields_set__`&nbsp;from&nbsp;trusted&nbsp;or&nbsp;pre-validated&nbsp;data.<br>
+Default&nbsp;values&nbsp;are&nbsp;respected,&nbsp;but&nbsp;no&nbsp;other&nbsp;validation&nbsp;is&nbsp;performed.<br>
+Behaves&nbsp;as&nbsp;if&nbsp;`Config.extra&nbsp;=&nbsp;'allow'`&nbsp;was&nbsp;set&nbsp;since&nbsp;it&nbsp;adds&nbsp;all&nbsp;passed&nbsp;values<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_fields_set:&nbsp;The&nbsp;set&nbsp;of&nbsp;field&nbsp;names&nbsp;accepted&nbsp;for&nbsp;the&nbsp;Model&nbsp;instance.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;values:&nbsp;Trusted&nbsp;or&nbsp;pre-validated&nbsp;data&nbsp;dictionary.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;new&nbsp;instance&nbsp;of&nbsp;the&nbsp;`Model`&nbsp;class&nbsp;with&nbsp;validated&nbsp;data.</span></dd></dl>
+
+<dl><dt><a name="ClienteUpdate-model_json_schema"><strong>model_json_schema</strong></a>(by_alias: 'bool' = True, ref_template: 'str' = '#/$defs/{model}', schema_generator: 'type[GenerateJsonSchema]' = &lt;class 'pydantic.json_schema.GenerateJsonSchema'&gt;, mode: 'JsonSchemaMode' = 'validation') -&gt; 'dict[str, Any]'</dt><dd><span class="code">Generates&nbsp;a&nbsp;JSON&nbsp;schema&nbsp;for&nbsp;a&nbsp;model&nbsp;class.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;by_alias:&nbsp;Whether&nbsp;to&nbsp;use&nbsp;attribute&nbsp;aliases&nbsp;or&nbsp;not.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ref_template:&nbsp;The&nbsp;reference&nbsp;template.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;schema_generator:&nbsp;To&nbsp;override&nbsp;the&nbsp;logic&nbsp;used&nbsp;to&nbsp;generate&nbsp;the&nbsp;JSON&nbsp;schema,&nbsp;as&nbsp;a&nbsp;subclass&nbsp;of<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`GenerateJsonSchema`&nbsp;with&nbsp;your&nbsp;desired&nbsp;modifications<br>
+&nbsp;&nbsp;&nbsp;&nbsp;mode:&nbsp;The&nbsp;mode&nbsp;in&nbsp;which&nbsp;to&nbsp;generate&nbsp;the&nbsp;schema.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;JSON&nbsp;schema&nbsp;for&nbsp;the&nbsp;given&nbsp;model&nbsp;class.</span></dd></dl>
+
+<dl><dt><a name="ClienteUpdate-model_parametrized_name"><strong>model_parametrized_name</strong></a>(params: 'tuple[type[Any], ...]') -&gt; 'str'</dt><dd><span class="code">Compute&nbsp;the&nbsp;class&nbsp;name&nbsp;for&nbsp;parametrizations&nbsp;of&nbsp;generic&nbsp;classes.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;can&nbsp;be&nbsp;overridden&nbsp;to&nbsp;achieve&nbsp;a&nbsp;custom&nbsp;naming&nbsp;scheme&nbsp;for&nbsp;generic&nbsp;BaseModels.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;params:&nbsp;Tuple&nbsp;of&nbsp;types&nbsp;of&nbsp;the&nbsp;class.&nbsp;Given&nbsp;a&nbsp;generic&nbsp;class<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Model`&nbsp;with&nbsp;2&nbsp;type&nbsp;variables&nbsp;and&nbsp;a&nbsp;concrete&nbsp;model&nbsp;`Model[str,&nbsp;int]`,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;value&nbsp;`(str,&nbsp;int)`&nbsp;would&nbsp;be&nbsp;passed&nbsp;to&nbsp;`params`.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;representing&nbsp;the&nbsp;new&nbsp;class&nbsp;where&nbsp;`params`&nbsp;are&nbsp;passed&nbsp;to&nbsp;`cls`&nbsp;as&nbsp;type&nbsp;variables.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TypeError:&nbsp;Raised&nbsp;when&nbsp;trying&nbsp;to&nbsp;generate&nbsp;concrete&nbsp;names&nbsp;for&nbsp;non-generic&nbsp;models.</span></dd></dl>
+
+<dl><dt><a name="ClienteUpdate-model_rebuild"><strong>model_rebuild</strong></a>(*, force: 'bool' = False, raise_errors: 'bool' = True, _parent_namespace_depth: 'int' = 2, _types_namespace: 'dict[str, Any] | None' = None) -&gt; 'bool | None'</dt><dd><span class="code">Try&nbsp;to&nbsp;rebuild&nbsp;the&nbsp;pydantic-core&nbsp;schema&nbsp;for&nbsp;the&nbsp;model.<br>
+&nbsp;<br>
+This&nbsp;may&nbsp;be&nbsp;necessary&nbsp;when&nbsp;one&nbsp;of&nbsp;the&nbsp;annotations&nbsp;is&nbsp;a&nbsp;ForwardRef&nbsp;which&nbsp;could&nbsp;not&nbsp;be&nbsp;resolved&nbsp;during<br>
+the&nbsp;initial&nbsp;attempt&nbsp;to&nbsp;build&nbsp;the&nbsp;schema,&nbsp;and&nbsp;automatic&nbsp;rebuilding&nbsp;fails.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;force:&nbsp;Whether&nbsp;to&nbsp;force&nbsp;the&nbsp;rebuilding&nbsp;of&nbsp;the&nbsp;model&nbsp;schema,&nbsp;defaults&nbsp;to&nbsp;`False`.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;raise_errors:&nbsp;Whether&nbsp;to&nbsp;raise&nbsp;errors,&nbsp;defaults&nbsp;to&nbsp;`True`.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_parent_namespace_depth:&nbsp;The&nbsp;depth&nbsp;level&nbsp;of&nbsp;the&nbsp;parent&nbsp;namespace,&nbsp;defaults&nbsp;to&nbsp;2.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_types_namespace:&nbsp;The&nbsp;types&nbsp;namespace,&nbsp;defaults&nbsp;to&nbsp;`None`.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Returns&nbsp;`None`&nbsp;if&nbsp;the&nbsp;schema&nbsp;is&nbsp;already&nbsp;"complete"&nbsp;and&nbsp;rebuilding&nbsp;was&nbsp;not&nbsp;required.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;rebuilding&nbsp;_was_&nbsp;required,&nbsp;returns&nbsp;`True`&nbsp;if&nbsp;rebuilding&nbsp;was&nbsp;successful,&nbsp;otherwise&nbsp;`False`.</span></dd></dl>
+
+<dl><dt><a name="ClienteUpdate-model_validate"><strong>model_validate</strong></a>(obj: 'Any', *, strict: 'bool | None' = None, from_attributes: 'bool | None' = None, context: 'dict[str, Any] | None' = None) -&gt; 'Model'</dt><dd><span class="code">Validate&nbsp;a&nbsp;pydantic&nbsp;model&nbsp;instance.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;obj:&nbsp;The&nbsp;object&nbsp;to&nbsp;validate.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;strict:&nbsp;Whether&nbsp;to&nbsp;raise&nbsp;an&nbsp;exception&nbsp;on&nbsp;invalid&nbsp;fields.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;from_attributes:&nbsp;Whether&nbsp;to&nbsp;extract&nbsp;data&nbsp;from&nbsp;object&nbsp;attributes.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;context:&nbsp;Additional&nbsp;context&nbsp;to&nbsp;pass&nbsp;to&nbsp;the&nbsp;validator.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ValidationError:&nbsp;If&nbsp;the&nbsp;object&nbsp;could&nbsp;not&nbsp;be&nbsp;validated.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;validated&nbsp;model&nbsp;instance.</span></dd></dl>
+
+<dl><dt><a name="ClienteUpdate-model_validate_json"><strong>model_validate_json</strong></a>(json_data: 'str | bytes | bytearray', *, strict: 'bool | None' = None, context: 'dict[str, Any] | None' = None) -&gt; 'Model'</dt><dd><span class="code">Validate&nbsp;the&nbsp;given&nbsp;JSON&nbsp;data&nbsp;against&nbsp;the&nbsp;Pydantic&nbsp;model.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;json_data:&nbsp;The&nbsp;JSON&nbsp;data&nbsp;to&nbsp;validate.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;strict:&nbsp;Whether&nbsp;to&nbsp;enforce&nbsp;types&nbsp;strictly.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;context:&nbsp;Extra&nbsp;variables&nbsp;to&nbsp;pass&nbsp;to&nbsp;the&nbsp;validator.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;validated&nbsp;Pydantic&nbsp;model.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ValueError:&nbsp;If&nbsp;`json_data`&nbsp;is&nbsp;not&nbsp;a&nbsp;JSON&nbsp;string.</span></dd></dl>
+
+<dl><dt><a name="ClienteUpdate-model_validate_strings"><strong>model_validate_strings</strong></a>(obj: 'Any', *, strict: 'bool | None' = None, context: 'dict[str, Any] | None' = None) -&gt; 'Model'</dt><dd><span class="code">Validate&nbsp;the&nbsp;given&nbsp;object&nbsp;contains&nbsp;string&nbsp;data&nbsp;against&nbsp;the&nbsp;Pydantic&nbsp;model.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;obj:&nbsp;The&nbsp;object&nbsp;contains&nbsp;string&nbsp;data&nbsp;to&nbsp;validate.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;strict:&nbsp;Whether&nbsp;to&nbsp;enforce&nbsp;types&nbsp;strictly.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;context:&nbsp;Extra&nbsp;variables&nbsp;to&nbsp;pass&nbsp;to&nbsp;the&nbsp;validator.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;validated&nbsp;Pydantic&nbsp;model.</span></dd></dl>
+
+<dl><dt><a name="ClienteUpdate-parse_file"><strong>parse_file</strong></a>(path: 'str | Path', *, content_type: 'str | None' = None, encoding: 'str' = 'utf8', proto: 'DeprecatedParseProtocol | None' = None, allow_pickle: 'bool' = False) -&gt; 'Model'</dt></dl>
+
+<dl><dt><a name="ClienteUpdate-parse_obj"><strong>parse_obj</strong></a>(obj: 'Any') -&gt; 'Model'</dt></dl>
+
+<dl><dt><a name="ClienteUpdate-parse_raw"><strong>parse_raw</strong></a>(b: 'str | bytes', *, content_type: 'str | None' = None, encoding: 'str' = 'utf8', proto: 'DeprecatedParseProtocol | None' = None, allow_pickle: 'bool' = False) -&gt; 'Model'</dt></dl>
+
+<dl><dt><a name="ClienteUpdate-schema"><strong>schema</strong></a>(by_alias: 'bool' = True, ref_template: 'str' = '#/$defs/{model}') -&gt; 'typing.Dict[str, Any]'</dt></dl>
+
+<dl><dt><a name="ClienteUpdate-schema_json"><strong>schema_json</strong></a>(*, by_alias: 'bool' = True, ref_template: 'str' = '#/$defs/{model}', **dumps_kwargs: 'Any') -&gt; 'str'</dt></dl>
+
+<dl><dt><a name="ClienteUpdate-update_forward_refs"><strong>update_forward_refs</strong></a>(**localns: 'Any') -&gt; 'None'</dt></dl>
+
+<dl><dt><a name="ClienteUpdate-validate"><strong>validate</strong></a>(value: 'Any') -&gt; 'Model'</dt></dl>
+
+<hr>
+Readonly properties inherited from <a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>:<br>
+<dl><dt><strong>__fields__</strong></dt>
+</dl>
+<dl><dt><strong>__fields_set__</strong></dt>
+</dl>
+<dl><dt><strong>model_computed_fields</strong></dt>
+<dd><span class="code">Get&nbsp;the&nbsp;computed&nbsp;fields&nbsp;of&nbsp;this&nbsp;model&nbsp;instance.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;dictionary&nbsp;of&nbsp;computed&nbsp;field&nbsp;names&nbsp;and&nbsp;their&nbsp;corresponding&nbsp;`ComputedFieldInfo`&nbsp;objects.</span></dd>
+</dl>
+<dl><dt><strong>model_extra</strong></dt>
+<dd><span class="code">Get&nbsp;extra&nbsp;fields&nbsp;set&nbsp;during&nbsp;validation.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;dictionary&nbsp;of&nbsp;extra&nbsp;fields,&nbsp;or&nbsp;`None`&nbsp;if&nbsp;`config.extra`&nbsp;is&nbsp;not&nbsp;set&nbsp;to&nbsp;`"allow"`.</span></dd>
+</dl>
+<dl><dt><strong>model_fields_set</strong></dt>
+<dd><span class="code">Returns&nbsp;the&nbsp;set&nbsp;of&nbsp;fields&nbsp;that&nbsp;have&nbsp;been&nbsp;set&nbsp;on&nbsp;this&nbsp;model&nbsp;instance.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;set&nbsp;of&nbsp;strings&nbsp;representing&nbsp;the&nbsp;fields&nbsp;that&nbsp;have&nbsp;been&nbsp;set,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.e.&nbsp;that&nbsp;were&nbsp;not&nbsp;filled&nbsp;from&nbsp;defaults.</span></dd>
+</dl>
+<hr>
+Data descriptors inherited from <a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__pydantic_extra__</strong></dt>
+</dl>
+<dl><dt><strong>__pydantic_fields_set__</strong></dt>
+</dl>
+<dl><dt><strong>__pydantic_private__</strong></dt>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="pydantic.main.html#BaseModel">pydantic.main.BaseModel</a>:<br>
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+<dl><dt><strong>__pydantic_root_model__</strong> = False</dl>
+
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>async <a name="-actualizar_cliente"><strong>actualizar_cliente</strong></a>(cliente_id: int, cliente_update: ejercicio-uno.ClienteUpdate) -&gt; ejercicio-uno.ClienteResponse</dt><dd><span class="code">Actualiza&nbsp;los&nbsp;datos&nbsp;de&nbsp;un&nbsp;cliente&nbsp;existente.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cliente_id&nbsp;(int):&nbsp;ID&nbsp;del&nbsp;cliente&nbsp;a&nbsp;actualizar<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cliente_update&nbsp;(<a href="#ClienteUpdate">ClienteUpdate</a>):&nbsp;Datos&nbsp;a&nbsp;actualizar<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#ClienteResponse">ClienteResponse</a>:&nbsp;Cliente&nbsp;actualizado<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;HTTPException:&nbsp;Si&nbsp;el&nbsp;cliente&nbsp;no&nbsp;existe&nbsp;(404)</span></dd></dl>
+ <dl><dt>async <a name="-crear_cliente"><strong>crear_cliente</strong></a>(cliente: ejercicio-uno.ClienteCreate) -&gt; ejercicio-uno.ClienteResponse</dt><dd><span class="code">Crea&nbsp;un&nbsp;nuevo&nbsp;cliente&nbsp;en&nbsp;el&nbsp;sistema.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cliente&nbsp;(<a href="#ClienteCreate">ClienteCreate</a>):&nbsp;Datos&nbsp;del&nbsp;cliente&nbsp;a&nbsp;crear<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#ClienteResponse">ClienteResponse</a>:&nbsp;Cliente&nbsp;creado&nbsp;con&nbsp;su&nbsp;ID&nbsp;asignado<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;HTTPException:&nbsp;Si&nbsp;ocurre&nbsp;un&nbsp;error&nbsp;durante&nbsp;la&nbsp;creación&nbsp;(500)</span></dd></dl>
+ <dl><dt>async <a name="-eliminar_cliente"><strong>eliminar_cliente</strong></a>(cliente_id: int) -&gt; None</dt><dd><span class="code">Elimina&nbsp;un&nbsp;cliente&nbsp;del&nbsp;sistema.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cliente_id&nbsp;(int):&nbsp;ID&nbsp;del&nbsp;cliente&nbsp;a&nbsp;eliminar<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;HTTPException:&nbsp;Si&nbsp;el&nbsp;cliente&nbsp;no&nbsp;existe&nbsp;(404)</span></dd></dl>
+ <dl><dt>async <a name="-inicio"><strong>inicio</strong></a>() -&gt; dict</dt><dd><span class="code">Endpoint&nbsp;de&nbsp;inicio&nbsp;de&nbsp;la&nbsp;API.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dict:&nbsp;Mensaje&nbsp;de&nbsp;bienvenida</span></dd></dl>
+ <dl><dt>async <a name="-listar_clientes"><strong>listar_clientes</strong></a>() -&gt; list[ejercicio-uno.ClienteResponse]</dt><dd><span class="code">Obtiene&nbsp;la&nbsp;lista&nbsp;de&nbsp;todos&nbsp;los&nbsp;clientes&nbsp;registrados.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list[<a href="#ClienteResponse">ClienteResponse</a>]:&nbsp;Lista&nbsp;de&nbsp;todos&nbsp;los&nbsp;clientes</span></dd></dl>
+ <dl><dt>async <a name="-obtener_cliente"><strong>obtener_cliente</strong></a>(cliente_id: int) -&gt; ejercicio-uno.ClienteResponse</dt><dd><span class="code">Obtiene&nbsp;un&nbsp;cliente&nbsp;específico&nbsp;por&nbsp;su&nbsp;ID.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cliente_id&nbsp;(int):&nbsp;ID&nbsp;del&nbsp;cliente&nbsp;a&nbsp;buscar<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#ClienteResponse">ClienteResponse</a>:&nbsp;Datos&nbsp;del&nbsp;cliente&nbsp;encontrado<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;HTTPException:&nbsp;Si&nbsp;el&nbsp;cliente&nbsp;no&nbsp;existe&nbsp;(404)</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>Optional</strong> = typing.Optional<br>
+<strong>app</strong> = &lt;fastapi.applications.FastAPI object&gt;<br>
+<strong>cliente_id_counter</strong> = 1<br>
+<strong>clientes</strong> = {}</td></tr></table>
+</body></html>
