@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from routes import tarea
 from fastapi.responses import Response
-from database.init_db import init_db
+from init_db import init_db
 from database.create import crear_base_de_datos
 from config import settings
 
@@ -23,7 +23,7 @@ app.include_router(tarea.router, prefix="/tareas", tags=["Tareas"])
 
 @app.get("/favicon.ico")
 async def favicon():
-    return Response(status_code=204)
+    return Response(status_code=204) # No content
 
 @app.get("/")
 def root():
