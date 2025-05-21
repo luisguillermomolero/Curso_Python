@@ -30,3 +30,4 @@ def eliminar_tarea(db: Session, tarea_id: int):
         db.delete(tarea)
         db.commit()
     return tarea
+
