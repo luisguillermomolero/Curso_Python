@@ -1,0 +1,4 @@
+SECRET_KEY = "mi_super_contrasena"
+ALGORITHM = "HS256"
+ACCESS_TOKEN_EXPIRE_MINUTES = 30
+
