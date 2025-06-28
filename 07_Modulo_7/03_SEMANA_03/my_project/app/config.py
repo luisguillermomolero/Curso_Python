@@ -1,4 +1,3 @@
-SECRET_KEY = "mi_super_contrasena"
+SECRET_KEY = "clave_super_segura"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
-

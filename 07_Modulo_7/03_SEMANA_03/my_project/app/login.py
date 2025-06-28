@@ -1,7 +1,7 @@
 from jose import jwt
 from datetime import datetime, timedelta
 
-SECRET_KEY = "super_clave"
+SECRET_KEY = "mi_super_contrasena"
 ALGORITHM = "HS256"
 
 data = {
