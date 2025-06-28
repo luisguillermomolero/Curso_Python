@@ -1,4 +1,4 @@
 fastapi
 uvicorn
-python-jose[cryptographjy]
+python-jose[cryptography]
 passlib[bcrypt]
