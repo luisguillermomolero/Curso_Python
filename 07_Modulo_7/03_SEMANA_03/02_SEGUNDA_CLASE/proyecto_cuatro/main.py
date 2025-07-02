@@ -23,3 +23,4 @@ def divide(x: int, y: int):
     except ZeroDivisionError:
         logging.warning(f"Intento de división por cero: {x} / {y}")
         raise HTTPException(status_code=400, detail="No se puede dividir por cero")
+
