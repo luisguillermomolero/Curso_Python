@@ -3,7 +3,7 @@ import os
 from logging.handlers import TimedRotatingFileHandler
 
 def init_looger():
-    os.makedirs('logs', exist_ok=True)
+    os.makedirs('log', exist_ok=True)
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
     handler = TimedRotatingFileHandler('log/app.log', when='midnight', backupCount=7, encoding='utf-8')
