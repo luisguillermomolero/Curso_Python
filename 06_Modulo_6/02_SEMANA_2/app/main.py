@@ -26,6 +26,8 @@ next_recurso_id = 1
 db_usuarios: List[Dict] = []
 next_usuario_id = 1
 
+# Endpoints para recursos
+
 @app.get("/")
 def read_root():
     """
@@ -61,3 +63,39 @@ def get_all_recursos():
     # Retorna la lista de diccionarios, Pydantic se encarga de la validación y serialización
     return db_recursos
 
+@app.get("/recurso/{item_id}", response_model=RecursoResponse, summary="Obtener un recurso por ID")
+def read_recurso(item_id: int):
+    if item_id <= 0:
+        raise HTTPException(status_code=422, detail="ID de recurso no valido")
+
+    for item in db_recursos:
+        if item["item_id"] == item_id:
+            return item
+    raise HTTPException(status_code=404, detail="Recurso no encontrado")
+
+# Endpoint para usuarios
+
+@app.post("/usuarios/", response_model=UsuarioCreate, status_code=status.HTTP_201_CREATED)
+def create_usuario(usuario: UsuarioCreate):
+    global next_usuario_id
+    new_user = usuario.model_dump()
+    new_user["user_id"] = next_usuario_id
+    db_usuarios.append(new_user)
+    next_usuario_id += 1
+    return new_user
+
+@app.get("/usuario/{user_id}", response_model=UsuarioResponse)
+def read_usuario(user_id: int):
+    if user_id <= 0:
+        raise HTTPException(status_code=422, detail="ID de usuario invalido")
+    
+    for user in db_usuarios:
+        if user["user_id"] == user_id:
+            return user
+    raise HTTPException(status_code=404, detail="Usuario no encontrado")
+
+@app.get("/usuarios/", response_model=List[UsuarioResponse])
+def get_all_usuarios():
+    return db_usuarios
+    
+    
