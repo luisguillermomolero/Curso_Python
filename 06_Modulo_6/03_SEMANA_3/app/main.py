@@ -5,7 +5,7 @@ from fastapi.responses import Response
 # from database.create import crear_base_de_datos
 # from config import settings
 
-# app = FastAPI()
+app = FastAPI()
 
 # crear_base_de_datos(
 #     settings.DB_NAME,
