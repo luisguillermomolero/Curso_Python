@@ -1,4 +1,0 @@
-fastapi
-uvicorn
-python-jose[cryptography]
-passlib[bcrypt]
