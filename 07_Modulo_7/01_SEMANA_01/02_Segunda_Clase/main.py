@@ -3,6 +3,7 @@ from passlib.context import CryptContext
 from jose import jwt, JWTError
 from datetime import datetime, timedelta, timezone
 from fastapi.security import OAuth2PasswordBearer
+from pydantic import BaseModel
 
 app = FastAPI()
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
@@ -23,5 +24,19 @@ def crear_token(data: dict, expiration: int = ACCESS_TOKEN_EXPIRE_MINUTES):
     to_encode.update({"exp": expire})
     return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
 
+usuarios["admin"] = hashear_password("1234")
 
+class LoginData(BaseModel):
+    username: str
+    password: str
+
+@app.post("/login")
+def login(datos: LoginData):
+    user_pass = usuarios.get(datos.username)
+    if not user_pass or not verificar_password(datos.password, user_pass):
+        raise HTTPException(status_code=400, detail="Credencial Invalida...")
+    
+    token = crear_token({"sub": datos.username})
+    
+    return {"acceso token": token, "token_type": "bearer"}
 
