@@ -22,6 +22,6 @@ def credential_exception():
     return HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail="Credenciales invalidas",
-        headers={"www-authenticate": "Bearer"}
+        headers={"www-authenticate": "Bearer"},
     )
 
