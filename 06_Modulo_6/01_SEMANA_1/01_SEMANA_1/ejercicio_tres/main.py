@@ -70,7 +70,7 @@ def obtener_articulo(articulo_id: int):
                  "articulo": ArticuloRespuesta(id=articulo_id, **articulos[articulo_id]).model_dump()}
         )
 
-@app.post("/ariculos/", response_model=ArticuloRespuesta)
+@app.post("/articulos/", response_model=ArticuloRespuesta)
 def crear_articulo(articulo: ArticuloCrear):
     articulo_id = len(articulos) + 1
     articulos[articulo_id] = articulo.model_dump()
@@ -108,7 +108,7 @@ def actualizar_articulo(articulo_id: int, articulo: ArticuloActualizar):
         )
 
 @app.delete("/articulos/{articulo_id}", response_model=ArticuloRespuesta)
-def eliminar_articulo(articulo_id):
+def eliminar_articulo(articulo_id: int):
     if articulo_id not in articulos:
         return JSONResponse(
             status_code=404,
