@@ -61,7 +61,7 @@ async def obtener_productos():
             status_code=404,
             content={
                 "exitos": False,
-                "mensaje": "No existe el producto",
+                "mensaje": "No hay productos registrados",
                 "produtos": []
             }
         )
@@ -76,6 +76,50 @@ async def obtener_productos():
         content={
             "exito": True,
             "productos": lista_productos
+        }
+    )
+
+@app.get("/productos/{producto_id}")
+async def obtener_producto(producto_id: str):
+    if producto_id not in productos:
+        return JSONResponse(
+            status_code=404,
+            content={
+                "exitos": False,
+                "mensaje":"No existe el producto"
+            }
+        )
+    
+    return JSONResponse(
+        status_code=200,
+        content={
+            "exito": True,
+            "producto": ProductoRespuesta(id=producto_id, **productos[producto_id]).model_dump()
+        }
+    )
+
+@app.put("/productos/{producto_id}")
+async def actualizar_producto(producto_id: str, producto_actualizar: ProductoActualizar):
+    if producto_id not in productos:
+        return JSONResponse(
+            status_code=404,
+            content={
+                "exitos": False,
+                "mensaje":"No existe el producto"
+            }
+        )
+    
+    producto_existente = productos[producto_id]
+    datos_actualizados = producto_actualizar.model_dump(exclude_unset=True)
+    producto_existente.update(datos_actualizados)
+    productos[producto_id] = producto_existente
+    
+    return JSONResponse(
+        status_code=200,
+        content={
+            "exito": True,
+            "mensaje": "Producto actualizado",
+            "producto": ProductoRespuesta(id=producto_id, **producto_existente).model_dump()
         }
     )
 
