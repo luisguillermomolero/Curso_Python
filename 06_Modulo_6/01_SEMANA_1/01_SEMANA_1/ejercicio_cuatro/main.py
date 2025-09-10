@@ -123,3 +123,24 @@ async def actualizar_producto(producto_id: str, producto_actualizar: ProductoAct
         }
     )
 
+@app.delete("/productos/{producto_id}")
+async def eliminar_producto(producto_id: str):
+    if producto_id not in productos:
+        return JSONResponse(
+            status_code=404,
+            content={
+                "exito": False,
+                "mensaje":"No existe el producto"
+            }
+        )
+    
+    producto_eliminado = productos.pop()(producto_id)
+    return JSONResponse(
+        status_code=200,
+        content={
+            "exito": True,
+            "mensaje": f"Producto con id {producto_id} eliminado exitosamente",
+            "producto": ProductoRespuesta(id=producto_id, **producto_eliminado).model_dump()
+        }
+    )
+
