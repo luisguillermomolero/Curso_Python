@@ -134,7 +134,7 @@ async def eliminar_producto(producto_id: str):
             }
         )
     
-    producto_eliminado = productos.pop()(producto_id)
+    producto_eliminado = productos.pop(producto_id)
     return JSONResponse(
         status_code=200,
         content={
