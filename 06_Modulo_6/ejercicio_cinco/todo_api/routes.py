@@ -100,3 +100,15 @@ async def actualizar_tarea(tarea_id: str, tarea_actualizar: TareaActualizar):
         }
     )
 
+@router.delete("/tareas/{tarea_id}")
+async def eliminar_tarea(tarea_id: str):
+    if tarea_id not in tareas:
+        return JSONResponse(
+            status_code=404,
+            content={
+                "exito":False,
+                "mensaje":"Tarea no encontrada"
+            }
+        )
+    
+    
