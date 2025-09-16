@@ -6,16 +6,6 @@ import uuid
 
 router = APIRouter()
 
-@router.get("/") # => endpoint del root de la app
-async def raiz():
-    return JSONResponse(
-        status_code=200,
-        content={
-            "exito": True,
-            "mensaje": "Bienvenidos todos a mi TO-DO List"
-        }
-    )
-
 @router.post("/tareas/")
 async def crear_tarea(tarea: TareaCrear):
     tarea_id = str(uuid.uuid4())
@@ -111,4 +101,14 @@ async def eliminar_tarea(tarea_id: str):
             }
         )
     
+    tarea_eliminada = tareas.pop(tarea_id)
     
+    return JSONResponse(
+        status_code=200,
+        content={
+            "exito":True,
+            "mensaje":f"La tarea con el ID {tarea_id} ha sido eliminada satisfactoriamente",
+            "tarea":TareaRespuesta(id=tarea_id, **tarea_eliminada).model_dump()
+        }
+    )
+
