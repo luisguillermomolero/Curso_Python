@@ -6,7 +6,7 @@ from typing import List, Dict, Optional
 # Modelos para las API los recursos
 class RecursoBase(BaseModel):
     nombre: str = Field(..., min_length=3, max_length=50, description="Nombre del recurso", examples=["Mi recurso"])
-    descripcion = Optional[str] = Field(None, max_length=200, description="Descripción opcional del recurso", examples=["Esta es una descripción del recurso"])
+    descripción: Optional[str] = Field(None, max_length=200, description="Descripción opcional del recurso", examples=["Esta es una descripción del recurso"])
     
 # Modelo para crear un recurso (entrada)
 class RecursoCreate(RecursoBase):
@@ -230,3 +230,16 @@ async def root():
         }
     }
 
+app.include_router(recurso_router)
+app.include_router(usuarios_router)
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(
+        "main:app",
+        host="127.0.0.1",
+        port=8000,
+        reload=True,
+        log_level="info"
+    )
+    
