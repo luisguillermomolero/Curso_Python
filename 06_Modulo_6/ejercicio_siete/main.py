@@ -83,3 +83,173 @@ class Cliente(Base):
     
 # Routers personalizados
 
+proyectos_router = APIRouter(
+    prefix="/proyectos",
+    tags=["Proyectos"],
+    responses={404:{"descripcion":"Proyecto no encontrado"}}
+)
+
+clientes_router = APIRouter(
+    prefix="/clientes",
+    tags=["Clientes"],
+    responses={404:{"descripcion":"Proyecto no encontrado"}}
+)
+
+# API de Productos
+
+@proyectos_router.post(
+    "/",
+    response_model=ProyectoResponse,
+    status_code=status.HTTP_201_CREATE,
+    summary="Crear un nuevo proyecto"
+)
+async def crear_proyecto(proyecto: ProyectoCreate, db: Session = Depends(get_db)):
+    try:
+        proyecto_id = str(uuid.uuid4())
+        fecha_dt = date.fromisoformat(proyecto.fecha_inicio)
+        orm_obj = Proyecto(
+            proyecto_id=proyecto_id,
+            nombre=proyecto.nombre,
+            descripcion=proyecto.descripcion,
+            presupuesto=float(round(proyecto.presupuesto, 2)),
+            fecha_inicio=fecha_dt,
+            estado=proyecto.estado
+        )
+        
+        db.add(orm_obj)
+        db.commit()
+        db.refresh(orm_obj)
+        return{
+            "proyecto_id": orm_obj.proyecto_id,
+            "nombre": orm_obj.nombre,
+            "descripcion": orm_obj.descripcion,
+            "presupuesto": orm_obj.presupuesto,
+            "fecha_inicio": orm_obj.fecha_inicio.strftime("%Y-%m-%d"),
+            "estado": orm_obj.estado,
+        }
+    except SQLAlchemyError as e:
+        db.rollback()
+        raise HTTPException(status_code=500, detail=f"Error de base de datos: {str(e)}")
+    except Exception as e:
+        db.rollback()
+        raise HTTPException(status_code=500, detail=f"Error interno: {str(e)}")
+
+@proyectos_router.get(
+    "/",
+    response_model=List[ProyectoResponse],
+    summary="Obtener todos los proyectos"
+)
+async def get_all_proyectos(db: Session = Depends(get_db)):
+    try:
+        rows = db.query(Proyecto).all()
+        return[
+            {
+                "proyecto_id": r.proyecto_id,
+                "nombre": r.nombre,
+                "descripcion": r.descripcion,
+                "presupuesto": r.presupuesto,
+                "fecha_inicio": r.fecha_inicio.strftime("%Y-%m-%d"),
+                "estado": r.estado,
+            }
+            for r in rows
+        ]
+    except SQLAlchemyError as e:
+        db.rollback()
+        raise HTTPException(status_code=500, detail=f"Error de base de datos: {str(e)}")
+    except Exception as e:
+        db.rollback()
+        raise HTTPException(status_code=500, detail=f"Error interno: {str(e)}")
+
+@proyectos_router.get(
+    "/{proyecto_id}",
+    response_model=ProyectoResponse,
+    summary="Obtener un proyecto por ID"
+)
+async def read_proyecto(proyecto_id: str, db: Session = Depends(get_db)):
+    try:
+        uuid.UUID(proyecto_id)
+    except ValueError:
+        raise HTTPException(status_code=422, detail="Formato de ID de proyecto inválido. Debe ser un UUID válido...")
+    
+    try:
+        obj = db.query(Proyecto).filter(Proyecto.proyecto_id == proyecto_id).first()
+        if not obj:
+            raise HTTPException(status_code=404, detail="Proyecto no encontrado")
+        return{
+            "proyecto_id": obj.proyecto_id,
+            "nombre": obj.nombre,
+            "descripcion": obj.descripcion,
+            "presupuesto": obj.presupuesto,
+            "fecha_inicio": obj.fecha_inicio.strftime("%Y-%m-%d"),
+            "estado": obj.estado,
+        }
+    except SQLAlchemyError as e:
+        db.rollback()
+        raise HTTPException(status_code=500, detail=f"Error de base de datos: {str(e)}")
+    except Exception as e:
+        db.rollback()
+        raise HTTPException(status_code=500, detail=f"Error interno: {str(e)}")
+
+@proyectos_router.put(
+    "/{proyecto_id}",
+    response_model=ProyectoResponse,
+    summary="Actualizar un proyecto existente"
+)
+async def update_proyecto(proyecto_id: str, proyecto = ProyectoUpdate, db: Session = Depends(get_db)):
+    try:
+        uuid.UUID(proyecto_id)
+    except ValueError:
+        raise HTTPException(status_code=422, detail="Formato de ID de proyecto inválido. Debe ser un UUID válido...")
+    
+    try:
+        obj = db.query(Proyecto).filter(Proyecto.proyecto_id == proyecto_id).first()
+        if not obj:
+            raise HTTPException(status_code=404, detail="Proyecto no encontrado")
+        data = proyecto.model_dump(exclude_unset=True)
+        if "fecha_inicio" in data and data["fecha_inicio"] is not None:
+            data["fecha_inicio"] = date.fromisoformat(data["fecha_inicio"])
+        for k, v in data.items()():
+            setattr(obj, k, v)
+        
+        db.commit()
+        db.refresh(obj)
+        return{
+            "proyecto_id": obj.proyecto_id,
+            "nombre": obj.nombre,
+            "descripcion": obj.descripcion,
+            "presupuesto": obj.presupuesto,
+            "fecha_inicio": obj.fecha_inicio.strftime("%Y-%m-%d"),
+            "estado": obj.estado,
+        }
+    except SQLAlchemyError as e:
+        db.rollback()
+        raise HTTPException(status_code=500, detail=f"Error de base de datos: {str(e)}")
+    except Exception as e:
+        db.rollback()
+        raise HTTPException(status_code=500, detail=f"Error interno: {str(e)}")
+
+@proyectos_router.delete(
+    "/{proyecto_id}",
+    status_code=status.HTTP_200_OK,
+    summary="Eliminar un proyecto existente"
+)
+async def delete_proyecto(proyecto_id: str, db: Session = Depends(get_db)):
+    try:
+        uuid.UUID(proyecto_id)
+    except ValueError:
+        raise HTTPException(status_code=422, detail="Formato de ID de proyecto inválido. Debe ser un UUID válido...")
+    
+    try:
+        obj = db.query(Proyecto).filter(Proyecto.proyecto_id == proyecto_id).first()
+        if not obj:
+            raise HTTPException(status_code=404, detail="Proyecto no encontrado")
+        
+        db.delete(obj)
+        db.commit()
+        return {"mensaje": "Proyecto eliminado con éxitos"}
+    except SQLAlchemyError as e:
+        db.rollback()
+        raise HTTPException(status_code=500, detail=f"Error de base de datos: {str(e)}")
+    except Exception as e:
+        db.rollback()
+        raise HTTPException(status_code=500, detail=f"Error interno: {str(e)}")
