@@ -4,17 +4,17 @@ import sys
 # Lista de dependencias necesarias para el proyecto
 # Versiones compatibles para evitar errores de bcrypt con passlib
 dependencias = [
-    "python-jose[cryptography]==3.3.0\n",
-    "passlib[bcrypt]==1.7.4\n",
-    "bcrypt==4.0.1\n",  # Versión compatible con passlib 1.7.4
-    "fastapi\n",
-    "uvicorn\n",
+    "python-jose[cryptography]\n",
+    "passlib\n",
+    "bcrypt\n",
+    "fastapi[standard]\n",
+    "uvicorn[standard]\n",
+    "sqlalchemy\n",
+    "psycopg2-binary\n",
+    "python-dotenv\n",
     "pydantic\n",
-    "sqlalchemy==2.0.23\n",
-    "psycopg2-binary==2.9.9\n",
-    "python-dotenv==1.0.0\n",
-    "python-multipart==0.0.6\n",
-    "pydantic-settings==2.1.0"
+    "pydantic-settings\n",
+    "python-multipart\n"
 ]
 
 # Crear y escribir el archivo requirements.txt
@@ -29,7 +29,15 @@ with open("requirements.txt", "r", encoding="utf-8") as archivo:
 
 # Instalar las dependencias
 print("─" * 50)
-print("\nInstalando dependencias...\n")
+print("\nActualizando pyasn1-modules...\n")
+
+try:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "--upgrade", "pyasn1-modules"])
+    print("\npyasn1-modules actualizado correctamente")
+except subprocess.CalledProcessError as e:
+    print(f"\nAdvertencia: No se pudo actualizar pyasn1-modules: {e}")
+
+print("\nInstalando dependencias del proyecto...\n")
 
 try:
     subprocess.check_call([sys.executable, "-m", "pip", "install", "-r", "requirements.txt"])
@@ -39,3 +47,40 @@ except subprocess.CalledProcessError as e:
 except Exception as e:
     print(f"\nError inesperado: {e}")
 
+# Mostrar versiones instaladas
+print("\n" + "─" * 50)
+print("\nVERSIONES INSTALADAS:")
+print("─" * 50)
+
+# Lista de paquetes principales a verificar
+paquetes_principales = [
+    "python-jose",
+    "passlib",
+    "bcrypt",
+    "fastapi",
+    "uvicorn",
+    "sqlalchemy",
+    "psycopg2-binary",
+    "python-dotenv",
+    "pydantic",
+    "pydantic-settings",
+    "python-multipart"
+]
+
+for paquete in paquetes_principales:
+    try:
+        resultado = subprocess.check_output(
+            [sys.executable, "-m", "pip", "show", paquete],
+            stderr=subprocess.STDOUT
+        ).decode()
+        
+        # Extraer la versión del resultado
+        for linea in resultado.split('\n'):
+            if linea.startswith('Version:'):
+                version = linea.split(':', 1)[1].strip()
+                print(f"  {paquete:<25} {version}")
+                break
+    except subprocess.CalledProcessError:
+        print(f"  {paquete:<25} No instalado")
+
+print("─" * 50)

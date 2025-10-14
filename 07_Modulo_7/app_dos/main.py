@@ -23,7 +23,7 @@ def crear_token(datos: dict, expiration: int = ACCESS_TIME_EXPIRE):
 def verificar_token(token: str):
     
     try:
-        payload = jwt.decode(token, SECRET_KEY, algorithms=ALGORITHM)
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
         return payload
     except jwt.ExpiredSignatureError:
         print("Error: El token ha expirado")
