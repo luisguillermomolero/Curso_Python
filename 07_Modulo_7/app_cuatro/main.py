@@ -24,7 +24,7 @@ app = FastAPI()
 pwd_context = CryptContext(schemes=[HASH_SCHEME], deprecated="auto")
 
 # db 
-usuarios= {}
+usuarios = {}
 
 def hashear_password(password: str) -> str:
     return pwd_context.hash(password)
@@ -64,6 +64,7 @@ async def registrar_usuario(datos: RegistroData):
         "mensaje": "Usuario registrado exitosamente",
         "usuario": {
             "username": datos.username,
+            "password": datos.password,
             "registrado_en": datetime.now(timezone.utc).isoformat()
         }
     }
@@ -82,7 +83,8 @@ async def login(datos: LoginData):
         "access_token": token,
         "expire_in": ACCESS_TOKEN_EXPIRE_MINUTES * 60,
         "usuario":{
-            "username": datos.username
+            "username": datos.username,
+            "Hash_de_retorno": user_pass
         }
     }
 
